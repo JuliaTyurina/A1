@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#fff">
+	<link rel="stylesheet" href="assets/css/style.min.css">
+	<title>@@title</title>
+</head>
+<body>
+
+<div class="app" id="app">
+	<header class="header">
+		<div class="container">
+			<div class="header-mobile">
+				<div class="header-mobile__bar">
+					<img class="logo" src="/assets/img/svg/logo-mobile.svg" alt="Логотип «Форма А1»">
+					<search class="search" role="search" data-global-action="search-bar-toggle">
+						<form class="search-form">
+							<input class="search-input" type="search"
+								   placeholder="Искать в магазине"
+								   readonly>
+							<button class="search-button">
+							<span class="visually-hidden">
+								Поиск
+							</span>
+								<svg class="search-button__icon" aria-hidden="true">
+									<use href="/assets/img/svg/sprite.svg#search"></use>
+								</svg>
+							</button>
+						</form>
+					</search>
+					<button class="burger" data-global-action="mobile-all-menus-toggle">
+						<span class="burger-line"></span>
+						<span class="burger-line"></span>
+						<span class="burger-line"></span>
+					</button>
+				</div>
+				<div class="header-mobile__menu mobile-menu">
+					<nav class="mobile-menu__nav mobile-menu__nav--main nav">
+						<ul class="nav-list">
+							<li class="nav-item">
+								<a href="" class="nav-link ">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#box"></use>
+									</svg>
+									<span class="nav-text">Новинки</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#sale"></use>
+									</svg>
+									<span class="nav-text">Акции</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#fire"></use>
+									</svg>
+									<span class="nav-text">Подарочные сертификаты</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#male"></use>
+									</svg>
+									<span class="nav-text">Корпоративным клиентам</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#valentines-day"></use>
+									</svg>
+									<span class="nav-text">О компании</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#star"></use>
+									</svg>
+									<span class="nav-text">Покупателям</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<nav class="mobile-menu__nav mobile-menu__nav--account nav">
+						<ul class="nav-list">
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#box"></use>
+									</svg>
+									<span class="nav-text">Мои заказы</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#user-circle"></use>
+									</svg>
+									<span class="nav-text">Мои данные</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#heart"></use>
+									</svg>
+									<span class="nav-text">Избранное</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#gear"></use>
+									</svg>
+									<span class="nav-text">Настройки</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<nav class="mobile-menu__nav mobile-menu__nav--catalog nav">
+						<ul class="nav-list">
+							<li class="nav-item">
+								<button class="nav-link" data-global-action="submenu-open"
+										data-submenu="clothing">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#overall"></use>
+									</svg>
+									<span class="nav-text">Одежда</span>
+								</button>
+								<dialog data-submenu="clothing">
+									<div class="submenu">
+										<p class="submenu__title">
+											Одежда
+										</p>
+										<ul class="nav">
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-img"
+														  style="background-image: url('/assets/img/raster/tops.png')"></span>
+													<span class="nav-text font-medium">Топы</span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-img"
+														  style="background-image: url('/assets/img/raster/trousers.png')"></span>
+													<span class="nav-text font-medium">Брюки</span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-img"
+														  style="background-image: url('/assets/img/raster/dressing-gowns.png')"></span>
+													<span class="nav-text font-medium">Халаты</span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-img"
+														  style="background-image: url('/assets/img/raster/t-shirts.png')"></span>
+													<span class="nav-text font-medium">Футболки</span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-img"
+														  style="background-image: url('/assets/img/raster/sweatshirts.png')"></span>
+													<span class="nav-text font-medium">Свитшоты</span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-img"
+														  style="background-image: url('/assets/img/raster/longsleeves.png')"></span>
+													<span class="nav-text font-medium">Лонгсливы</span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-img"
+														  style="background-image: url('/assets/img/raster/hoodies.png')"></span>
+													<span class="nav-text font-medium">Худи</span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<button class="nav-link" data-global-action="submenu-open"
+														data-submenu="accessories">
+													<span class="nav-img"
+														  style="background-image: url('/assets/img/raster/accessories.png')"></span>
+													<span class="nav-text font-medium">Аксессуары</span>
+												</button>
+
+												<dialog data-submenu="accessories">
+													<div class="submenu">
+														<p class="submenu__title">
+															Аксессуары
+														</p>
+
+														<ul class="nav">
+															<li class="nav-item">
+																<a href="" class="nav-link">
+																	<span class="nav-text font-medium">Все</span>
+																</a>
+															</li>
+															<li class="nav-item">
+																<a href="" class="nav-link">
+																	<span class="nav-text font-medium">Брелоки</span>
+																</a>
+															</li>
+															<li class="nav-item">
+																<a href="" class="nav-link">
+																	<span class="nav-text font-medium">Подарочная упаковка</span>
+																</a>
+															</li>
+															<li class="nav-item">
+																<a href="" class="nav-link">
+																	<span class="nav-text font-medium">Стикерпаки</span>
+																</a>
+															</li>
+															<li class="nav-item">
+																<a href="" class="nav-link">
+																	<span class="nav-text font-medium">Шапочки</span>
+																</a>
+															</li>
+															<li class="nav-item">
+																<a href="" class="nav-link">
+																	<span class="nav-text font-medium">Шарфы</span>
+																</a>
+															</li>
+															<li class="nav-item">
+																<a href="" class="nav-link">
+																	<span class="nav-text font-medium">Брелоки</span>
+																</a>
+															</li>
+														</ul>
+
+
+														<button class="submenu__back button-lg button-secondary"
+																data-global-action="submenu-close">
+															Назад
+														</button>
+														<button class="submenu__close"
+																data-global-action="submenu-close">
+															<svg aria-hidden="true">
+																<use href="/assets/img/svg/sprite.svg#cancel"></use>
+															</svg>
+														</button>
+													</div>
+												</dialog>
+											</li>
+
+										</ul>
+
+										<button class="submenu__back button-lg button-secondary"
+												data-global-action="submenu-close">
+											Назад
+										</button>
+										<button class="submenu__close" data-global-action="submenu-close">
+											<svg aria-hidden="true">
+												<use href="/assets/img/svg/sprite.svg#cancel"></use>
+											</svg>
+										</button>
+									</div>
+								</dialog>
+
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#palette"></use>
+									</svg>
+									<span class="nav-text">Цвета</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#premium"></use>
+									</svg>
+									<span class="nav-text">Аксессуары</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#mark"></use>
+									</svg>
+									<span class="nav-text">Подборки</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+
+					<address class="mobile-menu__contacts">
+						<div class="main-contact">
+							<a class="main-contact__link" href="tel:+74932333333">8 4932 333 333</a>
+							<span class="body-text-lg text-grey">Звонки принимаются пн-пт с 9 до 19</span>
+						</div>
+
+						<ul class="contacts-grid">
+							<li class="contacts-grid-item">
+								<a href="#" class="body-text-md font-medium contacts-grid-link">
+									<svg aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#place"></use>
+									</svg>
+									Иваново, пер. Конспиративный д. 11
+								</a>
+							</li>
+							<li class="contacts-grid-item">
+								<a href="https://t.me/+78001000000" class="body-text-md font-medium contacts-grid-link">
+									<svg aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#telegram"></use>
+									</svg>
+									Telegram
+								</a>
+							</li>
+							<li class="contacts-grid-item">
+								<a href="https://wa.me/78001000000" class="body-text-md font-medium contacts-grid-link">
+									<svg aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#whatsapp"></use>
+									</svg>
+									WhatsApp
+								</a>
+							</li>
+							<li class="contacts-grid-item">
+								<a href="mailto:a1@mail.ru" class="body-text-md font-medium contacts-grid-link">
+									<svg aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#mail"></use>
+									</svg>
+									A1@mail.ru
+								</a>
+							</li>
+						</ul>
+					</address>
+
+					<button class="button-lg button-primary">
+						Обратный звонок
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="header-desktop">
+			<div class="header-desktop__bar">
+				<button class="burger" data-global-action="desktop-menu-toggle">
+					<span class="burger-line"></span>
+					<span class="burger-line"></span>
+					<span class="burger-line"></span>
+				</button>
+				<img class="logo" src="/assets/img/svg/logo-desktop.svg" alt="Логотип «Форма А1»">
+				<nav class="toolbar">
+					<ul class="toolbar__list">
+						<li class="toolbar__item">
+							<a class="toolbar__link" data-global-action="search-bar-toggle">
+								<span class="toolbar__icon icon">
+									<svg aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#search-2"></use>
+									</svg>
+								</span>
+								<span class="visually-hidden">Поиск</span>
+							</a>
+						</li>
+						<li class="toolbar__item">
+							<a href="#" class="toolbar__link">
+							<span class="toolbar__icon icon">
+								<span class="icon-counter" data-nav-counter="1">
+									<span class="visually-hidden">1</span>
+								</span>
+								<svg aria-hidden="true">
+									<use href="/assets/img/svg/sprite.svg#cart"></use>
+								</svg>
+							</span>
+
+								<span class="visually-hidden">Корзина</span>
+							</a>
+						</li>
+						<li class="toolbar__item">
+							<a href="#" class="toolbar__link">
+						<span class="toolbar__icon icon">
+							<span class="icon-counter" data-nav-counter="72">
+								<span class="visually-hidden">72</span>
+							</span>
+							<svg aria-hidden="true">
+								<use href="/assets/img/svg/sprite.svg#heart"></use>
+							</svg>
+						</span>
+
+								<span class="visually-hidden">Избранное</span>
+							</a>
+						</li>
+						<li class="toolbar__item">
+							<a href="#" class="toolbar__link">
+						<span class="toolbar__icon icon">
+							<span class="icon-counter" data-nav-counter="100">
+								<span class="visually-hidden">100</span>
+							</span>
+							<svg aria-hidden="true">
+								<use href="/assets/img/svg/sprite.svg#user"></use>
+							</svg>
+						</span>
+
+								<span class="visually-hidden">Профиль</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="header-desktop__menu">
+				<nav class="nav">
+					<div class="nav-wrapper">
+						<ul class="nav-list">
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#female"></use>
+									</svg>
+									<span class="nav-text font-medium">Женщинам</span>
+								</a>
+								<div class="header-desktop__submenu nav nav--level-2">
+									<div class="nav-wrapper">
+										<ul class="nav-list">
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-text font-medium">Костюмы</span>
+												</a>
+												<div class="header-desktop__submenu nav nav--level-3">
+													<div class="nav-wrapper">
+														<ul class="nav-list">
+															<li class="nav-item">
+																<a href="" class="nav-link">
+																	<span class="nav-text font-medium">Колпак медицинский 1</span>
+																</a>
+															</li>
+															<li class="nav-item">
+																<a href="" class="nav-link">
+																	<span class="nav-text font-medium">Колпак медицинский 2</span>
+																</a>
+															</li>
+															<li class="nav-item">
+																<a href="" class="nav-link">
+																	<span class="nav-text font-medium">Колпак медицинский 3</span>
+																</a>
+															</li>
+															<li class="nav-item">
+																<a href="" class="nav-link">
+																	<span class="nav-text font-medium">Колпак медицинский 4</span>
+																</a>
+															</li>
+															<li class="nav-item">
+																<a href="" class="nav-link">
+																	<span class="nav-text font-medium">Колпак медицинский 5</span>
+																</a>
+															</li>
+
+														</ul>
+
+													</div>
+
+												</div>
+
+											</li>
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-text font-medium">Брюки</span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-text font-medium">Халаты</span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-text font-medium">Рубашки</span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-text font-medium">Колпаки</span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-text font-medium">Колпаки</span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-text font-medium">Колпаки</span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-text font-medium">Колпаки</span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-text font-medium">Колпаки</span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-text font-medium">Колпаки</span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-text font-medium">Колпаки</span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-text font-medium">Колпаки</span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-text font-medium">Колпаки</span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-text font-medium">Колпаки</span>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a href="" class="nav-link">
+													<span class="nav-text font-medium">Колпаки</span>
+												</a>
+											</li>
+
+										</ul>
+
+									</div>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#male"></use>
+									</svg>
+									<span class="nav-text font-medium">Мужчинам</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#slippers"></use>
+									</svg>
+									<span class="nav-text font-medium">Обувь</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#slippers"></use>
+									</svg>
+									<span class="nav-text font-medium">Обувь</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#slippers"></use>
+									</svg>
+									<span class="nav-text font-medium">Обувь</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#slippers"></use>
+									</svg>
+									<span class="nav-text font-medium">Обувь</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#slippers"></use>
+									</svg>
+									<span class="nav-text font-medium">Обувь</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#slippers"></use>
+									</svg>
+									<span class="nav-text font-medium">Обувь</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#slippers"></use>
+									</svg>
+									<span class="nav-text font-medium">Обувь</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#slippers"></use>
+									</svg>
+									<span class="nav-text font-medium">Обувь</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#slippers"></use>
+									</svg>
+									<span class="nav-text font-medium">Обувь</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#slippers"></use>
+									</svg>
+									<span class="nav-text font-medium">Обувь</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#slippers"></use>
+									</svg>
+									<span class="nav-text font-medium">Обувь</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#slippers"></use>
+									</svg>
+									<span class="nav-text font-medium">Обувь</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#slippers"></use>
+									</svg>
+									<span class="nav-text font-medium">Обувь</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#slippers"></use>
+									</svg>
+									<span class="nav-text font-medium">Обувь</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link">
+									<svg class="nav-icon" aria-hidden="true">
+										<use href="/assets/img/svg/sprite.svg#slippers"></use>
+									</svg>
+									<span class="nav-text font-medium">Обувь</span>
+								</a>
+							</li>
+
+						</ul>
+					</div>
+				</nav>
+				<div class="header-desktop__menu-overlay" data-global-action="desktop-menu-toggle"></div>
+			</div>
+		</div>
+
+
+		<div class="search-bar">
+			<div class="search-bar__header">
+				<search class="search" role="search" data-input-wrapper>
+					<form>
+						<input class="search-input" type="search"
+							   placeholder="Искать в магазине"
+							   data-clearable-input
+						>
+						<button class="search-delete" data-clear-button>
+							<span class="visually-hidden">
+								Стереть
+							</span>
+							<svg class="search-delete__icon" aria-hidden="true">
+								<use href="/assets/img/svg/sprite.svg#dismiss-fill"></use>
+							</svg>
+						</button>
+						<button class="search-button">
+							<span class="visually-hidden">
+								Поиск
+							</span>
+							<svg class="search-button__icon" aria-hidden="true">
+								<use href="/assets/img/svg/sprite.svg#search"></use>
+							</svg>
+						</button>
+					</form>
+				</search>
+				<button class="search-bar__close" data-global-action="search-bar-toggle">
+					Закрыть
+				</button>
+			</div>
+
+			<div class="search-bar__content">
+				<p class="body-text-lg font-medium text-grey">
+					Начните поиск
+				</p>
+
+				<ul class="search-bar__results">
+					<li class="search-bar__results-card">
+						<a href="#" class="search-bar__results-link body-text-xl font-medium">
+							Брюки палаццо
+						</a>
+					</li>
+					<li class="search-bar__results-card">
+						<a href="#" class="search-bar__results-link body-text-xl font-medium">
+							Брюки зауженные
+						</a>
+					</li>
+					<li class="search-bar__results-card">
+						<a href="#" class="search-bar__results-link body-text-xl font-medium">
+							Брюки широкие
+						</a>
+					</li>
+					<li class="search-bar__results-card">
+						<a href="#" class="search-bar__results-link body-text-xl font-medium">
+							Брюки палаццо
+						</a>
+					</li>
+					<li class="search-bar__results-card">
+						<a href="#" class="search-bar__results-link body-text-xl font-medium">
+							Брюки палаццо
+						</a>
+					</li>
+					<li class="search-bar__results-card">
+						<a href="#" class="search-bar__results-link body-text-xl font-medium">
+							Брюки зауженные
+						</a>
+					</li>
+					<li class="search-bar__results-card">
+						<a href="#" class="search-bar__results-link body-text-xl font-medium">
+							Брюки широкие
+						</a>
+					</li>
+					<li class="search-bar__results-card">
+						<a href="#" class="search-bar__results-link body-text-xl font-medium">
+							Брюки палаццо
+						</a>
+					</li>
+					<li class="search-bar__results-card">
+						<a href="#" class="search-bar__results-link body-text-xl font-medium">
+							Брюки палаццо
+						</a>
+					</li>
+					<li class="search-bar__results-card">
+						<a href="#" class="search-bar__results-link body-text-xl font-medium">
+							Брюки зауженные
+						</a>
+					</li>
+					<li class="search-bar__results-card">
+						<a href="#" class="search-bar__results-link body-text-xl font-medium">
+							Брюки широкие
+						</a>
+					</li>
+					<li class="search-bar__results-card">
+						<a href="#" class="search-bar__results-link body-text-xl font-medium">
+							Брюки палаццо
+						</a>
+					</li>
+					<li class="search-bar__results-card">
+						<a href="#" class="search-bar__results-link body-text-xl font-medium">
+							Брюки палаццо
+						</a>
+					</li>
+					<li class="search-bar__results-card">
+						<a href="#" class="search-bar__results-link body-text-xl font-medium">
+							Брюки зауженные
+						</a>
+					</li>
+					<li class="search-bar__results-card">
+						<a href="#" class="search-bar__results-link body-text-xl font-medium">
+							Брюки широкие
+						</a>
+					</li>
+					<li class="search-bar__results-card">
+						<a href="#" class="search-bar__results-link body-text-xl font-medium">
+							Брюки палаццо
+						</a>
+					</li>
+					<li class="search-bar__results-card">
+						<a href="#" class="search-bar__results-link body-text-xl font-medium">
+							Брюки палаццо
+						</a>
+					</li>
+					<li class="search-bar__results-card">
+						<a href="#" class="search-bar__results-link body-text-xl font-medium">
+							Брюки зауженные
+						</a>
+					</li>
+					<li class="search-bar__results-card">
+						<a href="#" class="search-bar__results-link body-text-xl font-medium">
+							Брюки широкие
+						</a>
+					</li>
+					<li class="search-bar__results-card">
+						<a href="#" class="search-bar__results-link body-text-xl font-medium">
+							Брюки палаццо
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="search-bar__overlay" data-global-action="search-bar-toggle"></div>
+
+		</div>
+
+	</header>
+
+

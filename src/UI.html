@@ -1,0 +1,64 @@
+@@include("header/header.html", {
+"title": "UI"
+})
+<main class="main">
+	<div class="container">
+		<button class="button-xl button-primary">Button</button>
+		<button disabled class="button-xl button-primary">Button</button>
+		<button class="button-lg button-secondary">Button</button>
+		<button disabled class="button-lg button-secondary">Button</button>
+		<button class="button-md-rounded button-bordered">Button</button>
+		<button disabled class="button-md-rounded button-bordered">Button</button>
+
+		<label class="checkbox">
+			<input class="checkbox-input" type="checkbox" name="чекбокс">
+			<span class="checkbox-text">Чекбокс</span>
+		</label>
+		<label class="checkbox">
+			<input checked class="checkbox-input" type="checkbox" name="чекбокс">
+			<span class="checkbox-text">Чекбокс</span>
+		</label>
+		<label class="checkbox">
+			<input disabled class="checkbox-input" type="checkbox" name="чекбокс">
+			<span class="checkbox-text">Чекбокс</span>
+		</label>
+		<label class="checkbox">
+			<input checked disabled class="checkbox-input" type="checkbox" name="чекбокс">
+			<span class="checkbox-text">Чекбокс</span>
+		</label>
+
+		<label class="radio">
+			<input class="radio-input" type="radio" name="радио">
+			<span class="radio-text">Радио</span>
+		</label>
+		<label class="radio">
+			<input checked class="radio-input" type="radio" name="радио">
+			<span class="radio-text">Радио</span>
+		</label>
+		<label class="radio">
+			<input disabled class="radio-input" type="radio" name="радио">
+			<span class="radio-text">Радио</span>
+		</label>
+		<label class="radio">
+			<input checked disabled class="radio-input" type="radio" name="радио">
+			<span class="radio-text">Радио</span>
+		</label>
+
+		<label class="toggle">
+			<input class="toggle-input" type="checkbox" name="переключатель" />
+		</label>
+
+		<button class="chip" type="button" aria-selected="false">Тапиры</button>
+		<button class="chip" type="button" aria-selected="true">Ламантины</button>
+
+		<div class="input">
+			<input id="name" class="input-elem" name="name" type="text" placeholder="Введите ваше имя"/>
+			<label for="name" class="input-label" data-content="Имя">
+				<span class="visually-hidden">Имя</span>
+			</label>
+		</div>
+	</div>
+
+</main>
+<script src="assets/js/main.js"></script>
+@@include("footer/footer.html")

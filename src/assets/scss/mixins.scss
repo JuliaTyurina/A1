@@ -1,0 +1,61 @@
+@use "sass:math";
+@use "breakpoints" as *;
+
+@mixin mobile() {
+  @media (min-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin desktop-lg() {
+  @media (min-width: $desktop-lg) {
+    @content;
+  }
+}
+
+@mixin desktop-xl() {
+  @media (min-width: $desktop-xl) {
+    @content;
+  }
+}
+
+@mixin focus-visible() {
+  outline: 1px solid var(--focus-visible-outline);
+  outline-offset: 2px;
+}
+
+// Переменные для резиновой типографики
+$screen-min: 375px;
+$screen-max: 1300px;
+
+@function fluid($mobile, $desktop) {
+  // Считаем разницу между значениями
+  $value-diff: $desktop - $mobile;
+
+  // Считаем разницу между экранами в vw (процентах от ширины)
+  $screen-diff: math.div($screen-max - $screen-min, 100);
+
+  // Коэффициент для vw — на сколько меняется значение на 1vw
+  $vw-coefficient: math.div($value-diff, $screen-diff);
+
+  // Базовое значение — начальная точка формулы
+  $base: $mobile - ($vw-coefficient * math.div($screen-min, 100));
+
+  // Возвращаем готовую формулу clamp
+  @return clamp(#{$mobile}, calc(#{$base} + #{$vw-coefficient}vw), #{$desktop});
+}
+
+
+

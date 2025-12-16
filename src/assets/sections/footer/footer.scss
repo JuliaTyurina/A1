@@ -1,0 +1,238 @@
+@use '../../scss/mixins' as *;
+
+.footer {
+  padding: 24px 0;
+  background-color: var(--color-background-primary);
+
+  @include tablet {
+    padding: 56px 0 24px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+            'top top'
+            'mid mid'
+            'bottom bottom';
+    row-gap: 40px;
+    column-gap: 8px;
+
+    @include tablet {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+            'top top top top'
+            'mid mid mid mid'
+            'bottom bottom bottom bottom';
+    }
+
+    @include desktop-lg {
+      row-gap: unset;
+    }
+  }
+
+  &__top {
+    grid-area: top;
+    display: grid;
+    grid-template-columns: subgrid;
+    align-items: center;
+    grid-template-areas:
+            'logo up'
+            'phone phone'
+            'btn btn';
+    row-gap: 16px;
+
+    @include tablet {
+      grid-template-areas:
+            'logo phone phone up'
+            'btn btn btn btn';
+      align-items: start;
+    }
+
+    @include desktop {
+      grid-template-areas:
+            'logo btn phone up';
+    }
+
+    @include desktop-lg {
+      margin-bottom: 48px;
+    }
+
+    .main-contact {
+      grid-area: phone;
+      padding-top: 24px;
+
+      @include tablet {
+        padding-top: unset;
+      }
+
+      @include desktop {
+        align-items: flex-start;
+      }
+
+      @include desktop-lg {
+        flex-direction: column-reverse;
+      }
+
+    }
+  }
+
+  &__logo {
+    grid-area: logo;
+    width: 144px;
+
+    @include desktop {
+      width: 180px;
+    }
+  }
+
+  &__up {
+    grid-area: up;
+    justify-self: end;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    max-width: fit-content;
+    padding: 14px;
+    border-radius: 50%;
+    transition: background-color var(--transition);
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+  }
+
+  &__request {
+    grid-area: btn;
+
+    @include desktop {
+      max-width: fit-content;
+    }
+  }
+
+  &__mid {
+    grid-area: mid;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-areas:
+            'nav nav'
+            'contacts contacts';
+    row-gap: 40px;
+
+    @include tablet {
+      grid-template-areas:
+            'nav nav contacts contacts'
+            'nav nav contacts contacts';
+    }
+
+    @include desktop-lg {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__nav {
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: subgrid;
+
+    &-title {
+      margin-bottom: 16px;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+    }
+
+    &-link {
+      transition: color var(--transition);
+
+      &:hover {
+        color: var(--color-text-secondary);
+      }
+
+      &:focus-visible {
+        outline: none;
+        color: var(--color-text-secondary);
+      }
+    }
+
+
+  }
+
+  &__contacts {
+    grid-area: contacts;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+
+    &-title {
+      margin-bottom: 12px;
+
+      @include tablet {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__socials {
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 48px);
+      justify-content: space-between;
+      gap: 8px;
+
+      @include desktop {
+        justify-content: start;
+      }
+    }
+
+    &-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px;
+      color: var(--color-text-secondary);
+      background-color: var(--color-background-secondary);
+      border-radius: 50%;
+      transition: background-color var(--transition);
+
+      &:hover {
+        background-color: var(--color-background-tertiary);
+      }
+
+      &:focus-visible {
+        @include focus-visible;
+      }
+    }
+  }
+
+  &__bottom {
+    grid-area: bottom;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include tablet {
+      flex-direction: row;
+    }
+
+    @include desktop {
+      column-gap: 32px;
+    }
+  }
+}

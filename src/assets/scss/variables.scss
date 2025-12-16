@@ -1,0 +1,64 @@
+:root {
+  --container-primary: 1292px;
+  --container-wide: 1920px;
+  --container-padding: 16px;
+
+  --transition: .3s ease-in-out;
+
+  --focus-visible-outline: var(--project-color-1);
+
+  --header-height: 64px;
+  --bottom-nav-height: 56px;
+
+  --desktop-menu-width: 310px;
+  --desktop-menu-gap: 8px;
+  --desktop-menu-left-gap: 8px;
+
+  --project-color-1: #0b0c0e;
+  --project-color-2: #4f5664;
+  --project-color-3: #8d95a5;
+  --project-color-4: #bcbcbc;
+  --project-color-5: #c6cad2;
+  --project-color-6: #e2e4e9;
+  --project-color-7: #f6f7f8;
+  --project-color-8: #f1f2f4;
+  --project-color-9: #fff;
+  --project-color-10: #e1312f;
+  --project-color-11: #ff0408;
+  --project-color-12: #ffa700;
+  --project-color-13: #337aff;
+  --project-color-14: #1fad36;
+  --project-color-15: #E6E8EA;
+
+  --color-background-primary: var(--project-color-9);
+  --color-background-contrast: var(--project-color-1);
+  --color-background-contrast-2: var(--project-color-2);
+  --color-background-secondary: var(--project-color-7);
+  --color-background-secondary-2: var(--project-color-4);
+  --color-background-secondary-3: var(--project-color-15);
+  --color-background-tertiary: var(--project-color-8);
+  --color-background-accent: var(--project-color-10);
+  --color-background-accent-2: var(--project-color-13);
+
+  --color-text-primary: var(--project-color-1);
+  --color-text-contrast: var(--project-color-9);
+  --color-text-secondary: var(--project-color-3);
+  --color-text-tertiary: var(--project-color-5);
+  --color-text-accent: var(--project-color-10);
+
+  --color-stroke-primary: var(--project-color-6);
+  --color-stroke-contrast: var(--project-color-9);
+  --color-stroke-secondary: var(--project-color-3);
+  --color-stroke-tertiary: var(--project-color-8);
+  --color-stroke-accent: var(--project-color-10);
+  --color-stroke-accent-2: var(--project-color-13);
+
+  --color-icon-primary: var(--project-color-1);
+  --color-icon-contrast: var(--project-color-9);
+  --color-icon-secondary: var(--project-color-3);
+  --color-icon-secondary-2: var(--project-color-8);
+  --color-icon-tertiary: var(--project-color-5);
+  --color-icon-accent: var(--project-color-10);
+  --color-icon-accent-2: var(--project-color-13);
+}
+
