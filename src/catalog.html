@@ -1,0 +1,31 @@
+@@include("header/header.html", {
+"title": "Каталог"
+})
+
+<main class="main">
+	@@include("./_components/breadcrumbs/breadcrumbs.html", {
+	"level1Title": "Главная",
+	"level1Url": "/",
+	"level2Title": "Медицинская одежда",
+	"level2Url": null,
+	"level3Title": null,
+	"level3Url": null,
+	"columns": null,
+	"background": true,
+	"product": null,
+	})
+
+	@@include("catalog/catalog.html")
+
+	@@include("set-cards-slider/set-cards-slider.html", {
+	"title" : "Собирайте собственный&nbsp;образ",
+	"showAll": true,
+	})
+
+	@@include("products-slider/products-slider.html", {
+	"title" : "Недавно вы смотрели",
+	"showAll": null,
+	})
+</main>
+
+@@include("footer/footer.html")

@@ -9,5 +9,8 @@ export const images = () =>
         .pipe(app.plugins.rename((path) => {
             path.extname += path.extname;
         }))
-        .pipe(webp())
+        .pipe(webp({
+            quality: 90,      // 0–100,
+            alphaQuality: 90, // для прозрачности, если есть PNG с альфой
+        }))
         .pipe(app.gulp.dest(app.paths.build.images));

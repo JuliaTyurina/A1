@@ -1,0 +1,127 @@
+@use '../../scss/mixins' as *;
+
+.faq {
+
+  @include desktop {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__container {
+    @include desktop {
+      display: flex;
+      column-gap: 48px;
+
+    }
+  }
+
+  &__content {
+    @include desktop {
+      position: relative;
+      max-width: 780px;
+      z-index: 1;
+    }
+  }
+
+  &__heading {
+    margin-bottom: fluid(12px, 40px);
+  }
+
+  .scroll {
+    left: -16px;
+
+    @include desktop {
+      position: static;
+      width: initial;
+      max-width: initial;
+    }
+  }
+
+  .track {
+    @include desktop {
+      width: fit-content;
+      padding: unset;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    column-gap: fluid(6px, 8px);
+
+    .chip {
+      font-size: 14px;
+    }
+  }
+
+  &__title {
+    margin-bottom: fluid(16px, 24px);
+  }
+
+  &__accordion {
+
+    &-summary {
+      display: flex;
+      justify-content: space-between;
+      transition: color var(--transition);
+      cursor: pointer;
+    }
+
+    &-title {
+      font-size: fluid(14px, 20px);
+      font-weight: 500;
+      line-height: 1.5;
+
+      @include desktop {
+        letter-spacing: -0.01em;
+      }
+    }
+
+    &-arrow {
+      width: 20px;
+      height: 20px;
+      transition: transform var(--transition);
+    }
+
+    &-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: 0.3s;
+      margin-bottom: fluid(16px, 24px);
+    }
+
+    &-body {
+      overflow: hidden;
+      p {
+
+        &:not(:last-child) {
+          margin-bottom: fluid(8px, 12px);
+        }
+      }
+    }
+
+    &-details[open] + .faq__accordion-content {
+      grid-template-rows: 1fr;
+      padding-top: 12px;
+    }
+
+    &-details[open] .faq__accordion-arrow {
+      transform: rotate(180deg);
+    }
+  }
+
+
+  &__img {
+    @include desktop {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 40%;
+      transform: translateX(100%);
+      width: 700px;
+      max-width: var(--container-wide);
+      background-position: left 40px top;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}

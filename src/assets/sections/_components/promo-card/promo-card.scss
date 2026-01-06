@@ -1,0 +1,103 @@
+@use '../../../scss/mixins' as *;
+
+.promo-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+
+  @include desktop {
+    border-radius: 24px;
+  }
+
+  &.full {
+    @include tablet {
+      grid-column: span 2;
+    }
+
+    .promo-card__content {
+      display: flex;
+      flex-direction: column;
+      row-gap: 32px;
+
+      @include tablet {
+        aspect-ratio: 14/5;
+      }
+    }
+
+    .promo-card__descr {
+      @include tablet {
+        max-width: 44%;
+      }
+
+    }
+  }
+
+  &.light {
+    .promo-card__content {
+      color: var(--color-text-contrast);
+    }
+  }
+
+  &__back {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+
+    &--mobile {
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include tablet {
+        display: block;
+      }
+    }
+  }
+
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: fluid(16px, 40px);
+    aspect-ratio: 7/5;
+    z-index: 2;
+  }
+
+  &__descr {
+    max-width: 64%;
+  }
+
+  &__period {
+    margin-bottom: fluid(16px, 24px);
+  }
+
+  &__title {
+    margin-bottom: fluid(8px, 16px);
+  }
+
+  &__text {
+    @include tablet {
+      font-weight: 500;
+      max-width: 370px;
+    }
+  }
+
+  &__btn {
+    margin-top: auto;
+    width: fit-content;
+  }
+
+  &__link {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+}

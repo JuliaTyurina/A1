@@ -1,0 +1,20 @@
+<article class="ellipse-card @@if (size === 'lg') {lg}">
+	<a href="" class="ellipse-card__link">
+		<div class="ellipse-card__wrapper">
+			@@if (image) {
+			<div class="ellipse-card__media">
+				<img class="ellipse-card__img" src="@@image" alt="">
+			</div>
+			}
+			<div class="ellipse-card__content">
+				@@if (title) {
+				<span class="font-medium ellipse-card__title">@@title</span>
+				}
+
+				@@if (info) {
+				<span class="body-text-md font-semibold text-grey ellipse-card__info">@@info</span>
+				}
+			</div>
+		</div>
+	</a>
+</article>

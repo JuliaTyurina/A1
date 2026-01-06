@@ -1,0 +1,63 @@
+<section class=" section set-cards-slider" data-set-cards-section>
+	<div class="container">
+		<div class="slider-heading">
+			<h2 class="heading-md font-medium">@@title</h2>
+			@@if (showAll) {
+			<a href="" class="button-sm-rounded button-bordered show-all">Смотреть все</a>
+			}
+			<div class="slider-controls">
+				<button type="button"
+						data-set-cards-prev
+						aria-label="Предыдущий слайд">
+					<svg aria-hidden="true">
+						<use href="./assets/img/svg/sprite.svg#chevron-left"></use>
+					</svg>
+				</button>
+				<button type="button"
+						data-set-cards-next
+						aria-label="Следующий слайд">
+					<svg aria-hidden="true">
+						<use href="./assets/img/svg/sprite.svg#chevron-right"></use>
+					</svg>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="container-right">
+		<div class="set-cards-slider__slider swiper" data-set-cards-slider>
+			<div class="swiper-wrapper">
+				<div class="swiper-slide set-cards-slider__item">
+					@@include("./_components/set-card/set-card.html", {
+					"image": "./assets/img/raster/product-5.png.webp",
+					})
+				</div>
+				<div class="swiper-slide set-cards-slider__item">
+					@@include("./_components/set-card/set-card.html", {
+					"image": "./assets/img/raster/product-4.png.webp",
+					})
+				</div>
+				<div class="swiper-slide set-cards-slider__item">
+					@@include("./_components/set-card/set-card.html", {
+					"image": "./assets/img/raster/product-3.png.webp",
+					})
+				</div>
+				<div class="swiper-slide set-cards-slider__item">
+					@@include("./_components/set-card/set-card.html", {
+					"image": "./assets/img/raster/product-2.png.webp",
+					})
+				</div>
+				<div class="swiper-slide set-cards-slider__item">
+					@@include("./_components/set-card/set-card.html", {
+					"image": "./assets/img/raster/product-1.png.webp",
+					})
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="container">
+		@@if (showAll) {
+		<a href="" class="button-lg button-secondary show-all--bottom">Смотреть все</a>
+		}
+	</div>
+</section>

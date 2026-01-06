@@ -1,0 +1,86 @@
+@use '../../../../../scss/mixins' as *;
+
+.p-descr {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: fluid(16px, 24px);
+  margin: 0 auto;
+  width: 100%;
+  max-width: 420px;
+  padding: 0 var(--container-padding) 24px;
+
+  @include desktop {
+    padding: unset;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__subtitle {
+    &:not(:last-child) {
+      margin-bottom: fluid(4px, 8px);
+    }
+  }
+
+  &__text {
+    line-height: 1.6;
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 12px;
+      }
+    }
+
+    ul, ol {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      row-gap: 8px;
+
+      &:not(:last-child) {
+        margin-bottom: fluid(12px, 16px);
+      }
+
+      li {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: subgrid;
+        column-gap: 4px;
+      }
+    }
+
+    ul {
+      li {
+        &:before {
+          content: '-';
+        }
+      }
+    }
+
+    ol {
+      counter-reset: p-descr-counter;
+
+      li {
+        counter-increment: p-descr-counter;
+
+        &:before {
+          content: counter(p-descr-counter) ".";
+        }
+      }
+    }
+
+    a {
+      border-bottom: 1px dashed var(--color-stroke-contrast-2);
+      transition: color var(--transition), border-color var(--transition);
+
+      &:hover {
+        color: var(--color-text-accent-2);
+        border-color: var(--color-stroke-accent-2);
+      }
+    }
+  }
+
+}

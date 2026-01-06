@@ -1,0 +1,98 @@
+<section class="section blog-cards">
+	<div class="container">
+		<div class="blog-cards__heading">
+			<h1 class="heading-md font-medium blog-cards__title">Полезные материалы</h1>
+			<div class="blog-cards__tabs">
+				<button class="chip" type="button" aria-selected="true">Все</button>
+				<button class="chip" type="button" aria-selected="false">Новости</button>
+				<button class="chip" type="button" aria-selected="false">Статьи</button>
+			</div>
+		</div>
+
+		<div class="blog-cards__grid">
+			@@include("./_components/blog-card/blog-card.html", {
+			"id": 1,
+			"image": "./assets/img/raster/blog-1.png.webp",
+			"date": "14 сентября 2025",
+			"text": "Уход за&nbsp;формой &laquo;А1&raquo;: практические советы для долговечности"
+			})
+
+			@@include("./_components/blog-card/blog-card.html", {
+			"id": 2,
+			"image": "./assets/img/raster/blog-2.png.webp",
+			"date": "8 сентября 2025",
+			"text": "Прибавляйте товары в корзину и увеличьте вашу скидку до –35%"
+			})
+
+			@@include("./_components/blog-card/blog-card.html", {
+			"id": 3,
+			"image": "./assets/img/raster/blog-3.png.webp",
+			"date": "5 сентября 2025",
+			"text": "Уход за&nbsp;формой &laquo;А1&raquo;: практические советы для долговечности"
+			})
+
+			@@include("./_components/blog-card/blog-card.html", {
+			"id": 1,
+			"image": "./assets/img/raster/blog-1.png.webp",
+			"date": "14 сентября 2025",
+			"text": "Уход за&nbsp;формой &laquo;А1&raquo;: практические советы для долговечности"
+			})
+
+			@@include("./_components/blog-card/blog-card.html", {
+			"id": 2,
+			"image": "./assets/img/raster/blog-2.png.webp",
+			"date": "8 сентября 2025",
+			"text": "Уход за&nbsp;формой &laquo;А1&raquo;: практические советы для долговечности"
+			})
+		</div>
+
+		<nav aria-label="Пагинация">
+			<div class="pagination">
+				<a class="pagination-link pagination-link--prev" href="?page=31">
+					<svg>
+						<use href="./assets/img/svg/sprite.svg#chevron-left"></use>
+					</svg>
+
+					<span class="visually-hidden">Страница </span>
+					Назад
+				</a>
+
+				<a class="pagination-link" href="?page=1">
+					<span class="visually-hidden">Страница </span>
+					1
+				</a>
+
+				<span class="pagination-dots" aria-label="ещё страницы">...</span>
+
+				<a class="pagination-link" href="?page=31">
+					<span class="visually-hidden">Страница </span>
+					31
+				</a>
+				<a class="pagination-link pagination-link--current" href="?page=32">
+					<span class="visually-hidden">Страница </span>
+					32
+				</a>
+
+				<a class="pagination-link" aria-current="page" href="?page=33">
+					<span class="visually-hidden">Страница </span>
+					33
+				</a>
+
+				<span class="pagination-dots" aria-label="ещё страницы">...</span>
+
+				<a class="pagination-link" href="?page=65">
+					<span class="visually-hidden">Страница </span>
+					65
+				</a>
+
+				<a class="pagination-link pagination-link--next" href="?page=34">
+					Вперед
+					<svg>
+						<use href="./assets/img/svg/sprite.svg#chevron-right"></use>
+					</svg>
+				</a>
+			</div>
+		</nav>
+
+	</div>
+</section>

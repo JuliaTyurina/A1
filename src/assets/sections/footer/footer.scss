@@ -3,9 +3,14 @@
 .footer {
   padding: 24px 0;
   background-color: var(--color-background-primary);
+  border-radius: 16px 16px 0 0;
 
   @include tablet {
     padding: 56px 0 24px;
+  }
+
+  @include desktop-lg {
+    border-radius: 40px 40px 0 0;
   }
 
   &__container {
@@ -97,11 +102,6 @@
     border-radius: 50%;
     transition: background-color var(--transition);
 
-    svg {
-      width: 24px;
-      height: 24px;
-    }
-
   }
 
   &__request {
@@ -154,10 +154,6 @@
         color: var(--color-text-secondary);
       }
 
-      &:focus-visible {
-        outline: none;
-        color: var(--color-text-secondary);
-      }
     }
 
 
@@ -204,9 +200,6 @@
         background-color: var(--color-background-tertiary);
       }
 
-      &:focus-visible {
-        @include focus-visible;
-      }
     }
   }
 

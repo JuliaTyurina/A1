@@ -1,0 +1,345 @@
+@use '../../../scss/mixins' as *;
+
+.product-card {
+  min-width: 100%;
+
+  &:hover {
+    .product-card__cart {
+      opacity: 1;
+    }
+  }
+
+  &__media {
+    position: relative;
+    width: 100%;
+    margin-bottom: fluid(10px, 12px);
+
+    @include desktop {
+      margin-bottom: 12px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+
+    @include desktop {
+      position: static;
+    }
+  }
+
+  &__slider {
+    width: 100%;
+
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 4px;
+    row-gap: 2px;
+    width: 100%;
+    z-index: 1;
+
+    @include desktop {
+      z-index: 2;
+    }
+
+    .swiper-pagination-bullet {
+      margin: unset !important;
+      width: 5px;
+      height: 5px;
+      background-color: var(--color-icon-primary);
+      opacity: 0.1;
+      transition: opacity var(--transition);
+    }
+
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+    }
+  }
+
+  &__pagination-invisible {
+    display: none;
+
+    @include desktop {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      z-index: 1;
+    }
+  }
+
+  &__pagination-link {
+    flex: 1;
+  }
+
+  &__img {
+    height: auto;
+    aspect-ratio: 5/6;
+    object-fit: cover;
+    background-color: var(--color-background-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+
+    @include desktop {
+      border-radius: 16px;
+    }
+  }
+
+  &__badges {
+    position: absolute;
+    width: fit-content;
+    max-width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: fluid(3px, 5px);
+    z-index: 1;
+
+    @include desktop {
+      z-index: 2;
+    }
+
+    &--top {
+      top: 4px;
+      left: 4px;
+
+      @include desktop {
+        top: 8px;
+        left: 8px;
+      }
+    }
+
+    &--bottom {
+      bottom: 4px;
+      left: 4px;
+
+      @include desktop {
+        bottom: 8px;
+        left: 8px;
+      }
+    }
+  }
+
+  &__favorite {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    color: #D4D6DB;
+    transition: opacity var(--transition);
+
+    @include desktop {
+      top: 0;
+      right: 0;
+      padding: 8px;
+      z-index: 2;
+    }
+
+    &:hover {
+      opacity: .8;
+    }
+
+    &.active {
+      color: var(--color-icon-accent);
+    }
+  }
+
+  &__cart {
+    position: absolute;
+    bottom: -8px;
+    right: 0;
+    padding: 4px;
+    z-index: 1;
+
+    @include desktop {
+      bottom: 0;
+      right: 0;
+      padding: 8px;
+      opacity: 0;
+      z-index: 2;
+      transition: opacity var(--transition);
+    }
+
+    &-btn {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 11px;
+      color: var(--color-text-contrast);
+      background-color: var(--color-background-contrast);
+      border: 1px solid var(--color-stroke-contrast);
+      border-radius: 999px;
+      z-index: 1;
+      transition: background-color var(--transition);
+
+      @include desktop {
+        padding: 12px;
+        border: none;
+      }
+
+      &:hover {
+        background-color: var(--color-background-accent);
+      }
+    }
+
+  }
+
+  &__counter {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    display: inline-block;
+    padding: 2px 4px;
+    min-width: 20px;
+    max-width: 28px;
+    height: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.2;
+    background-color: inherit;
+    border: 1px solid var(--color-stroke-contrast);
+    border-radius: 999px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: background-color var(--transition);
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+
+    &-current {
+      font-size: fluid(14px, 20px);
+      font-weight: 800;
+      line-height: 1.5;
+
+      @include desktop {
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: 0.01em;
+      }
+    }
+
+    &-old {
+      font-size: fluid(13px, 14px);
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--color-text-secondary);
+
+      @include desktop {
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__content {
+    @include desktop {
+      padding: 0 8px;
+    }
+  }
+
+  &__title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: fluid(12px, 16px);
+    font-weight: 500;
+    line-height: 1.5;
+
+    @include desktop {
+      line-height: 1.3;
+      -webkit-line-clamp: 1;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: fluid(8px, 16px);
+    }
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 8px;
+    row-gap: 4px;
+  }
+
+  &__color {
+    display: flex;
+    align-items: center;
+
+    &-btn {
+      width: 16px;
+      min-width: 16px;
+      height: 16px;
+      border-radius: 999px;
+
+      &:not(:last-of-type) {
+        margin-right: -4px;
+      }
+
+      &:last-of-type {
+        margin-right: 6px;
+      }
+
+      &.has-border {
+        border: 1px solid var(--color-stroke-primary);
+      }
+    }
+
+    &-more {
+      display: inline-flex;
+      align-items: center;
+      font-size: fluid(10px, 14px);
+      font-weight: 600;
+      line-height: 1.6;
+    }
+  }
+
+
+  &__sizes {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: fluid(10px, 14px);
+    font-weight: 600;
+    line-height: 1.6;
+
+    @include desktop {
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    &-btn {
+      padding: 5px fluid(5px, 6px);
+      font-size: fluid(10px, 14px);
+      font-weight: 600;
+      line-height: 1;
+      outline: 1px solid var(--color-stroke-primary);
+      outline-offset: -1px;
+      border-radius: 999px;
+    }
+  }
+
+  &.unavailable {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+
+}

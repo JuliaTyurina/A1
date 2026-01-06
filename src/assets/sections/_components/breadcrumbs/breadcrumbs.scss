@@ -1,0 +1,111 @@
+@use '../../../scss/mixins' as *;
+
+.breadcrumbs {
+
+  padding: fluid(16px, 24px) 0 fluid(16px, 40px);
+
+  &.bc-col-8 {
+    .breadcrumbs__nav {
+      @include desktop-lg {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+      }
+    }
+
+    .breadcrumbs__list {
+
+      @include desktop-lg {
+        grid-column: 3/span 8;
+      }
+    }
+  }
+
+  &.bc-bg {
+    padding: 16px 0;
+
+    @include desktop {
+      padding: 24px 0 52px;
+      margin-top: 8px;
+      margin-bottom: -40px;
+      background-color: var(--color-background-primary);
+      border-radius: 16px;
+    }
+
+    @include desktop-lg {
+      border-radius: 40px 40px 0 0;
+    }
+  }
+
+  &.bc-product {
+
+    @include desktop {
+      position: relative;
+      padding: unset;
+      margin-top: 8px;
+    }
+
+    .breadcrumbs__nav {
+      @include desktop {
+        display: grid;
+        grid-template-columns: repeat(18, 1fr);
+        column-gap: 8px;
+      }
+    }
+
+    .breadcrumbs__list {
+      @include desktop {
+        grid-column: 11 /span 8;
+      }
+    }
+
+    .scroll {
+      @include desktop {
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+
+  .scroll {
+    @include desktop {
+      position: static;
+      width: 100%;
+      max-width: var(--container-primary);
+      margin: 0 auto;
+      padding: 0 var(--container-padding);
+    }
+  }
+
+  .track {
+    @include desktop {
+      width: initial;
+      padding: unset;
+    }
+  }
+
+  &__list {
+    display: flex;
+    column-gap: 12px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+
+    &:after {
+      content: '•';
+    }
+  }
+
+  &__current {
+    @include desktop {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@use '../../../scss/mixins' as *;
+
+.blog-card {
+  height: 100%;
+
+  &:hover {
+    .blog-card__img {
+      transform: scale(1.02);
+      transform-origin: center;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__link {
+    display: block;
+    height: 100%;
+  }
+
+  &__media {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__img {
+    aspect-ratio: 16/9;
+    transition: transform .4s ease-in-out;
+  }
+
+  &__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: fluid(8px, 16px);
+  }
+
+  &__date {
+    &:not(:last-child) {
+      margin-bottom: fluid(2px, 12px);
+    }
+  }
+
+  &__title {
+      line-height: 1.3;
+  }
+}

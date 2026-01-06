@@ -1,0 +1,98 @@
+@use '../../scss/mixins' as *;
+
+.contacts {
+  overflow: hidden;
+
+  &__title {
+    margin-bottom: fluid(16px, 24px);
+  }
+
+  &__social,
+  &__text,
+  &__link {
+    font-size: fluid(16px, 24px);
+    font-weight: 700;
+    line-height: 1.2;
+
+    @include tablet {
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+  }
+
+  &__social,
+  &__link {
+    transition: color var(--transition);
+    &:hover{
+      color: var(--color-text-secondary);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: fluid(8px, 24px);
+    margin-bottom: fluid(16px, 32px);
+
+    @include tablet {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 24px;
+    padding: fluid(12px, 20px);
+    min-height: 168px;
+    background-color: var(--color-background-primary);
+    border-radius: 12px;
+    overflow: hidden;
+
+    @include tablet {
+      row-gap: fluid(24px, 50px);
+    }
+
+    @include desktop {
+      border-radius: 24px;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      row-gap: fluid(4px, 8px);
+    }
+
+    &-icon {
+      width: fluid(24px, 48px);
+      height: fluid(24px, 48px);
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+  }
+
+  &__map {
+    height: fluid(220px, 480px);
+    border-radius: 12px;
+    overflow: hidden;
+
+    @include desktop-lg {
+      border-radius: 40px;
+    }
+
+    img {
+      height: 100%;
+    }
+  }
+}

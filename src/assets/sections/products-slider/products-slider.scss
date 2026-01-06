@@ -1,0 +1,9 @@
+@use '../../scss/mixins' as *;
+
+.products-slider {
+
+  &__item {
+    width: 100%;
+    min-width: 0;
+  }
+}

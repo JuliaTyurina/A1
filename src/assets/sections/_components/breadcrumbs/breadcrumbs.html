@@ -1,0 +1,40 @@
+<div class="container-wide breadcrumbs @@if (columns) {bc-col-@@columns} @@if (background) {bc-bg} @@if (product) {bc-product}">
+	<div class="scroll">
+		<nav class="track breadcrumbs__nav" aria-label="Хлебные крошки">
+			<ul class="breadcrumbs__list">
+				@@if (level1Title) {
+				<li class="body-text-xxs breadcrumbs__item">
+					@@if (level1Url) {
+					<a class="text-grey font-medium breadcrumbs__link" href="@@level1Url">@@level1Title</a>
+					}
+					@@if (!level1Url) {
+					<span class="font-medium breadcrumbs__current" aria-current="page">@@level1Title</span>
+					}
+				</li>
+				}
+
+				@@if (level2Title) {
+				<li class="body-text-xxs breadcrumbs__item">
+					@@if (level2Url) {
+					<a class="text-grey font-medium breadcrumbs__link" href="@@level2Url">@@level2Title</a>
+					}
+					@@if (!level2Url) {
+					<span class="font-medium breadcrumbs__current" aria-current="page">@@level2Title</span>
+					}
+				</li>
+				}
+
+				@@if (level3Title) {
+				<li class="body-text-xxs breadcrumbs__item">
+					@@if (level3Url) {
+					<a class="text-grey font-medium breadcrumbs__link" href="@@level3Url">@@level3Title</a>
+					}
+					@@if (!level3Url) {
+					<span class="font-medium breadcrumbs__current" aria-current="page">@@level3Title</span>
+					}
+				</li>
+				}
+			</ul>
+		</nav>
+	</div>
+</div>

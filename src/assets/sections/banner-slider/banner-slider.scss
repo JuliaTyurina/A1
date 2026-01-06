@@ -1,0 +1,46 @@
+@use '../../scss/mixins' as *;
+
+.banner-slider {
+
+  &__slider {
+    border-radius: 16px;
+
+    @include desktop-lg {
+      border-radius: 40px;
+    }
+  }
+
+  .swiper-slide {
+    height: auto;
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    column-gap: 4px;
+    padding-top: 8px;
+
+    @include desktop {
+      display: none;
+    }
+
+    .swiper-pagination-bullet {
+      margin: unset !important;
+      width: 4px;
+      height: 4px;
+      background-color: var(--color-icon-primary);
+      opacity: 0.1;
+      transition: opacity var(--transition);
+
+      @include desktop {
+        width: 6px;
+        height: 6px;
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+    }
+  }
+
+}

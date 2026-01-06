@@ -1,5 +1,4 @@
 import fileInclude from "gulp-file-include";
-
 // Обработка HTML
 export const html = () =>
     app.gulp.src(app.paths.src.html)

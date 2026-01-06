@@ -1,0 +1,713 @@
+@use '../../scss/mixins' as *;
+
+.product {
+
+  @include tablet {
+    background-color: var(--color-background-primary);
+    border-radius: 16px;
+  }
+
+  @include desktop-lg {
+    border-radius: 40px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  &-section {
+    padding: 16px var(--container-padding);
+    background-color: var(--color-background-primary);
+    border-radius: 16px;
+    overflow: hidden;
+
+    @include tablet {
+      padding: unset;
+      background-color: unset;
+      border-radius: unset;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+
+      @include tablet {
+        margin-bottom: unset;
+      }
+    }
+  }
+
+  &__container {
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 16px;
+      width: 100%;
+      max-width: var(--container-primary);
+      margin: 0 auto;
+      padding: 16px var(--container-padding) fluid(16px, 64px);
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(18, 1fr);
+      column-gap: 8px;
+      padding-top: 0;
+    }
+  }
+
+  &__media {
+    max-width: 100%;
+    padding: 4px 0 fluid(16px, 64px);
+
+    @include tablet {
+      position: sticky;
+      top: var(--header-height);
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+      gap: 4px;
+      height: fit-content;
+
+    }
+
+    @include desktop {
+      grid-column: 1/ span 9;
+      flex-direction: row;
+      gap: 24px;
+    }
+
+    .sku,
+    .product__actions {
+      @include tablet {
+        display: none;
+      }
+    }
+
+  }
+
+  &__tools {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 24px;
+    padding: 16px var(--container-padding) 0;
+    border-radius: 16px;
+
+    @include tablet {
+      padding: unset;
+      border-radius: unset;
+    }
+  }
+
+  &__img {
+    height: 100%;
+    aspect-ratio: 5/7;
+    cursor: pointer;
+  }
+
+  &__slider,
+  &__thumbs {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  &__slider {
+
+    @include tablet {
+      position: relative;
+    }
+
+    .swiper-slide {
+      height: auto;
+    }
+
+    &-img {
+      border-radius: 12px;
+
+      @include tablet {
+        border-radius: unset;
+      }
+    }
+  }
+
+  &__badges {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 1;
+  }
+
+  &__thumbs {
+    display: none;
+
+    @include tablet {
+      display: block;
+      border-radius: 6px;
+    }
+
+    @include desktop {
+      margin-top: 56px;
+      margin-bottom: 56px;
+      width: 80px;
+      min-width: 80px;
+    }
+
+    .swiper-slide {
+      height: auto;
+      opacity: 0.3;
+
+      @include desktop {
+        width: auto;
+      }
+    }
+
+    .swiper-slide-thumb-active {
+      opacity: 1;
+    }
+
+  }
+
+  &__badges {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 5px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__favorite {
+    path {
+      fill: transparent;
+      transition: fill var(--transition), stroke var(--transition);
+    }
+
+    &:hover {
+      path {
+        stroke: var(--color-icon-secondary);
+      }
+    }
+
+    &.active {
+      transition: opacity var(--transition);
+
+      path {
+        fill: var(--color-background-accent);
+        stroke: var(--color-background-accent);
+      }
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+
+  &__share {
+    transition: color var(--transition);
+
+    &:hover {
+      color: var(--color-icon-secondary);
+    }
+  }
+
+  &__content {
+    @include tablet {
+      min-width: 0;
+      min-height: 0;
+    }
+
+    @include desktop {
+      grid-column: 11/ span 8;
+    }
+
+    .product__actions {
+      display: none;
+
+      @include tablet {
+        display: flex;
+      }
+    }
+  }
+
+  &__info {
+    @include tablet {
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+    }
+
+    @include desktop {
+      padding-top: 110px;
+    }
+  }
+
+  &__title {
+    font-size: fluid(16px, 36px);
+    font-weight: 500;
+    line-height: 1.3;
+
+    @include tablet {
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+
+      @include tablet {
+        margin-bottom: fluid(12px, 32px);
+      }
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: fluid(8px, 16px);
+  }
+
+  &__price,
+  &__variants,
+  &__sizes {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__price {
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    &:not(:last-child) {
+      @include tablet {
+        margin-bottom: 32px;
+      }
+    }
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+
+      @include tablet {
+        column-gap: fluid(8px, 16px);
+        padding: 16px 24px;
+        border: 1px solid var(--color-stroke-primary);
+        border-radius: 12px;
+      }
+    }
+
+    &-current {
+      font-size: fluid(20px, 24px);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    &-old {
+      font-weight: 600;
+
+      @include tablet {
+        font-weight: 400;
+      }
+    }
+
+    &-discount {
+      padding: 2px 6px;
+      color: var(--color-text-contrast);
+      background-color: var(--color-background-danger);
+      border-radius: 8px;
+
+      @include tablet {
+        padding: unset;
+        color: var(--color-text-accent);
+        background-color: initial;
+      }
+    }
+  }
+
+  &__sizes,
+  &__variants {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 8px;
+
+    @include tablet {
+      flex-direction: column;
+    }
+
+    .scroll {
+      left: calc(var(--container-padding) * -1);
+
+      @include tablet {
+        position: static;
+        width: initial;
+        max-width: initial;
+        overflow: unset;
+      }
+    }
+
+    .track {
+      @include tablet {
+        padding-right: unset;
+        padding-left: unset;
+        width: initial;
+      }
+    }
+
+    &-list {
+      display: grid;
+      grid-auto-flow: column;
+      gap: 4px;
+    }
+  }
+
+
+  &__variants {
+
+    &-scroll {
+      @include tablet {
+        display: grid;
+        grid-template-rows: 0fr;
+        padding-top: 68px;
+        transition: 0.3s;
+      }
+    }
+
+    &-list {
+      @include tablet {
+        grid-template-columns: repeat(auto-fit, 56px);
+        grid-auto-flow: row;
+        margin-top: -68px;
+        overflow: hidden;
+      }
+    }
+
+  }
+
+  &__sizes {
+
+    @include tablet {
+      row-gap: fluid(8px, 12px);
+    }
+
+    &-list {
+      @include tablet {
+        grid-template-columns: unset;
+        grid-auto-flow: unset;
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+
+    &-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 24px;
+    }
+
+    &-caption {
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--color-text-secondary);
+
+      @include tablet {
+        font-weight: 600;
+        color: var(--color-text-primary);
+      }
+    }
+
+    &-table {
+      display: flex;
+      align-items: center;
+      column-gap: 4px;
+
+      svg {
+        width: 16px;
+        min-width: 16px;
+        height: 16px;
+      }
+
+      @include tablet {
+        column-gap: 8px;
+
+        svg {
+          width: 20px;
+          min-width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  &__variant {
+
+    &-label {
+      display: flex;
+      cursor: pointer;
+    }
+
+    &-img {
+      width: 56px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-color: var(--color-background-tertiary);
+      aspect-ratio: 14/17;
+      outline: 2px solid transparent;
+      outline-offset: -2px;
+      border-radius: 12px;
+      transition: outline-color var(--transition);
+    }
+
+    &-input {
+      &:hover + span {
+        outline-color: var(--color-stroke-primary);
+      }
+
+      &:checked + span {
+        outline-color: var(--color-stroke-contrast-2);
+      }
+
+    }
+
+    &-info {
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &-more {
+      display: none;
+
+      @include tablet {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        column-gap: 2px;
+        font-size: 12px;
+
+        svg {
+          width: 14px;
+          min-width: 14px;
+          height: 14px;
+        }
+      }
+
+      &:before {
+        content: 'Ещё';
+      }
+
+      &[hidden] {
+        display: none;
+      }
+
+    }
+
+  }
+
+  &__size {
+    &-label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      padding: 5px 6px;
+      background-color: var(--color-background-tertiary);
+      outline: 1px solid var(--color-stroke-primary);
+      outline-offset: -1px;
+      border-radius: 12px;
+      transition: background-color var(--transition), outline-color var(--transition);
+      cursor: pointer;
+    }
+
+    &-input {
+      &:hover + label {
+        background-color: var(--color-background-secondary-3);
+      }
+
+      &:checked + label {
+        outline: 2px solid var(--color-stroke-contrast-2);
+        outline-offset: -2px;
+      }
+    }
+  }
+
+  &__model {
+    padding: 12px 16px;
+    background-color: var(--color-background-secondary);
+    border-radius: 12px;
+
+    @include tablet {
+      &:not(:last-child) {
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  &__buy {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 16px var(--container-padding) calc(var(--bottom-nav-height) + 16px);
+    background-color: var(--color-background-primary);
+    z-index: 8;
+
+    @include tablet {
+      position: static;
+      padding: unset;
+    }
+
+    button {
+      width: 100%;
+
+      @include tablet {
+        width: fit-content;
+      }
+    }
+  }
+
+  &__triggers {
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+
+      @include tablet {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-weight: 500;
+
+    @include tablet {
+      font-weight: 400;
+    }
+
+    svg {
+      width: 20px;
+      min-width: 20px;
+      height: 20px;
+      transition: transform var(--transition);
+
+      &:nth-of-type(1) {
+        margin-right: 6px;
+      }
+
+      &:nth-of-type(2) {
+        margin-left: auto;
+
+        @include tablet {
+          margin-left: 2px;
+        }
+      }
+    }
+
+    &:hover {
+      @include tablet {
+        svg {
+          &:nth-of-type(2) {
+            transform: translateX(2px);
+          }
+        }
+      }
+    }
+  }
+
+  &__ref {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      row-gap: fluid(8px, 16px);
+
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+    }
+
+    &-slider {
+      position: relative;
+      width: 100vw;
+      left: calc(var(--container-padding) * -1);
+
+      @include tablet {
+        position: static;
+        width: 100%;
+        min-width: 0;
+      }
+    }
+
+    .swiper-slide {
+      width: 100%;
+      min-width: min-content;
+      max-width: fluid(216px, 240px);
+    }
+
+    .product__subtitle {
+      @include tablet {
+        margin-bottom: unset;
+      }
+    }
+  }
+
+  &__marketplace {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    @include mobile {
+      flex-direction: row;
+    }
+
+    &-link {
+      &.mobile {
+        @include tablet {
+          display: none;
+        }
+      }
+
+      &.desktop {
+        display: none;
+
+        @include tablet {
+          display: flex;
+        }
+      }
+
+      svg {
+        width: 20px;
+        min-width: 20px;
+        height: 20px;
+      }
+    }
+
+
+  }
+}

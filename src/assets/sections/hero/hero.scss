@@ -1,0 +1,89 @@
+@use '../../scss/mixins' as *;
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: fluid(32px, 64px);
+  text-align: center;
+  padding: fluid(32px, 72px) 0 fluid(24px, 72px);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet {
+      max-width: 58%;
+      margin: 0 auto;
+    }
+
+    .hero__btn {
+      display: none;
+
+      @include mobile {
+        display: flex;
+        max-width: fit-content;
+      }
+    }
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: fluid(8px, 16px);
+    }
+  }
+
+  &__slide {
+    max-width: 178px;
+
+    @include desktop {
+      max-width: 220px;
+    }
+
+    @include desktop-lg {
+      max-width: 282px;
+    }
+  }
+
+  &__video {
+    position: relative;
+    aspect-ratio: 9/16;
+    border-radius: 12px;
+    overflow: hidden;
+
+    &-link {
+      &:hover {
+        .hero__video-play {
+          opacity: .6;
+        }
+      }
+    }
+
+    &-cover {
+      height: 100%;
+    }
+
+    &-play {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 4px;
+      color: var(--color-icon-contrast);
+      transition: opacity var(--transition);
+    }
+
+    &-icon {
+      width: fluid(48px, 56px);
+      height: fluid(48px, 56px);
+    }
+  }
+
+  &__btn {
+    margin: fluid(32px, 40px) var(--container-padding) 0;
+
+    @include mobile {
+      display: none;
+    }
+  }
+}

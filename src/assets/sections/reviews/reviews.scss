@@ -1,0 +1,229 @@
+@use '../../scss/mixins' as *;
+
+.reviews {
+
+  &__title {
+    margin-bottom: fluid(16px, 32px);
+
+    @include tablet {
+      text-align: center;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 8px;
+    row-gap: 4px;
+
+    @include tablet {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: fluid(8px, 20px);
+    }
+
+  }
+
+  &__img {
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include tablet {
+      height: 100%;
+      aspect-ratio: unset;
+
+      &:nth-of-type(1) {
+        grid-row: 1;
+      }
+
+      &:nth-of-type(2) {
+        grid-row: 2;
+      }
+    }
+  }
+
+  &__grid {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    row-gap: 4px;
+
+    @include tablet {
+      grid-row: span 2;
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: subgrid;
+      gap: fluid(8px, 20px);
+    }
+  }
+
+  .review-card {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: subgrid;
+    column-gap: 12px;
+    row-gap: 4px;
+    padding: fluid(12px, 28px);
+    background-color: var(--color-background-primary);
+    border-radius: 16px;
+
+    @include desktop {
+      position: relative;
+      grid-column: unset;
+      display: flex;
+      flex-direction: column;
+      row-gap: 0;
+      border-radius: 24px;
+    }
+
+    &__avatar {
+      grid-row: span 2;
+      width: fluid(48px, 72px);
+      aspect-ratio: 1/1;
+      border-radius: 999px;
+
+      @include desktop {
+        margin-bottom: fluid(4px, 32px);
+      }
+    }
+
+    &__name {
+      @include desktop {
+        margin-bottom: fluid(4px, 16px);
+      }
+    }
+
+    &__date {
+      justify-self: end;
+
+      @include desktop {
+        position: absolute;
+        top: fluid(12px, 28px);}
+        right: fluid(12px, 28px);
+    }
+
+    &__text {
+      grid-column: 2 / span 2;
+    }
+  }
+
+  &__rating {
+    grid-column: span 3;
+    padding: fluid(12px, 28px);
+    background-color: #EEE8FF;
+    border-radius: 16px;
+
+    @include desktop {
+      grid-column: unset;
+      border-radius: 24px;
+    }
+  }
+
+  &-rating {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    @include desktop {
+      row-gap: 20px;
+      height: 100%;
+    }
+
+    &__top {
+      display: flex;
+      align-items: flex-end;
+      column-gap: 4px;
+
+      @include desktop {
+        flex-grow: 1;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        row-gap: fluid(40px, 64px);
+      }
+    }
+
+    &__value {
+      margin-left: auto;
+
+      @include desktop {
+        margin-left: unset;
+      }
+    }
+
+    &__current {
+      font-size: fluid(34px, 64px);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.01em;
+
+      @include desktop {
+        font-weight: 300;
+      }
+    }
+
+    &__max {
+      font-size: fluid(20px, 28px);
+      font-weight: 500;
+      line-height: 1.4;
+      color: #7F6EAE;
+
+      @include desktop {
+        font-weight: 400;
+      }
+    }
+
+    &__logos {
+      display: flex;
+      column-gap: fluid(4px, 10px);
+    }
+
+    &__logo {
+      width: 68px;
+      aspect-ratio: 1/1;
+
+    }
+
+    &__bottom {
+      display: flex;
+      flex-direction: column-reverse;
+      row-gap: fluid(8px, 24px);
+
+      @include desktop {
+        flex-direction: column;
+      }
+    }
+
+
+
+    &__links {
+      display: flex;
+      column-gap: 8px;
+    }
+
+    &__link {
+      flex: 1;
+
+      @include desktop {
+        flex: unset;
+      }
+    }
+
+    &__text {
+      font-size: fluid(12px, 24px);
+      line-height: 1.2;
+      color: #7F6EAE;
+      text-align: center;
+
+      @include desktop {
+        text-align: left;
+      }
+    }
+  }
+}

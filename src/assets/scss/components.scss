@@ -1,4 +1,30 @@
 @use "../sections/header/header";
 @use "../sections/footer/footer";
-@use "../sections/components/bottom-nav/bottom-nav";
+@use "../sections/_components/bottom-nav/bottom-nav";
+@use "../sections/_components/modal/modal";
+@use "../sections/_components/bottom-sheet/bottom-sheet";
+@use "../sections/_components/product-card/product-card";
+@use "../sections/_components/banner-card/banner-card";
+@use "../sections/_components/promo-card/promo-card";
+@use "../sections/_components/breadcrumbs/breadcrumbs";
+@use "../sections/_components/blog-card/blog-card";
+@use "../sections/_components/ellipse-card/ellipse-card";
+@use "../sections/_components/set-card/set-card";
+@use "../sections/hero/hero";
+@use "../sections/products-slider/products-slider";
+@use "../sections/banner-slider/banner-slider";
+@use "../sections/marketplaces/marketplaces";
+@use "../sections/benefits/benefits";
+@use "../sections/about/about";
+@use "../sections/reviews/reviews";
+@use "../sections/promo-cards/promo-cards";
+@use "../sections/blog-slider/blog-slider";
+@use "../sections/blog-cards/blog-cards";
+@use "../sections/faq/faq";
+@use "../sections/contacts/contacts";
+@use "../sections/product/product";
+@use "../sections/catalog/catalog";
+@use "../sections/set-cards-slider/set-cards-slider";
+
+
 

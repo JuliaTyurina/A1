@@ -1,0 +1,7 @@
+@use '../../scss/mixins' as *;
+
+.blog-slider {
+  .swiper-slide {
+    height: auto;
+  }
+}

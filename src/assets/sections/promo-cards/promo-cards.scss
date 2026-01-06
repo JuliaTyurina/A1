@@ -1,0 +1,21 @@
+@use '../../scss/mixins' as *;
+
+.promo-cards {
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: fluid(16px, 32px);
+  }
+
+  &__grid {
+    display: grid;
+    gap: 8px;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: fluid(8px, 20px);
+    }
+  }
+}

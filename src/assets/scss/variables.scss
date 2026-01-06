@@ -5,10 +5,11 @@
 
   --transition: .3s ease-in-out;
 
-  --focus-visible-outline: var(--project-color-1);
+  --focus-visible-outline: var(--project-color-10);
 
   --header-height: 64px;
   --bottom-nav-height: 56px;
+  --table-height: 0;
 
   --desktop-menu-width: 310px;
   --desktop-menu-gap: 8px;
@@ -29,6 +30,25 @@
   --project-color-13: #337aff;
   --project-color-14: #1fad36;
   --project-color-15: #E6E8EA;
+  --project-color-16: #F7F7F7;
+
+  --project-color-17: #e1312f1f;
+  --project-color-18: #1c26350d;
+  --project-color-19: #24292f1a;
+  --project-color-20: #e1312f1f;
+  --project-color-21: #0cc0601f;
+  --project-color-22: #24292f0d;
+  --project-color-23: #f75a3b1f;
+  --project-color-24: #ffa7001f;
+  --project-color-25: #ffffff4d;
+  --project-color-26: #337aff1f;
+  --project-color-27: #DF18B6;
+  --project-color-28: #df18b6cc;
+  --project-color-29: #df18b61f;
+  --project-color-30: #0056FF;
+  --project-color-31: #0056ffcc;
+  --project-color-32: #0056ff1f;
+  --project-color-33: #4B8AFF;
 
   --color-background-primary: var(--project-color-9);
   --color-background-contrast: var(--project-color-1);
@@ -36,22 +56,32 @@
   --color-background-secondary: var(--project-color-7);
   --color-background-secondary-2: var(--project-color-4);
   --color-background-secondary-3: var(--project-color-15);
+  --color-background-secondary-4: var(--project-color-16);
+  --color-background-secondary-5: var(--project-color-6);
   --color-background-tertiary: var(--project-color-8);
   --color-background-accent: var(--project-color-10);
   --color-background-accent-2: var(--project-color-13);
+  --color-background-danger: var(--project-color-11);
 
   --color-text-primary: var(--project-color-1);
   --color-text-contrast: var(--project-color-9);
   --color-text-secondary: var(--project-color-3);
   --color-text-tertiary: var(--project-color-5);
   --color-text-accent: var(--project-color-10);
+  --color-text-accent-2: var(--project-color-13);
+  --color-text-accent-2-hover: var(--project-color-33);
+  --color-text-success: var(--project-color-14);
+  --color-text-danger: var(--project-color-11);
 
   --color-stroke-primary: var(--project-color-6);
   --color-stroke-contrast: var(--project-color-9);
+  --color-stroke-contrast-2: var(--project-color-1);
   --color-stroke-secondary: var(--project-color-3);
   --color-stroke-tertiary: var(--project-color-8);
   --color-stroke-accent: var(--project-color-10);
   --color-stroke-accent-2: var(--project-color-13);
+  --color-stroke-success: var(--project-color-14);
+  --color-stroke-danger: var(--project-color-11);
 
   --color-icon-primary: var(--project-color-1);
   --color-icon-contrast: var(--project-color-9);
@@ -60,5 +90,26 @@
   --color-icon-tertiary: var(--project-color-5);
   --color-icon-accent: var(--project-color-10);
   --color-icon-accent-2: var(--project-color-13);
+  --color-icon-success: var(--project-color-14);
+  --color-icon-danger: var(--project-color-11);
+
+  --color-highlight-accent-themed: var(--project-color-17);
+  --color-highlight-primary: var(--project-color-18);
+  --color-highlight-secondary: var(--project-color-19);
+  --color-highlight-accent: var(--project-color-20);
+  --color-highlight-positive: var(--project-color-21);
+  --color-highlight-primary-invariably: var(--project-color-22);
+  --color-highlight-negative: var(--project-color-23);
+  --color-highlight-warning: var(--project-color-24);
+  --color-highlight-contrast: var(--project-color-25);
+  --color-highlight-link: var(--project-color-26);
+
+  //цвета для элементов маркетплейса
+  --color-wildberries: var(--project-color-27);
+  --color-hover-wildberries: var(--project-color-28);
+  --color-highlight-wildberries: var(--project-color-29);
+  --color-ozon: var(--project-color-30);
+  --color-hover-ozon: var(--project-color-31);
+  --color-highlight-ozon: var(--project-color-32);
 }
 

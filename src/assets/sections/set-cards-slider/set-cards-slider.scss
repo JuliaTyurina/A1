@@ -1,0 +1,31 @@
+@use '../../scss/mixins' as *;
+
+.set-cards-slider {
+  .slider-heading {
+    .show-all {
+      display: none;
+
+      @include tablet {
+        display: flex;
+      }
+    }
+  }
+
+  .set-card {
+    height: 100%;
+  }
+
+  .swiper-slide {
+    height: auto;
+  }
+
+  &__slider {
+    margin-bottom: 24px;
+  }
+
+  .show-all--bottom {
+    @include tablet {
+      display: none;
+    }
+  }
+}

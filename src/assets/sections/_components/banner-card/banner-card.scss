@@ -1,0 +1,95 @@
+@use '../../../scss/mixins' as *;
+
+.banner-card {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  row-gap: 32px;
+  height: 100%;
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  overflow: hidden;
+
+  @include mobile {
+    flex-direction: row;
+  }
+
+  @include desktop-lg {
+    border-radius: 40px;
+  }
+
+  &__media {
+    @include mobile {
+      flex: 1;
+    }
+  }
+
+  &__back {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    z-index: 0;
+
+    &--mobile {
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include mobile {
+        display: block;
+      }
+    }
+  }
+
+  &__img {
+    aspect-ratio: 1/1;
+    height: 100%;
+  }
+
+  &__content {
+    position: relative;
+    flex: 1;
+    padding: fluid(32px, 48px) 16px 0;
+    z-index: 1;
+
+    @include mobile {
+      padding: fluid(32px, 128px) fluid(32px, 128px) fluid(32px, 128px) fluid(32px, 52px);
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+
+    @include tablet {
+      font-weight: 400;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: fluid(8px, 16px);
+    }
+  }
+
+  &__btn {
+    display: inline-flex;
+    width: 100%;
+    margin-top: clamp(32px, 0.917rem + 2.26vw, 56px);
+
+    @include mobile {
+      width: fit-content;
+    }
+  }
+
+  &__link {
+    position: absolute;
+    inset: 0;
+  }
+}

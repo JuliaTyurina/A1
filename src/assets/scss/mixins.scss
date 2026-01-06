@@ -38,7 +38,7 @@
 
 // Переменные для резиновой типографики
 $screen-min: 375px;
-$screen-max: 1300px;
+$screen-max: 1600px;
 
 @function fluid($mobile, $desktop) {
   // Считаем разницу между значениями

@@ -1,0 +1,21 @@
+<div class="banner-card" style="background-color: @@color; ">
+  <div class="banner-card__media">
+    @@if (imageBackMobile) {
+    <div class="banner-card__back banner-card__back--mobile" style="background-image: url('@@imageBackMobile'); "></div>
+    }
+    @@if (imageBackDesktop) {
+    <div class="banner-card__back banner-card__back--desktop" style="background-image: url('@@imageBackDesktop'); "></div>
+    }
+
+    @@if (!imageBackDesktop && !imageBackMobile) {
+    <img class="banner-card__img" src="@@image" alt="" loading="lazy">
+    }
+  </div>
+  <div class="banner-card__content">
+    <div class="heading-xl banner-card__title">@@title</div>
+    <p class="body-text-xl banner-card__descr">
+      @@text
+    </p>
+    <a href="#" class="banner-card__btn button-lg button-primary">Смотреть коллекцию</a>
+  </div>
+</div>

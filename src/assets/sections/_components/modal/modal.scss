@@ -1,0 +1,107 @@
+@use '../../../scss/mixins' as *;
+@use "./auth/auth";
+@use "./product/p-descr/p-descr";
+@use "./product/p-specs/p-specs";
+@use "./product/p-sizes/p-sizes";
+
+.modal {
+  z-index: 10;
+  display: block !important;
+
+  &[open] {
+    .modal__container {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+
+      @include desktop {
+        transform: translateX(0);
+      }
+    }
+
+    .modal__content {
+      opacity: 1;
+    }
+
+    .modal__overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &[data-modal="product-sizes"] {
+    .modal__content {
+      min-height: 0;
+    }
+
+    .modal__container {
+      @include desktop {
+        padding-right: unset;
+      }
+    }
+  }
+
+  &__container {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    max-height: 100dvh;
+    padding-top: 72px;
+    background-color: var(--color-background-primary);
+    z-index: 10;
+    overflow-x: hidden;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(-20px);
+    visibility: hidden;
+    transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+
+    @include desktop {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: initial;
+      padding: 72px 48px 24px;
+      width: 50dvw;
+      opacity: 1;
+      transform: translateX(100%);
+    }
+
+    @include desktop-lg {
+      padding: 64px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    @include desktop {
+      opacity: 0;
+      transition: opacity var(--transition);
+      transition-delay: .4s;
+    }
+  }
+
+  &__close {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 18px 20px;
+    z-index: 10;
+    background-color: transparent;
+  }
+
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0 0 0 / 35%);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition), visibility var(--transition);
+  }
+}

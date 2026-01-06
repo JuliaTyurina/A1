@@ -1,0 +1,60 @@
+@use '../../scss/mixins' as *;
+
+.about {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+
+  @include desktop-lg {
+    border-radius: 40px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include mobile {
+      flex-direction: row;
+      column-gap: fluid(16px, 52px);
+    }
+  }
+
+  &__media {
+    @include mobile {
+      flex: 1;
+    }
+  }
+
+  &__img {
+    aspect-ratio: 1/1;
+    height: 100%;
+  }
+
+  &__content {
+    flex: 1;
+    padding: fluid(32px, 175px) 0;
+  }
+
+  &__title {
+    font-weight: 500;
+
+    @include desktop {
+      font-weight: 400;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: fluid(8px, 24px);
+    }
+  }
+
+  &__link {
+    margin-top: fluid(24px, 64px);
+
+    @include tablet {
+      max-width: fit-content;
+    }
+  }
+
+
+}

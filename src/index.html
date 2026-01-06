@@ -2,7 +2,37 @@
 "title": "Главная страница"
 })
 <main class="main">
+	@@include("hero/hero.html")
+
+	@@include("products-slider/products-slider.html", {
+	"title" : "Новинки",
+	"showAll": true,
+	})
+
+	@@include("banner-slider/banner-slider.html")
+
+	@@include("products-slider/products-slider.html", {
+	"title" : "Хиты продаж",
+	"showAll": true,
+	})
+
+	@@include("marketplaces/marketplaces.html")
+
+	@@include("benefits/benefits.html")
+
+	@@include("about/about.html")
+
+	@@include("reviews/reviews.html")
+
+	@@include("promo-cards/promo-cards.html")
+
+	@@include("blog-slider/blog-slider.html", {
+	"title" : "Полезные материалы",
+	})
+
+	@@include("faq/faq.html")
+
+	@@include("contacts/contacts.html")
 
 </main>
-<script src="assets/js/main.js"></script>
 @@include("footer/footer.html")

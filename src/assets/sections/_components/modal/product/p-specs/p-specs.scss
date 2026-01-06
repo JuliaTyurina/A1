@@ -1,0 +1,61 @@
+@use '../../../../../scss/mixins' as *;
+
+.p-specs {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: fluid(16px, 24px);
+  margin: 0 auto;
+  width: 100%;
+  max-width: 420px;
+  padding: 0 var(--container-padding) 24px;
+
+  @include desktop {
+    padding: unset;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+    @include tablet {
+      row-gap: 12px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    column-gap: 4px;
+
+    dt {
+      flex: 1 1 auto;
+      display: flex;
+      column-gap: 4px;
+      color: var(--color-text-secondary);
+
+      &:after {
+        content: '';
+        flex-grow: 1;
+        min-width: 32px;
+        margin-bottom: fluid(4px, 6px);
+        border-bottom: 1px dashed var(--color-stroke-primary);
+      }
+    }
+
+    dd {
+      flex: 0 1 auto;
+      max-width: 50%;
+      text-align: right;
+    }
+  }
+
+}

@@ -1,0 +1,72 @@
+<section class="section blog-slider" data-blog-section>
+	<div class="container">
+		<div class="slider-heading">
+			<h2 class="heading-md font-medium">@@title</h2>
+			<a href="/blog.html" class="button-sm-rounded button-bordered">Смотреть все</a>
+			<div class="slider-controls">
+				<button type="button"
+						data-blog-prev
+						aria-label="Предыдущий слайд">
+					<svg aria-hidden="true">
+						<use href="./assets/img/svg/sprite.svg#chevron-left"></use>
+					</svg>
+				</button>
+				<button type="button"
+						data-blog-next
+						aria-label="Следующий слайд">
+					<svg aria-hidden="true">
+						<use href="./assets/img/svg/sprite.svg#chevron-right"></use>
+					</svg>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="slider-container">
+		<div class="blog-slider__slider swiper" data-blog-slider>
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					@@include("./_components/blog-card/blog-card.html", {
+					"id": 1,
+					"image": "./assets/img/raster/blog-1.png.webp",
+					"date": "14 сентября 2025",
+					"text": "Уход за&nbsp;формой &laquo;А1&raquo;: практические советы для долговечности"
+					})
+				</div>
+				<div class="swiper-slide">
+					@@include("./_components/blog-card/blog-card.html", {
+					"id": 2,
+					"image": "./assets/img/raster/blog-2.png.webp",
+					"date": "8 сентября 2025",
+					"text": "Прибавляйте товары в корзину и увеличьте вашу скидку до –35%"
+					})
+				</div>
+				<div class="swiper-slide">
+					@@include("./_components/blog-card/blog-card.html", {
+					"id": 3,
+					"image": "./assets/img/raster/blog-3.png.webp",
+					"date": "5 сентября 2025",
+					"text": "Уход за&nbsp;формой &laquo;А1&raquo;: практические советы для долговечности"
+					})
+				</div>
+				<div class="swiper-slide">
+					@@include("./_components/blog-card/blog-card.html", {
+					"id": 1,
+					"image": "./assets/img/raster/blog-1.png.webp",
+					"date": "14 сентября 2025",
+					"text": "Уход за&nbsp;формой &laquo;А1&raquo;: практические советы для долговечности"
+					})
+				</div>
+				<div class="swiper-slide">
+					@@include("./_components/blog-card/blog-card.html", {
+					"id": 2,
+					"image": "./assets/img/raster/blog-2.png.webp",
+					"date": "8 сентября 2025",
+					"text": "Уход за&nbsp;формой &laquo;А1&raquo;: практические советы для долговечности"
+					})
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>

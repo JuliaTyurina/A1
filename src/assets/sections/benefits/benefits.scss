@@ -1,0 +1,99 @@
+@use '../../scss/mixins' as *;
+
+.benefits {
+  &__title {
+    margin-bottom: fluid(16px, 32px);
+
+    @include tablet {
+      text-align: center;
+    }
+  }
+
+  &__media{
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 5/3;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include tablet {
+      height: 100%;
+      aspect-ratio: unset;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    row-gap: 8px;
+
+    @include tablet {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: fluid(4px, 20px);
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 4px;
+    counter-reset: benefits;
+
+    @include tablet {
+      grid-column: span 2;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(6, auto);
+      gap: fluid(4px, 20px);
+    }
+
+  }
+
+  &__item {
+    counter-increment: benefits;
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: subgrid;
+    column-gap: 14px;
+    row-gap: 0;
+    padding: fluid(12px, 28px);
+    background-color: var(--color-background-primary);
+    border-radius: 16px;
+    overflow: hidden;
+
+    @include tablet {
+      grid-column: span 1;
+      grid-row: span 3;
+      grid-template-rows: subgrid;
+    }
+
+    &:before {
+      content: counter(benefits);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      grid-row: span 2;
+      height: auto;
+      width: fluid(35px, 100px);
+      padding: fluid(8px, 32px);
+      font-size: fluid(14px, 36px);
+      font-weight: 500;
+      line-height: 1.5;
+      background-color: var(--color-background-secondary-4);
+      border-radius: 999px;
+      aspect-ratio: 1/1;
+
+      @include tablet {
+        grid-row: 1;
+        font-weight: 600;
+        line-height: 1;
+        margin-bottom: fluid(4px, 24px);
+      }
+    }
+
+    &-title {
+      &:not(:last-child) {
+        margin-bottom: fluid(4px, 8px);
+      }
+    }
+  }
+}

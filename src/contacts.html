@@ -1,0 +1,99 @@
+@@include("header/header.html", {
+"title": "Полезные материалы"
+})
+
+<main class="main">
+	@@include("./_components/breadcrumbs/breadcrumbs.html", {
+	"level1Title": "Главная",
+	"level1Url": "/",
+	"level2Title": "Контакты",
+	"level2Url": null,
+	"level3Title": null,
+	"level3Url": null,
+	"columns": null,
+	"background": null,
+	"product": null,
+
+	})
+
+	<section class="contacts">
+		<div class="container contacts__container">
+			<h1 class="heading-md font-medium contacts__title">Контакты</h1>
+
+			<address class="contacts__grid">
+				<div class="contacts__card">
+					<svg class="contacts__card-icon" aria-hidden="true">
+						<use href="./assets/img/svg/sprite.svg#place"></use>
+					</svg>
+					<div class="contacts__card-content">
+						<p class="contacts__text">
+							Иваново, Ленина, 99
+						</p>
+						<p class="body-text-sm font-medium text-grey contacts__note">Адрес производства</p>
+					</div>
+				</div>
+
+				<div class="contacts__card">
+					<svg class="contacts__card-icon" aria-hidden="true">
+						<use href="./assets/img/svg/sprite.svg#phone"></use>
+					</svg>
+					<div class="contacts__card-content">
+						<a href="tel:+78002013831" class="contacts__link">
+							8 (800) 201-38-31
+						</a>
+						<p class="body-text-sm font-medium text-grey contacts__note">По всем вопросам</p>
+					</div>
+				</div>
+
+				<div class="contacts__card">
+					<svg class="contacts__card-icon" aria-hidden="true">
+						<use href="./assets/img/svg/sprite.svg#mail"></use>
+					</svg>
+					<div class="contacts__card-content">
+						<a href="mailto:a1@mail.ru" class="contacts__link">
+							A1@mail.ru
+						</a>
+						<p class="body-text-sm font-medium text-grey contacts__note">Почта</p>
+					</div>
+				</div>
+
+
+				<div class="contacts__card">
+					<svg class="contacts__card-icon" aria-hidden="true">
+						<use href="./assets/img/svg/sprite.svg#glob"></use>
+					</svg>
+					<div class="contacts__card-content">
+						<div class="contacts__socials">
+							<a href="#" class="contacts__social" aria-label="Telegram">
+								<svg class="contacts__social-icon" aria-hidden="true">
+									<use href="./assets/img/svg/sprite.svg#telegram"></use>
+								</svg>
+								Telegram
+							</a>
+							<a href="#" class="contacts__social">
+								<svg class="contacts__social-icon" aria-hidden="true">
+									<use href="./assets/img/svg/sprite.svg#whatsapp"></use>
+								</svg>
+								WhatsApp
+							</a>
+							<a href="#" class="contacts__social">
+								<svg class="contacts__social-icon" aria-hidden="true">
+									<use href="./assets/img/svg/sprite.svg#vk"></use>
+								</svg>
+								ВК
+							</a>
+						</div>
+
+						<p class="body-text-sm font-medium text-grey contacts__note">Соцсети</p>
+
+					</div>
+				</div>
+			</address>
+		</div>
+
+		<div class="contacts__map">
+			<img src="./assets/img/raster/map.png.webp" alt="">
+		</div>
+	</section>
+</main>
+@@include("footer/footer.html")

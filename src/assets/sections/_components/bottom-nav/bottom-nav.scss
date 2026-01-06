@@ -1,0 +1,55 @@
+@use '../../../scss/mixins' as *;
+
+.bottom-nav {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--bottom-nav-height);
+  background-color: var(--color-background-primary);
+  border-top: 1px solid var(--color-stroke-tertiary);
+  overflow: hidden;
+  z-index: 8;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    overflow-y: auto;
+  }
+
+  &__item {
+    flex: 1;
+    padding: 6px 4px;
+  }
+
+  &__link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2px;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+    transition: color var(--transition);
+    color: var(--color-text-secondary);
+
+    &:hover {
+      color: var(--color-text-primary);
+    }
+
+
+    &.active {
+      color: var(--color-text-primary);
+    }
+  }
+
+
+
+
+  @include desktop {
+    display: none;
+  }
+
+}
+

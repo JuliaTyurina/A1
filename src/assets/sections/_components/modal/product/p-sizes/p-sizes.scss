@@ -1,0 +1,98 @@
+@use '../../../../../scss/mixins' as *;
+
+.p-sizes {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: fluid(16px, 24px);
+  margin: 0 auto;
+  width: 100%;
+  min-height: 0;
+
+  @include desktop {
+    padding: unset;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+
+    @include desktop {
+      padding: unset;
+    }
+  }
+
+
+  &__table {
+    overflow: auto;
+
+    table {
+      border-collapse: separate;
+      border-spacing: 0;
+      table-layout: fixed;
+      width: 100%;
+    }
+
+    tr {
+      th:first-child {
+        position: sticky;
+        left: 0;
+        padding: 16px;
+        width: 190px;
+        background-color: var(--color-background-secondary);
+        z-index: 2;
+
+        @include desktop-lg {
+          width: 240px;
+        }
+      }
+    }
+
+    th, td {
+      padding: 16px 10px;
+      font-size: 13px;
+      font-weight: 400;
+      text-align: left;
+      transition: background-color var(--transition);
+    }
+
+    th {
+      width: 80px;
+    }
+
+    td {
+      position: relative;
+      border-bottom: 1px solid var(--color-stroke-primary);
+    }
+
+    thead {
+      th {
+
+        &:not(:first-child) {
+          position: sticky;
+          top: 0;
+          background-color: var(--color-background-primary);
+          border-top: 1px solid var(--color-stroke-primary);
+          border-bottom: 1px solid var(--color-stroke-primary);
+          z-index: 1;
+        }
+
+        &:first-child {
+          top: 0;
+          border-top: 1px solid var(--color-background-secondary);
+          z-index: 3;
+        }
+      }
+    }
+
+    tbody tr:hover td:not(:first-child) {
+      background-color: rgba(217, 217, 217, 0.32);
+    }
+
+
+  }
+
+}

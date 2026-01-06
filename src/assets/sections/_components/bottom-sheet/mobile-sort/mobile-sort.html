@@ -1,0 +1,34 @@
+<dialog class="bottom-sheet" data-modal="catalog-sort" >
+	<div class="bottom-sheet__container">
+		<header class="heading-md font-semibold bottom-sheet__header">
+			Сортировка
+		</header>
+		<div class="bottom-sheet__content">
+			<div class="mobile-sort">
+				<label class="radio">
+					<input checked class="radio-input" type="radio" name="radio">
+					<span class="radio-text font-medium">Популярные</span>
+				</label>
+				<label class="radio">
+					<input class="radio-input" type="radio" name="radio">
+					<span class="radio-text font-medium">Новинки</span>
+				</label>
+				<label class="radio">
+					<input  class="radio-input" type="radio" name="radio">
+					<span class="radio-text font-medium">По возрастанию цены</span>
+				</label>
+				<label class="radio">
+					<input class="radio-input" type="radio" name="radio">
+					<span class="radio-text font-medium">По убыванию цены</span>
+				</label>
+			</div>
+		</div>
+		<button class="bottom-sheet__close" data-global-action="modal-close">
+			<svg aria-hidden="true">
+				<use href="./assets/img/svg/sprite.svg#cancel"></use>
+			</svg>
+		</button>
+	</div>
+	<div class="bottom-sheet__overlay" data-global-action="modal-close"></div>
+
+</dialog>

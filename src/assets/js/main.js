@@ -11,14 +11,36 @@
 следует его расскоментировать
 */
 
-import { initGlobalAction } from "./files/globalActions.js";
-import { updateCounterClass } from "../sections/components/bottom-nav/bottom-nav-counter.js";
-import {initClearInput} from "./files/functions.js";
+import {initGlobalAction} from "./files/globalActions.js";
+import { updateCounterClass } from "../sections/_components/bottom-nav/bottom-nav-counter.js";
+import {initFancybox} from "./libs/fancybox.js";
+import {initHeroSliders} from "../sections/hero/hero.js";
+import {initProductsSliders} from "../sections/products-slider/products-slider.js";
+import {initProductCardSliders} from "../sections/_components/product-card/product-card.js";
+import {initBannerSliders} from "../sections/banner-slider/banner-slider.js";
+import {initBlogSliders} from "../sections/blog-slider/blog-slider.js";
+import {initExpandButtons, initProductRefSliders, initProductSliders} from "../sections/product/product.js";
+import {initDragScroll, initInputsRange} from "./files/functions.js";
+import {initSetCardsSliders} from "../sections/set-cards-slider/set-cards-slider.js";
 
 
 // Инициализация после загрузки DOM
 document.addEventListener('DOMContentLoaded', () => {
     initGlobalAction();
     updateCounterClass();
-    initClearInput()
+    initHeroSliders()
+    initProductCardSliders()
+    initProductsSliders()
+    initBannerSliders()
+    initBlogSliders()
+    initProductRefSliders()
+    initProductSliders()
+    initExpandButtons()
+    initInputsRange()
+    initSetCardsSliders()
+    // initDragScroll()
+
+    initFancybox()
+
+
 });

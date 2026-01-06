@@ -1,0 +1,66 @@
+@use '../../scss/mixins' as *;
+
+.marketplaces {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+
+  @include desktop-lg {
+    border-radius: 40px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+
+    @include mobile {
+      flex-direction: row;
+      column-gap: fluid(16px, 52px);
+    }
+  }
+
+  &__media {
+    @include mobile {
+      flex: 1;
+    }
+  }
+
+  &__img {
+    aspect-ratio: 3/2;
+    height: 100%;
+  }
+
+  &__content {
+    flex: 1;
+    padding: fluid(32px, 75px) 0;
+  }
+
+  &__title {
+    font-weight: 500;
+
+    @include tablet {
+      font-weight: 400;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: fluid(8px, 16px);
+    }
+  }
+
+  &__links {
+    position: relative;
+    display: flex;
+    column-gap: fluid(12px, 16px);
+    margin-top: fluid(32px, 56px);
+
+    @include tablet {
+      max-width: 62%;
+    }
+
+    a {
+      flex: 1;
+    }
+  }
+
+}
