@@ -1,0 +1,32 @@
+@@include("header/header.html", {
+"title": "Корзина"
+})
+
+<main class="main">
+	@@include("./_components/breadcrumbs/breadcrumbs.html", {
+	"level1Title": "Главная",
+	"level1Url": "/",
+	"level2Title": "Корзина",
+	"level2Url": null,
+	"level3Title": null,
+	"level3Url": null,
+	"columns": null,
+	"background": true,
+	"product": null,
+	})
+
+	@@include("basket/basket.html")
+
+
+	@@include("products-slider/products-slider.html", {
+	"title" : "Вам может понравиться",
+	"showAll": null,
+	})
+
+	@@include("products-slider/products-slider.html", {
+	"title" : "Похожие товары",
+	"showAll": null,
+	})
+</main>
+
+@@include("footer/footer.html")

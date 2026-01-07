@@ -213,14 +213,6 @@
     }
   }
 
-  &__share {
-    transition: color var(--transition);
-
-    &:hover {
-      color: var(--color-icon-secondary);
-    }
-  }
-
   &__content {
     @include tablet {
       min-width: 0;

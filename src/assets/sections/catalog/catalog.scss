@@ -11,10 +11,6 @@
     border-radius: 40px;
   }
 
-  &:not(:last-child) {
-    margin-bottom: 8px;
-  }
-
   &__container {
     @include tablet {
       display: grid;

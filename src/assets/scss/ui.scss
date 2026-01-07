@@ -256,7 +256,7 @@
 
   &.success {
     .input-elem {
-      border-color: var(--color-stroke-success);
+      outline-color: var(--color-stroke-success);
     }
 
     .input-hint {
@@ -266,12 +266,52 @@
 
   &.danger {
     .input-elem {
-      border-color: var(--color-stroke-danger);
+      outline-color: var(--color-stroke-danger);
     }
 
     .input-hint {
       color: var(--color-text-danger);
     }
+  }
+
+  &.promo-input {
+    .input-elem {
+      min-height: 48px;
+      font-size: 14px;
+      font-weight: 700;
+      background-color: transparent;
+    }
+
+    .input-button,
+    .input-switcher {
+      padding: 0 24px;
+      height: 48px;
+      color: var(--color-icon-primary);
+
+      &:hover {
+        color: var(--color-icon-secondary);
+      }
+    }
+
+    .input-icon--btn {
+      width: 24px;
+      min-width: 24px;
+      height: 24px;
+    }
+
+    @include tablet {
+
+      .input-elem {
+        min-height: 56px;
+        font-size: 16px;
+      }
+
+      .input-button,
+      .input-switcher {
+        height: 56px;
+      }
+    }
+
   }
 
   &-wrapper {
@@ -286,19 +326,17 @@
     line-height: 1;
     color: var(--color-text-primary);
     background-color: var(--color-background-secondary);
-    border: 1px solid var(--color-stroke-primary);
+    outline: 1px solid var(--color-stroke-primary);
+    outline-offset: -1px;
     border-radius: 12px;
-    transition: border-color var(--transition);
+    transition: outline-color var(--transition);
 
     &:not(:disabled) {
       &:hover,
       &:focus-visible,
       &:focus {
-        border-color: var(--color-stroke-secondary);
-      }
-
-      &:focus-visible {
-        outline: none;
+        outline: 1px solid var(--color-stroke-secondary);
+        outline-offset: -1px;
       }
     }
   }
@@ -311,7 +349,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 52px;
+    padding: 0 16px;
     height: 56px;
     border-radius: 12px;
     color: var(--color-icon-secondary);
@@ -414,6 +452,50 @@
       transform: translate3d(0, -52px, 0) scale3d(0.82, 0.82, 1);
       transform-origin: left top;
       transition: transform var(--transition);
+    }
+  }
+
+  &.promo-input {
+    .input-elem {
+      padding: 24px 72px 8px 24px;
+
+      &:placeholder-shown + .input-label::before {
+        transform: translate3d(0, -35px, 0) scale3d(1, 1, 1);
+      }
+
+      &:focus + .input-label::before {
+        transform: translate3d(0, -46px, 0) scale3d(0.82, 0.82, 1);
+      }
+    }
+
+    .input-label {
+      &::before {
+        left: 24px;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--color-text-primary);
+        transform: translate3d(0, -46px, 0) scale3d(0.82, 0.82, 1);
+      }
+    }
+
+    @include tablet {
+      .input-elem {
+
+        &:placeholder-shown + .input-label::before {
+          transform: translate3d(0, -40px, 0) scale3d(1, 1, 1);
+        }
+
+        &:focus + .input-label::before {
+          transform: translate3d(0, -52px, 0) scale3d(0.82, 0.82, 1);
+        }
+      }
+
+      .input-label {
+        &::before {
+          font-size: 16px;
+          transform: translate3d(0, -52px, 0) scale3d(0.82, 0.82, 1);
+        }
+      }
     }
   }
 }
@@ -541,6 +623,7 @@
   display: flex;
   column-gap: 8px;
   width: fit-content;
+  max-width: 100%;
   cursor: pointer;
 
   &:has(input:disabled) {
@@ -753,6 +836,88 @@
     width: fluid(14px, 16px);
     min-width: fluid(14px, 16px);
     height: fluid(14px, 16px);
+  }
+}
+
+.quantity-counter {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 154px;
+  min-height: 48px;
+  outline: 1px solid var(--color-stroke-primary);
+  outline-offset: -1px;
+  border-radius: 12px;
+  transition: outline var(--transition);
+
+  @include tablet {
+    width: 116px;
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    border-radius: 12px;
+    transition: color var(--transition);
+
+    svg {
+      width: 20px;
+      min-width: 20px;
+      height: 20px;
+    }
+  }
+
+    .quantity-counter__minus {
+      display: none;
+
+      @include tablet {
+        display: flex;
+      }
+    }
+
+    .quantity-counter__delete {
+      @include tablet {
+        display: none;
+      }
+    }
+
+
+  &__plus {
+    &:hover {
+      color: var(--color-text-secondary);
+    }
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  /* Для старых версий */
+  input[type="number"]::-ms-clear {
+    display: none; /* IE 10-11 */
+  }
+
+  &__input {
+    flex: 1 1 auto;
+    min-width: 20px;
+    text-align: center;
+    background-color: transparent;
+
+    &:hover,
+    &:focus-visible,
+    &:focus {
+      outline: none;
+    }
   }
 }
 
@@ -1156,5 +1321,99 @@
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.favorite,
+.favorite-lite,
+.share,
+.delete,
+.delete-lite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 12px;
+  margin: -12px;
+  border-radius: 12px;
+}
+
+.favorite {
+  path {
+    fill: transparent;
+    transition: fill var(--transition), stroke var(--transition);
+  }
+
+  &:hover {
+    path {
+      stroke: var(--color-icon-secondary);
+    }
+  }
+
+  &.active {
+    transition: opacity var(--transition);
+
+    path {
+      fill: var(--color-background-accent);
+      stroke: var(--color-background-accent);
+    }
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
+
+.favorite-lite {
+  color: var(--color-icon-secondary);
+
+  path {
+    fill: transparent;
+    transition: fill var(--transition), stroke var(--transition);
+  }
+
+  &:hover {
+    path {
+      stroke: var(--color-icon-primary);
+    }
+  }
+
+  &.active {
+    transition: opacity var(--transition);
+
+    path {
+      fill: var(--color-background-accent);
+      stroke: var(--color-background-accent);
+    }
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
+
+.share {
+  transition: color var(--transition);
+
+  &:hover {
+    color: var(--color-icon-secondary);
+  }
+}
+
+.delete {
+  transition: color var(--transition);
+
+  &:hover {
+    color: var(--color-icon-secondary);
+  }
+}
+
+.delete-lite {
+  color: var(--color-icon-secondary);
+  transition: color var(--transition);
+
+  &:hover {
+    color: var(--color-icon-primary);
   }
 }
