@@ -23,9 +23,6 @@
       padding: 16px var(--container-padding) fluid(16px, 64px);
     }
 
-    @include desktop-lg {
-      column-gap: 88px;
-    }
   }
 
   &__header {
@@ -42,6 +39,7 @@
       margin-bottom: 16px;
       padding: unset;
       background-color: unset;
+      border-radius: unset;
     }
   }
 
@@ -89,6 +87,7 @@
       row-gap: 40px;
       margin-bottom: unset;
       padding: 40px 0 0;
+      max-width: 824px;
       border-top: 1px solid var(--color-stroke-primary);
       border-radius: unset;
     }

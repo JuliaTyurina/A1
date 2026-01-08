@@ -1,0 +1,23 @@
+@@include("header/header.html", {
+"title": "Оформление заказа"
+})
+
+<main class="main">
+	@@include("./_components/breadcrumbs/breadcrumbs.html", {
+	"level1Title": "Главная",
+	"level1Url": "/",
+	"level2Title": "Корзина",
+	"level2Url": "#",
+	"level3Title": "Оформление заказа",
+	"level3Url": null,
+	"columns": null,
+	"background": true,
+	"product": null,
+	})
+
+	@@include("order/order.html")
+
+
+</main>
+
+@@include("footer/footer.html")
