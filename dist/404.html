@@ -1,0 +1,3538 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="#fff" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<link
+			rel="icon"
+			href="./assets/img/favicon/favicon.svg"
+			type="image/svg+xml"
+		/>
+		<link rel="apple-touch-icon" href="./assets/img/favicon/180.png" />
+		<link rel="manifest" href="manifest.webmanifest" />
+		<link rel="stylesheet" href="assets/css/vendors.min.css" />
+		<link rel="stylesheet" href="assets/css/style.min.css" />
+		<title>Страница не найдена</title>
+		<style>
+			#loader {
+				position: fixed;
+				inset: 0;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				gap: 12px;
+				background-color: #fff;
+				z-index: 20;
+				transition:
+					opacity 0.5s ease,
+					visibility 0.5s ease;
+			}
+
+			#loader.hidden {
+				opacity: 0;
+				visibility: hidden;
+				pointer-events: none;
+			}
+
+			.ecg-container {
+				position: relative;
+				width: 72px;
+				height: 29px;
+
+				svg {
+					width: initial;
+					height: initial;
+				}
+			}
+
+			.ecg-bg {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+
+			.ecg-active {
+				position: absolute;
+				top: 0;
+				left: 0;
+				clip-path: inset(0 100% 0 0);
+				animation: ecg-pulse 2s ease-in-out infinite;
+			}
+
+			@keyframes ecg-pulse {
+				0% {
+					clip-path: inset(0 100% 0 0);
+				}
+				50% {
+					clip-path: inset(0 0 0 0);
+				}
+				100% {
+					clip-path: inset(0 0 0 100%);
+				}
+			}
+
+			.loader-text {
+				animation: text-fade 2s ease-in-out infinite;
+			}
+
+			@keyframes text-fade {
+				0%,
+				100% {
+					opacity: 0.5;
+				}
+				50% {
+					opacity: 1;
+				}
+			}
+
+			#app {
+				opacity: 0;
+				transition: opacity 0.5s ease 0.3s;
+			}
+
+			#app.visible {
+				opacity: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="loader">
+			<div class="ecg-container">
+				<svg
+					class="ecg-bg"
+					xmlns="http://www.w3.org/2000/svg"
+					width="72"
+					height="29"
+					viewBox="0 0 72 29"
+					fill="none"
+				>
+					<path
+						d="M43.4653 21.2213L50.6816 12.4078L72 12.4078V16.3164H52.5745L42.19 29L35.4013 11.1353L29.5135 26.631L22.2576 14.8507H0V10.942H24.4857L28.6653 17.7273L35.4017 0L43.4653 21.2213Z"
+						fill="#E5E5E5"
+					/>
+				</svg>
+
+				<svg
+					class="ecg-active"
+					xmlns="http://www.w3.org/2000/svg"
+					width="72"
+					height="29"
+					viewBox="0 0 72 29"
+					fill="none"
+				>
+					<path
+						d="M43.4653 21.2213L50.6816 12.4078L72 12.4078V16.3164H52.5745L42.19 29L35.4013 11.1353L29.5135 26.631L22.2576 14.8507H0V10.942H24.4857L28.6653 17.7273L35.4017 0L43.4653 21.2213Z"
+						fill="#E1312F"
+					/>
+				</svg>
+			</div>
+			<span class="loader-text">Загрузка...</span>
+		</div>
+
+		<div class="app" id="app">
+			<header class="header">
+				<div class="container">
+					<div class="header-mobile">
+						<div class="header-mobile__bar">
+							<a href="/">
+								<img
+									class="logo"
+									src="/assets/img/svg/logo-mobile.svg"
+									alt="Логотип «Форма А1»"
+								/>
+							</a>
+							<search
+								class="search"
+								role="search"
+								data-global-action="search-bar-toggle"
+							>
+								<form class="search-form">
+									<input
+										class="search-input"
+										type="search"
+										placeholder="Искать в магазине"
+										readonly
+									/>
+									<button class="search-button">
+										<span class="visually-hidden"
+											>Поиск</span
+										>
+										<svg
+											class="search-button__icon"
+											aria-hidden="true"
+										>
+											<use
+												href="/assets/img/svg/sprite.svg#search"
+											></use>
+										</svg>
+									</button>
+								</form>
+							</search>
+							<button
+								class="burger"
+								data-global-action="mobile-all-menus-toggle"
+								aria-label="Взаимодействовать с мобильным меню"
+							>
+								<span class="burger-line"></span>
+								<span class="burger-line"></span>
+								<span class="burger-line"></span>
+							</button>
+						</div>
+						<div class="header-mobile__menu mobile-menu">
+							<nav
+								class="mobile-menu__nav mobile-menu__nav--main nav"
+							>
+								<ul class="nav-list">
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#box"
+												></use>
+											</svg>
+											<span class="nav-text"
+												>Новинки</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#sale"
+												></use>
+											</svg>
+											<span class="nav-text">Акции</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#fire"
+												></use>
+											</svg>
+											<span class="nav-text"
+												>Подарочные сертификаты</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#male"
+												></use>
+											</svg>
+											<span class="nav-text"
+												>Корпоративным клиентам</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#valentines-day"
+												></use>
+											</svg>
+											<span class="nav-text"
+												>О компании</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#star"
+												></use>
+											</svg>
+											<span class="nav-text"
+												>Покупателям</span
+											>
+										</a>
+									</li>
+								</ul>
+							</nav>
+							<nav
+								class="mobile-menu__nav mobile-menu__nav--account nav"
+							>
+								<ul class="nav-list">
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#box"
+												></use>
+											</svg>
+											<span class="nav-text"
+												>Мои заказы</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a
+											class="nav-link"
+											data-global-action="modal-open"
+											data-modal="auth"
+										>
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#user-circle"
+												></use>
+											</svg>
+											<span class="nav-text"
+												>Мои данные</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#heart"
+												></use>
+											</svg>
+											<span class="nav-text"
+												>Избранное</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#gear"
+												></use>
+											</svg>
+											<span class="nav-text"
+												>Настройки</span
+											>
+										</a>
+									</li>
+								</ul>
+							</nav>
+							<nav
+								class="mobile-menu__nav mobile-menu__nav--catalog nav"
+							>
+								<ul class="nav-list">
+									<li class="nav-item">
+										<button
+											class="nav-link"
+											data-global-action="modal-open"
+											data-modal="catalog-clothing"
+										>
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#overall"
+												></use>
+											</svg>
+											<span class="nav-text">Одежда</span>
+										</button>
+										<dialog data-modal="catalog-clothing">
+											<div class="submenu thin-scrollbar">
+												<p class="submenu__title">
+													Одежда
+												</p>
+												<ul class="nav">
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-img"
+																style="
+																	background-image: url(&quot;/assets/img/raster/subcategory-1.png.webp&quot;);
+																"
+															></span>
+															<span
+																class="nav-text font-medium"
+																>Костюмы</span
+															>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-img"
+																style="
+																	background-image: url(&quot;/assets/img/raster/subcategory-2.png.webp&quot;);
+																"
+															></span>
+															<span
+																class="nav-text font-medium"
+																>Брюки</span
+															>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-img"
+																style="
+																	background-image: url(&quot;/assets/img/raster/subcategory-3.png.webp&quot;);
+																"
+															></span>
+															<span
+																class="nav-text font-medium"
+																>Халаты</span
+															>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-img"
+																style="
+																	background-image: url(&quot;/assets/img/raster/subcategory-4.png.webp&quot;);
+																"
+															></span>
+															<span
+																class="nav-text font-medium"
+																>Рубашки</span
+															>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-img"
+																style="
+																	background-image: url(&quot;/assets/img/raster/subcategory-5.png.webp&quot;);
+																"
+															></span>
+															<span
+																class="nav-text font-medium"
+																>Колпаки</span
+															>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-img"
+																style="
+																	background-image: url(&quot;/assets/img/raster/subcategory-6.png.webp&quot;);
+																"
+															></span>
+															<span
+																class="nav-text font-medium"
+																>Обувь</span
+															>
+														</a>
+													</li>
+
+													<li class="nav-item">
+														<button
+															class="nav-link"
+															data-global-action="modal-open"
+															data-modal="catalog-accessories"
+														>
+															<span
+																class="nav-img"
+																style="
+																	background-image: url(&quot;/assets/img/raster/subcategory-7.png.webp&quot;);
+																"
+															></span>
+															<span
+																class="nav-text font-medium"
+																>Аксессуары</span
+															>
+														</button>
+
+														<dialog
+															data-modal="catalog-accessories"
+														>
+															<div
+																class="submenu"
+															>
+																<p
+																	class="submenu__title"
+																>
+																	Аксессуары
+																</p>
+
+																<ul class="nav">
+																	<li
+																		class="nav-item"
+																	>
+																		<a
+																			href=""
+																			class="nav-link"
+																		>
+																			<span
+																				class="nav-text font-medium"
+																				>Все</span
+																			>
+																		</a>
+																	</li>
+																	<li
+																		class="nav-item"
+																	>
+																		<a
+																			href=""
+																			class="nav-link"
+																		>
+																			<span
+																				class="nav-text font-medium"
+																				>Брелоки</span
+																			>
+																		</a>
+																	</li>
+																	<li
+																		class="nav-item"
+																	>
+																		<a
+																			href=""
+																			class="nav-link"
+																		>
+																			<span
+																				class="nav-text font-medium"
+																				>Подарочная
+																				упаковка</span
+																			>
+																		</a>
+																	</li>
+																	<li
+																		class="nav-item"
+																	>
+																		<a
+																			href=""
+																			class="nav-link"
+																		>
+																			<span
+																				class="nav-text font-medium"
+																				>Стикерпаки</span
+																			>
+																		</a>
+																	</li>
+																	<li
+																		class="nav-item"
+																	>
+																		<a
+																			href=""
+																			class="nav-link"
+																		>
+																			<span
+																				class="nav-text font-medium"
+																				>Шапочки</span
+																			>
+																		</a>
+																	</li>
+																	<li
+																		class="nav-item"
+																	>
+																		<a
+																			href=""
+																			class="nav-link"
+																		>
+																			<span
+																				class="nav-text font-medium"
+																				>Шарфы</span
+																			>
+																		</a>
+																	</li>
+																	<li
+																		class="nav-item"
+																	>
+																		<a
+																			href=""
+																			class="nav-link"
+																		>
+																			<span
+																				class="nav-text font-medium"
+																				>Брелоки</span
+																			>
+																		</a>
+																	</li>
+																</ul>
+
+																<button
+																	class="submenu__back button-lg button-secondary"
+																	data-global-action="modal-close"
+																>
+																	Назад
+																</button>
+																<button
+																	class="submenu__close"
+																	data-global-action="modal-close"
+																>
+																	<svg
+																		aria-hidden="true"
+																	>
+																		<use
+																			href="/assets/img/svg/sprite.svg#cancel"
+																		></use>
+																	</svg>
+																</button>
+															</div>
+														</dialog>
+													</li>
+												</ul>
+
+												<button
+													class="submenu__back button-lg button-secondary"
+													data-global-action="modal-close"
+												>
+													Назад
+												</button>
+												<button
+													class="submenu__close"
+													data-global-action="modal-close"
+												>
+													<svg aria-hidden="true">
+														<use
+															href="/assets/img/svg/sprite.svg#cancel"
+														></use>
+													</svg>
+												</button>
+											</div>
+										</dialog>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#palette"
+												></use>
+											</svg>
+											<span class="nav-text">Цвета</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#premium"
+												></use>
+											</svg>
+											<span class="nav-text"
+												>Аксессуары</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#mark"
+												></use>
+											</svg>
+											<span class="nav-text"
+												>Подборки</span
+											>
+										</a>
+									</li>
+								</ul>
+							</nav>
+
+							<address class="mobile-menu__contacts">
+								<div class="main-contact">
+									<a
+										class="main-contact__link"
+										href="tel:+74932333333"
+										>8 4932 333 333</a
+									>
+									<span class="text-grey"
+										>Звонки принимаются пн-пт с 9 до
+										19</span
+									>
+								</div>
+
+								<ul class="contacts-grid">
+									<li class="contacts-grid-item">
+										<a
+											href="#"
+											class="body-text-md font-medium contacts-grid-link"
+										>
+											<svg aria-hidden="true">
+												<use
+													href="/assets/img/svg/sprite.svg#place"
+												></use>
+											</svg>
+											Иваново, пер. Конспиративный д. 11
+										</a>
+									</li>
+									<li class="contacts-grid-item">
+										<a
+											href="https://t.me/+78001000000"
+											class="body-text-md font-medium contacts-grid-link"
+										>
+											<svg aria-hidden="true">
+												<use
+													href="/assets/img/svg/sprite.svg#telegram"
+												></use>
+											</svg>
+											Telegram
+										</a>
+									</li>
+									<li class="contacts-grid-item">
+										<a
+											href="https://wa.me/78001000000"
+											class="body-text-md font-medium contacts-grid-link"
+										>
+											<svg aria-hidden="true">
+												<use
+													href="/assets/img/svg/sprite.svg#whatsapp"
+												></use>
+											</svg>
+											WhatsApp
+										</a>
+									</li>
+									<li class="contacts-grid-item">
+										<a
+											href="mailto:a1@mail.ru"
+											class="body-text-md font-medium contacts-grid-link"
+										>
+											<svg aria-hidden="true">
+												<use
+													href="/assets/img/svg/sprite.svg#mail"
+												></use>
+											</svg>
+											A1@mail.ru
+										</a>
+									</li>
+								</ul>
+							</address>
+
+							<button class="button-lg button-primary">
+								Обратный звонок
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="header-desktop">
+					<div class="header-desktop__bar">
+						<button
+							class="burger"
+							data-global-action="desktop-menu-toggle"
+							aria-label="Взаимодействовать с меню"
+						>
+							<span class="burger-line"></span>
+							<span class="burger-line"></span>
+							<span class="burger-line"></span>
+						</button>
+						<a class="logo" href="/">
+							<img
+								src="/assets/img/svg/logo-desktop.svg"
+								alt="Логотип «Форма А1»"
+							/>
+						</a>
+						<nav class="toolbar">
+							<ul class="toolbar__list">
+								<li class="toolbar__item">
+									<a
+										class="toolbar__link"
+										data-global-action="search-bar-toggle"
+									>
+										<span class="toolbar__icon icon">
+											<svg aria-hidden="true">
+												<use
+													href="/assets/img/svg/sprite.svg#search-2"
+												></use>
+											</svg>
+										</span>
+										<span class="visually-hidden"
+											>Поиск</span
+										>
+									</a>
+								</li>
+								<li class="toolbar__item">
+									<a
+										href="/basket.html"
+										class="toolbar__link"
+									>
+										<span class="toolbar__icon icon">
+											<span
+												class="icon-counter"
+												data-nav-counter="1"
+											>
+												<span class="visually-hidden"
+													>1</span
+												>
+											</span>
+											<svg aria-hidden="true">
+												<use
+													href="/assets/img/svg/sprite.svg#cart"
+												></use>
+											</svg>
+										</span>
+
+										<span class="visually-hidden"
+											>Корзина</span
+										>
+									</a>
+								</li>
+								<li class="toolbar__item">
+									<a href="#" class="toolbar__link">
+										<span class="toolbar__icon icon">
+											<span
+												class="icon-counter"
+												data-nav-counter="72"
+											>
+												<span class="visually-hidden"
+													>72</span
+												>
+											</span>
+											<svg aria-hidden="true">
+												<use
+													href="/assets/img/svg/sprite.svg#heart"
+												></use>
+											</svg>
+										</span>
+
+										<span class="visually-hidden"
+											>Избранное</span
+										>
+									</a>
+								</li>
+								<li class="toolbar__item">
+									<a
+										class="toolbar__link"
+										data-global-action="modal-open"
+										data-modal="auth"
+									>
+										<span class="toolbar__icon icon">
+											<span
+												class="icon-counter"
+												data-nav-counter="100"
+											>
+												<span class="visually-hidden"
+													>100</span
+												>
+											</span>
+											<svg aria-hidden="true">
+												<use
+													href="/assets/img/svg/sprite.svg#user"
+												></use>
+											</svg>
+										</span>
+										<span class="visually-hidden"
+											>Профиль</span
+										>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="header-desktop__menu">
+						<nav class="nav">
+							<div class="nav-wrapper thin-scrollbar">
+								<ul class="nav-list">
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#female"
+												></use>
+											</svg>
+											<span class="nav-text font-medium"
+												>Женщинам</span
+											>
+										</a>
+										<div
+											class="header-desktop__submenu nav nav--level-2"
+										>
+											<div
+												class="nav-wrapper thin-scrollbar"
+											>
+												<ul class="nav-list">
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-text font-medium"
+																>Костюмы</span
+															>
+														</a>
+														<div
+															class="header-desktop__submenu nav nav--level-3"
+														>
+															<div
+																class="nav-wrapper thin-scrollbar"
+															>
+																<ul
+																	class="nav-list"
+																>
+																	<li
+																		class="nav-item"
+																	>
+																		<a
+																			href=""
+																			class="nav-link"
+																		>
+																			<span
+																				class="nav-text font-medium"
+																				>Колпак
+																				медицинский
+																				1</span
+																			>
+																		</a>
+																	</li>
+																	<li
+																		class="nav-item"
+																	>
+																		<a
+																			href=""
+																			class="nav-link"
+																		>
+																			<span
+																				class="nav-text font-medium"
+																				>Колпак
+																				медицинский
+																				2</span
+																			>
+																		</a>
+																	</li>
+																	<li
+																		class="nav-item"
+																	>
+																		<a
+																			href=""
+																			class="nav-link"
+																		>
+																			<span
+																				class="nav-text font-medium"
+																				>Колпак
+																				медицинский
+																				3</span
+																			>
+																		</a>
+																	</li>
+																	<li
+																		class="nav-item"
+																	>
+																		<a
+																			href=""
+																			class="nav-link"
+																		>
+																			<span
+																				class="nav-text font-medium"
+																				>Колпак
+																				медицинский
+																				4</span
+																			>
+																		</a>
+																	</li>
+																	<li
+																		class="nav-item"
+																	>
+																		<a
+																			href=""
+																			class="nav-link"
+																		>
+																			<span
+																				class="nav-text font-medium"
+																				>Колпак
+																				медицинский
+																				5</span
+																			>
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</li>
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-text font-medium"
+																>Брюки</span
+															>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-text font-medium"
+																>Халаты</span
+															>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-text font-medium"
+																>Рубашки</span
+															>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-text font-medium"
+																>Колпаки</span
+															>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-text font-medium"
+																>Колпаки</span
+															>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-text font-medium"
+																>Колпаки</span
+															>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-text font-medium"
+																>Колпаки</span
+															>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-text font-medium"
+																>Колпаки</span
+															>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-text font-medium"
+																>Колпаки</span
+															>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-text font-medium"
+																>Колпаки</span
+															>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-text font-medium"
+																>Колпаки</span
+															>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-text font-medium"
+																>Колпаки</span
+															>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-text font-medium"
+																>Колпаки</span
+															>
+														</a>
+													</li>
+													<li class="nav-item">
+														<a
+															href=""
+															class="nav-link"
+														>
+															<span
+																class="nav-text font-medium"
+																>Колпаки</span
+															>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#male"
+												></use>
+											</svg>
+											<span class="nav-text font-medium"
+												>Мужчинам</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#slippers"
+												></use>
+											</svg>
+											<span class="nav-text font-medium"
+												>Обувь</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#slippers"
+												></use>
+											</svg>
+											<span class="nav-text font-medium"
+												>Обувь</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#slippers"
+												></use>
+											</svg>
+											<span class="nav-text font-medium"
+												>Обувь</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#slippers"
+												></use>
+											</svg>
+											<span class="nav-text font-medium"
+												>Обувь</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#slippers"
+												></use>
+											</svg>
+											<span class="nav-text font-medium"
+												>Обувь</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#slippers"
+												></use>
+											</svg>
+											<span class="nav-text font-medium"
+												>Обувь</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#slippers"
+												></use>
+											</svg>
+											<span class="nav-text font-medium"
+												>Обувь</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#slippers"
+												></use>
+											</svg>
+											<span class="nav-text font-medium"
+												>Обувь</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#slippers"
+												></use>
+											</svg>
+											<span class="nav-text font-medium"
+												>Обувь</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#slippers"
+												></use>
+											</svg>
+											<span class="nav-text font-medium"
+												>Обувь</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#slippers"
+												></use>
+											</svg>
+											<span class="nav-text font-medium"
+												>Обувь</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#slippers"
+												></use>
+											</svg>
+											<span class="nav-text font-medium"
+												>Обувь</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#slippers"
+												></use>
+											</svg>
+											<span class="nav-text font-medium"
+												>Обувь</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#slippers"
+												></use>
+											</svg>
+											<span class="nav-text font-medium"
+												>Обувь</span
+											>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="" class="nav-link">
+											<svg
+												class="nav-icon"
+												aria-hidden="true"
+											>
+												<use
+													href="/assets/img/svg/sprite.svg#slippers"
+												></use>
+											</svg>
+											<span class="nav-text font-medium"
+												>Обувь</span
+											>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</nav>
+						<div
+							class="header-desktop__menu-overlay"
+							data-global-action="desktop-menu-toggle"
+						></div>
+					</div>
+				</div>
+
+				<div class="search-bar">
+					<div class="search-bar__header">
+						<search class="search" role="search" data-input-wrapper>
+							<form>
+								<input
+									class="search-input"
+									type="search"
+									placeholder="Искать в магазине"
+									data-clearable-input
+								/>
+								<button class="search-delete" data-clear-button>
+									<span class="visually-hidden">
+										Стереть
+									</span>
+									<svg
+										class="search-delete__icon"
+										aria-hidden="true"
+									>
+										<use
+											href="/assets/img/svg/sprite.svg#dismiss-fill"
+										></use>
+									</svg>
+								</button>
+								<button class="search-button">
+									<span class="visually-hidden"> Поиск </span>
+									<svg
+										class="search-button__icon"
+										aria-hidden="true"
+									>
+										<use
+											href="/assets/img/svg/sprite.svg#search"
+										></use>
+									</svg>
+								</button>
+							</form>
+						</search>
+						<button
+							class="search-bar__close"
+							data-global-action="search-bar-toggle"
+						>
+							Закрыть
+						</button>
+					</div>
+
+					<div class="search-bar__content">
+						<p class="font-medium text-grey">Начните поиск</p>
+
+						<ul class="search-bar__results thin-scrollbar">
+							<li class="search-bar__results-card">
+								<a
+									href="#"
+									class="search-bar__results-link body-text-xxl font-medium"
+								>
+									Брюки палаццо
+								</a>
+							</li>
+							<li class="search-bar__results-card">
+								<a
+									href="#"
+									class="search-bar__results-link body-text-xxl font-medium"
+								>
+									Брюки зауженные
+								</a>
+							</li>
+							<li class="search-bar__results-card">
+								<a
+									href="#"
+									class="search-bar__results-link body-text-xxl font-medium"
+								>
+									Брюки широкие
+								</a>
+							</li>
+							<li class="search-bar__results-card">
+								<a
+									href="#"
+									class="search-bar__results-link body-text-xxl font-medium"
+								>
+									Брюки палаццо
+								</a>
+							</li>
+							<li class="search-bar__results-card">
+								<a
+									href="#"
+									class="search-bar__results-link body-text-xxl font-medium"
+								>
+									Брюки палаццо
+								</a>
+							</li>
+							<li class="search-bar__results-card">
+								<a
+									href="#"
+									class="search-bar__results-link body-text-xxl font-medium"
+								>
+									Брюки зауженные
+								</a>
+							</li>
+							<li class="search-bar__results-card">
+								<a
+									href="#"
+									class="search-bar__results-link body-text-xxl font-medium"
+								>
+									Брюки широкие
+								</a>
+							</li>
+							<li class="search-bar__results-card">
+								<a
+									href="#"
+									class="search-bar__results-link body-text-xxl font-medium"
+								>
+									Брюки палаццо
+								</a>
+							</li>
+							<li class="search-bar__results-card">
+								<a
+									href="#"
+									class="search-bar__results-link body-text-xxl font-medium"
+								>
+									Брюки палаццо
+								</a>
+							</li>
+							<li class="search-bar__results-card">
+								<a
+									href="#"
+									class="search-bar__results-link body-text-xxl font-medium"
+								>
+									Брюки зауженные
+								</a>
+							</li>
+							<li class="search-bar__results-card">
+								<a
+									href="#"
+									class="search-bar__results-link body-text-xxl font-medium"
+								>
+									Брюки широкие
+								</a>
+							</li>
+							<li class="search-bar__results-card">
+								<a
+									href="#"
+									class="search-bar__results-link body-text-xxl font-medium"
+								>
+									Брюки палаццо
+								</a>
+							</li>
+							<li class="search-bar__results-card">
+								<a
+									href="#"
+									class="search-bar__results-link body-text-xxl font-medium"
+								>
+									Брюки палаццо
+								</a>
+							</li>
+							<li class="search-bar__results-card">
+								<a
+									href="#"
+									class="search-bar__results-link body-text-xxl font-medium"
+								>
+									Брюки зауженные
+								</a>
+							</li>
+							<li class="search-bar__results-card">
+								<a
+									href="#"
+									class="search-bar__results-link body-text-xxl font-medium"
+								>
+									Брюки широкие
+								</a>
+							</li>
+							<li class="search-bar__results-card">
+								<a
+									href="#"
+									class="search-bar__results-link body-text-xxl font-medium"
+								>
+									Брюки палаццо
+								</a>
+							</li>
+							<li class="search-bar__results-card">
+								<a
+									href="#"
+									class="search-bar__results-link body-text-xxl font-medium"
+								>
+									Брюки палаццо
+								</a>
+							</li>
+							<li class="search-bar__results-card">
+								<a
+									href="#"
+									class="search-bar__results-link body-text-xxl font-medium"
+								>
+									Брюки зауженные
+								</a>
+							</li>
+							<li class="search-bar__results-card">
+								<a
+									href="#"
+									class="search-bar__results-link body-text-xxl font-medium"
+								>
+									Брюки широкие
+								</a>
+							</li>
+							<li class="search-bar__results-card">
+								<a
+									href="#"
+									class="search-bar__results-link body-text-xxl font-medium"
+								>
+									Брюки палаццо
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div
+						class="search-bar__overlay"
+						data-global-action="search-bar-toggle"
+					></div>
+				</div>
+			</header>
+
+			<main class="main">
+				<section class="error-404">
+					<div class="container">
+						<div class="error-404__heading">
+							<h1 class="heading-lg">404</h1>
+							<p>Страница не найдена</p>
+						</div>
+						<a href="/" class="button-xl button-primary"
+							>На главную</a
+						>
+					</div>
+				</section>
+
+				<section class="section products-slider" data-products-section>
+					<div class="container">
+						<div class="slider-heading">
+							<h2 class="heading-md font-medium">
+								Популярные товары
+							</h2>
+
+							<a href="" class="button-xs-rounded button-bordered"
+								>Смотреть все</a
+							>
+
+							<div class="slider-controls">
+								<button
+									type="button"
+									data-products-prev
+									aria-label="Предыдущий слайд"
+								>
+									<svg aria-hidden="true">
+										<use
+											href="./assets/img/svg/sprite.svg#chevron-left"
+										></use>
+									</svg>
+								</button>
+								<button
+									type="button"
+									data-products-next
+									aria-label="Следующий слайд"
+								>
+									<svg aria-hidden="true">
+										<use
+											href="./assets/img/svg/sprite.svg#chevron-right"
+										></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="slider-container">
+						<div
+							class="products-slider__slider swiper"
+							data-products-slider
+						>
+							<div class="swiper-wrapper">
+								<div class="swiper-slide products-slider__item">
+									<article
+										class="product-card"
+										data-product-card
+									>
+										<div class="product-card__media">
+											<a
+												href="/product.html"
+												class="product-card__link"
+											>
+												<div
+													class="product-card__wrapper"
+												>
+													<div
+														class="product-card__slider swiper"
+														data-product-card-slider
+													>
+														<div
+															class="product-card__wrapper swiper-wrapper"
+														>
+															<div
+																class="product-card__slide swiper-slide"
+															>
+																<img
+																	class="product-card__img"
+																	src="./assets/img/raster/product-1.png.webp"
+																	alt="Медицинский костюм из вискозной ткани М12"
+																	loading="lazy"
+																/>
+															</div>
+
+															<div
+																class="product-card__slide swiper-slide"
+															>
+																<img
+																	class="product-card__img"
+																	src="./assets/img/raster/product-2.png.webp"
+																	alt="Медицинский костюм из вискозной ткани М12"
+																	loading="lazy"
+																/>
+															</div>
+
+															<div
+																class="product-card__slide swiper-slide"
+															>
+																<img
+																	class="product-card__img"
+																	src="./assets/img/raster/product-3.png.webp"
+																	alt="Медицинский костюм из вискозной ткани М12"
+																	loading="lazy"
+																/>
+															</div>
+														</div>
+													</div>
+
+													<div
+														class="product-card__badges product-card__badges--top"
+													>
+														<span
+															class="badge badge-main"
+															>hit</span
+														>
+
+														<span
+															class="badge badge-secondary"
+															>new</span
+														>
+													</div>
+
+													<button
+														class="product-card__favorite"
+														type="button"
+													>
+														<span
+															class="visually-hidden"
+															>Добавить в
+															избранное</span
+														>
+
+														<svg
+															class="product-card__favorite-icon"
+															aria-hidden="true"
+														>
+															<use
+																href="./assets/img/svg/sprite.svg#heart-fill"
+															></use>
+														</svg>
+													</button>
+
+													<div
+														class="product-card__cart"
+													>
+														<button
+															class="product-card__cart-btn"
+															type="button"
+														>
+															<span
+																class="visually-hidden"
+																>Добавить в
+																корзину</span
+															>
+
+															<svg
+																class="product-card__cart-icon"
+																aria-hidden="true"
+															>
+																<use
+																	href="./assets/img/svg/sprite.svg#cart-stroke-thin"
+																></use>
+															</svg>
+															<span
+																class="product-card__counter"
+																>2</span
+															>
+														</button>
+													</div>
+
+													<div
+														class="product-card__badges product-card__badges--bottom"
+													></div>
+												</div>
+											</a>
+											<div
+												class="product-card__pagination swiper-pagination"
+												data-product-card-pagination
+											></div>
+											<div
+												class="product-card__pagination-invisible"
+												data-product-card-pagination-invisible=""
+											>
+												<a
+													href="/product.html"
+													class="product-card__pagination-link"
+													data-slide-index="0"
+													aria-label="Перейти на страницу товара"
+												></a>
+
+												<a
+													href="/product.html"
+													class="product-card__pagination-link"
+													data-slide-index="1"
+													aria-label="Перейти на страницу товара"
+												></a>
+
+												<a
+													href="/product.html"
+													class="product-card__pagination-link"
+													data-slide-index="2"
+													aria-label="Перейти на страницу товара"
+												></a>
+											</div>
+										</div>
+
+										<div class="product-card__content">
+											<div class="product-card__price">
+												<span
+													class="product-card__price-current"
+													>13 000 ₽</span
+												>
+											</div>
+
+											<h3 class="product-card__title">
+												Медицинский костюм из вискозной
+												ткани М12
+											</h3>
+											<div class="product-card__details">
+												<div
+													class="product-card__color"
+												>
+													<span
+														class="product-card__color-btn"
+														style="
+															background-color: #c72973;
+														"
+													></span>
+
+													<span
+														class="product-card__color-btn"
+														style="
+															background-color: #483393;
+														"
+													></span>
+
+													<span
+														class="product-card__color-btn has-border"
+														style="
+															background-color: #f0f0f0;
+														"
+													></span>
+
+													<div
+														class="product-card__color-more"
+													>
+														+3
+													</div>
+												</div>
+
+												<div
+													class="product-card__sizes"
+												>
+													размеры
+													<span
+														class="product-card__sizes-btn"
+														>40–54</span
+													>
+												</div>
+											</div>
+										</div>
+									</article>
+								</div>
+								<div class="swiper-slide products-slider__item">
+									<article
+										class="product-card"
+										data-product-card
+									>
+										<div class="product-card__media">
+											<a
+												href="/product.html"
+												class="product-card__link"
+											>
+												<div
+													class="product-card__wrapper"
+												>
+													<div
+														class="product-card__slider swiper"
+														data-product-card-slider
+													>
+														<div
+															class="product-card__wrapper swiper-wrapper"
+														>
+															<div
+																class="product-card__slide swiper-slide"
+															>
+																<img
+																	class="product-card__img"
+																	src="./assets/img/raster/product-2.png.webp"
+																	alt="Медицинский костюм M16 стрейч"
+																	loading="lazy"
+																/>
+															</div>
+
+															<div
+																class="product-card__slide swiper-slide"
+															>
+																<img
+																	class="product-card__img"
+																	src="./assets/img/raster/product-4.png.webp"
+																	alt="Медицинский костюм M16 стрейч"
+																	loading="lazy"
+																/>
+															</div>
+														</div>
+													</div>
+
+													<div
+														class="product-card__badges product-card__badges--top"
+													>
+														<span
+															class="badge badge-secondary"
+															>new</span
+														>
+													</div>
+
+													<button
+														class="product-card__favorite active"
+														type="button"
+													>
+														<span
+															class="visually-hidden"
+															>Убрать из
+															избранного</span
+														>
+
+														<svg
+															class="product-card__favorite-icon"
+															aria-hidden="true"
+														>
+															<use
+																href="./assets/img/svg/sprite.svg#heart-fill"
+															></use>
+														</svg>
+													</button>
+
+													<div
+														class="product-card__cart"
+													>
+														<button
+															class="product-card__cart-btn"
+															type="button"
+														>
+															<span
+																class="visually-hidden"
+																>Добавить в
+																корзину</span
+															>
+
+															<svg
+																class="product-card__cart-icon"
+																aria-hidden="true"
+															>
+																<use
+																	href="./assets/img/svg/sprite.svg#cart-stroke-thin"
+																></use>
+															</svg>
+															<span
+																class="product-card__counter"
+																>2</span
+															>
+														</button>
+													</div>
+
+													<div
+														class="product-card__badges product-card__badges--bottom"
+													>
+														<span
+															class="badge badge-accent product-card__discount"
+															>24%</span
+														>
+													</div>
+												</div>
+											</a>
+											<div
+												class="product-card__pagination swiper-pagination"
+												data-product-card-pagination
+											></div>
+											<div
+												class="product-card__pagination-invisible"
+												data-product-card-pagination-invisible=""
+											>
+												<a
+													href="/product.html"
+													class="product-card__pagination-link"
+													data-slide-index="0"
+													aria-label="Перейти на страницу товара"
+												></a>
+
+												<a
+													href="/product.html"
+													class="product-card__pagination-link"
+													data-slide-index="1"
+													aria-label="Перейти на страницу товара"
+												></a>
+
+												<a
+													href="/product.html"
+													class="product-card__pagination-link"
+													data-slide-index="2"
+													aria-label="Перейти на страницу товара"
+												></a>
+											</div>
+										</div>
+
+										<div class="product-card__content">
+											<div class="product-card__price">
+												<span
+													class="product-card__price-current"
+													>13 000 ₽</span
+												>
+
+												<span
+													class="text-strike product-card__price-old"
+												>
+													18 000 ₽
+												</span>
+											</div>
+
+											<h3 class="product-card__title">
+												Медицинский костюм M16 стрейч
+											</h3>
+											<div class="product-card__details">
+												<div
+													class="product-card__color"
+												>
+													<span
+														class="product-card__color-btn has-border"
+														style="
+															background-color: #fff;
+														"
+													></span>
+
+													<span
+														class="product-card__color-btn"
+														style="
+															background-color: #f96fdc;
+														"
+													></span>
+
+													<span
+														class="product-card__color-btn has-border"
+														style="
+															background-color: #f0f0f0;
+														"
+													></span>
+
+													<div
+														class="product-card__color-more"
+													>
+														+5
+													</div>
+												</div>
+
+												<div
+													class="product-card__sizes"
+												>
+													размеры
+													<span
+														class="product-card__sizes-btn"
+														>40–54</span
+													>
+												</div>
+											</div>
+										</div>
+									</article>
+								</div>
+								<div class="swiper-slide products-slider__item">
+									<article
+										class="product-card"
+										data-product-card
+									>
+										<div class="product-card__media">
+											<a
+												href="/product.html"
+												class="product-card__link"
+											>
+												<div
+													class="product-card__wrapper"
+												>
+													<div
+														class="product-card__slider swiper"
+														data-product-card-slider
+													>
+														<div
+															class="product-card__wrapper swiper-wrapper"
+														>
+															<div
+																class="product-card__slide swiper-slide"
+															>
+																<img
+																	class="product-card__img"
+																	src="./assets/img/raster/product-3.png.webp"
+																	alt="Медицинский костюм M16 стрейч"
+																	loading="lazy"
+																/>
+															</div>
+
+															<div
+																class="product-card__slide swiper-slide"
+															>
+																<img
+																	class="product-card__img"
+																	src="./assets/img/raster/product-4.png.webp"
+																	alt="Медицинский костюм M16 стрейч"
+																	loading="lazy"
+																/>
+															</div>
+
+															<div
+																class="product-card__slide swiper-slide"
+															>
+																<img
+																	class="product-card__img"
+																	src="./assets/img/raster/product-5.png.webp"
+																	alt="Медицинский костюм M16 стрейч"
+																	loading="lazy"
+																/>
+															</div>
+														</div>
+													</div>
+
+													<div
+														class="product-card__badges product-card__badges--top"
+													>
+														<span
+															class="badge badge-secondary"
+															>new</span
+														>
+													</div>
+
+													<button
+														class="product-card__favorite"
+														type="button"
+													>
+														<span
+															class="visually-hidden"
+															>Добавить в
+															избранное</span
+														>
+
+														<svg
+															class="product-card__favorite-icon"
+															aria-hidden="true"
+														>
+															<use
+																href="./assets/img/svg/sprite.svg#heart-fill"
+															></use>
+														</svg>
+													</button>
+
+													<div
+														class="product-card__cart"
+													>
+														<button
+															class="product-card__cart-btn"
+															type="button"
+														>
+															<span
+																class="visually-hidden"
+																>Добавить в
+																корзину</span
+															>
+
+															<svg
+																class="product-card__cart-icon"
+																aria-hidden="true"
+															>
+																<use
+																	href="./assets/img/svg/sprite.svg#cart-stroke-thin"
+																></use>
+															</svg>
+															<span
+																class="product-card__counter"
+																>2</span
+															>
+														</button>
+													</div>
+
+													<div
+														class="product-card__badges product-card__badges--bottom"
+													>
+														<span
+															class="badge badge-accent product-card__discount"
+															>24%</span
+														>
+													</div>
+												</div>
+											</a>
+											<div
+												class="product-card__pagination swiper-pagination"
+												data-product-card-pagination
+											></div>
+											<div
+												class="product-card__pagination-invisible"
+												data-product-card-pagination-invisible=""
+											>
+												<a
+													href="/product.html"
+													class="product-card__pagination-link"
+													data-slide-index="0"
+													aria-label="Перейти на страницу товара"
+												></a>
+
+												<a
+													href="/product.html"
+													class="product-card__pagination-link"
+													data-slide-index="1"
+													aria-label="Перейти на страницу товара"
+												></a>
+
+												<a
+													href="/product.html"
+													class="product-card__pagination-link"
+													data-slide-index="2"
+													aria-label="Перейти на страницу товара"
+												></a>
+											</div>
+										</div>
+
+										<div class="product-card__content">
+											<div class="product-card__price">
+												<span
+													class="product-card__price-current"
+													>13 000 ₽</span
+												>
+
+												<span
+													class="text-strike product-card__price-old"
+												>
+													18 000 ₽
+												</span>
+											</div>
+
+											<h3 class="product-card__title">
+												Медицинский костюм M16 стрейч
+											</h3>
+											<div class="product-card__details">
+												<div
+													class="product-card__color"
+												>
+													<span
+														class="product-card__color-btn"
+														style="
+															background-color: #f96fdc;
+														"
+													></span>
+												</div>
+
+												<div
+													class="product-card__sizes"
+												>
+													размеры
+													<span
+														class="product-card__sizes-btn"
+														>40–54</span
+													>
+												</div>
+											</div>
+										</div>
+									</article>
+								</div>
+								<div class="swiper-slide products-slider__item">
+									<article
+										class="product-card"
+										data-product-card
+									>
+										<div class="product-card__media">
+											<a
+												href="/product.html"
+												class="product-card__link"
+											>
+												<div
+													class="product-card__wrapper"
+												>
+													<div
+														class="product-card__slider swiper"
+														data-product-card-slider
+													>
+														<div
+															class="product-card__wrapper swiper-wrapper"
+														>
+															<div
+																class="product-card__slide swiper-slide"
+															>
+																<img
+																	class="product-card__img"
+																	src="./assets/img/raster/product-4.png.webp"
+																	alt="Медицинский костюм M16 стрейч"
+																	loading="lazy"
+																/>
+															</div>
+
+															<div
+																class="product-card__slide swiper-slide"
+															>
+																<img
+																	class="product-card__img"
+																	src="./assets/img/raster/product-5.png.webp"
+																	alt="Медицинский костюм M16 стрейч"
+																	loading="lazy"
+																/>
+															</div>
+
+															<div
+																class="product-card__slide swiper-slide"
+															>
+																<img
+																	class="product-card__img"
+																	src="./assets/img/raster/product-6.png.webp"
+																	alt="Медицинский костюм M16 стрейч"
+																	loading="lazy"
+																/>
+															</div>
+														</div>
+													</div>
+
+													<div
+														class="product-card__badges product-card__badges--top"
+													>
+														<span
+															class="badge badge-secondary"
+															>new</span
+														>
+													</div>
+
+													<button
+														class="product-card__favorite"
+														type="button"
+													>
+														<span
+															class="visually-hidden"
+															>Добавить в
+															избранное</span
+														>
+
+														<svg
+															class="product-card__favorite-icon"
+															aria-hidden="true"
+														>
+															<use
+																href="./assets/img/svg/sprite.svg#heart-fill"
+															></use>
+														</svg>
+													</button>
+
+													<div
+														class="product-card__cart"
+													>
+														<button
+															class="product-card__cart-btn"
+															type="button"
+														>
+															<span
+																class="visually-hidden"
+																>Добавить в
+																корзину</span
+															>
+
+															<svg
+																class="product-card__cart-icon"
+																aria-hidden="true"
+															>
+																<use
+																	href="./assets/img/svg/sprite.svg#cart-stroke-thin"
+																></use>
+															</svg>
+															<span
+																class="product-card__counter"
+																>2</span
+															>
+														</button>
+													</div>
+
+													<div
+														class="product-card__badges product-card__badges--bottom"
+													>
+														<span
+															class="badge badge-accent product-card__discount"
+															>24%</span
+														>
+													</div>
+												</div>
+											</a>
+											<div
+												class="product-card__pagination swiper-pagination"
+												data-product-card-pagination
+											></div>
+											<div
+												class="product-card__pagination-invisible"
+												data-product-card-pagination-invisible=""
+											>
+												<a
+													href="/product.html"
+													class="product-card__pagination-link"
+													data-slide-index="0"
+													aria-label="Перейти на страницу товара"
+												></a>
+
+												<a
+													href="/product.html"
+													class="product-card__pagination-link"
+													data-slide-index="1"
+													aria-label="Перейти на страницу товара"
+												></a>
+
+												<a
+													href="/product.html"
+													class="product-card__pagination-link"
+													data-slide-index="2"
+													aria-label="Перейти на страницу товара"
+												></a>
+											</div>
+										</div>
+
+										<div class="product-card__content">
+											<div class="product-card__price">
+												<span
+													class="product-card__price-current"
+													>13 000 ₽</span
+												>
+
+												<span
+													class="text-strike product-card__price-old"
+												>
+													18 000 ₽
+												</span>
+											</div>
+
+											<h3 class="product-card__title">
+												Медицинский костюм M16 стрейч
+											</h3>
+											<div class="product-card__details">
+												<div
+													class="product-card__color"
+												>
+													<span
+														class="product-card__color-btn"
+														style="
+															background-color: #c72973;
+														"
+													></span>
+												</div>
+
+												<div
+													class="product-card__sizes"
+												>
+													размеры
+													<span
+														class="product-card__sizes-btn"
+														>40–54</span
+													>
+												</div>
+											</div>
+										</div>
+									</article>
+								</div>
+
+								<div class="swiper-slide products-slider__item">
+									<article
+										class="product-card unavailable"
+										data-product-card
+									>
+										<div class="product-card__media">
+											<a
+												href="/product.html"
+												class="product-card__link"
+											>
+												<div
+													class="product-card__wrapper"
+												>
+													<div
+														class="product-card__slider swiper"
+														data-product-card-slider
+													>
+														<div
+															class="product-card__wrapper swiper-wrapper"
+														>
+															<div
+																class="product-card__slide swiper-slide"
+															>
+																<img
+																	class="product-card__img"
+																	src="./assets/img/raster/product-1.png.webp"
+																	alt="Медицинский костюм M16 стрейч"
+																	loading="lazy"
+																/>
+															</div>
+
+															<div
+																class="product-card__slide swiper-slide"
+															>
+																<img
+																	class="product-card__img"
+																	src="./assets/img/raster/product-2.png.webp"
+																	alt="Медицинский костюм M16 стрейч"
+																	loading="lazy"
+																/>
+															</div>
+
+															<div
+																class="product-card__slide swiper-slide"
+															>
+																<img
+																	class="product-card__img"
+																	src="./assets/img/raster/product-3.png.webp"
+																	alt="Медицинский костюм M16 стрейч"
+																	loading="lazy"
+																/>
+															</div>
+														</div>
+													</div>
+
+													<button
+														class="product-card__favorite"
+														type="button"
+													>
+														<span
+															class="visually-hidden"
+															>Добавить в
+															избранное</span
+														>
+
+														<svg
+															class="product-card__favorite-icon"
+															aria-hidden="true"
+														>
+															<use
+																href="./assets/img/svg/sprite.svg#heart-fill"
+															></use>
+														</svg>
+													</button>
+
+													<div
+														class="product-card__cart"
+													>
+														<button
+															class="product-card__cart-btn"
+															type="button"
+														>
+															<span
+																class="visually-hidden"
+																>Добавить в
+																корзину</span
+															>
+
+															<svg
+																class="product-card__cart-icon"
+																aria-hidden="true"
+															>
+																<use
+																	href="./assets/img/svg/sprite.svg#cart-stroke-thin"
+																></use>
+															</svg>
+															<span
+																class="product-card__counter"
+																>2</span
+															>
+														</button>
+													</div>
+
+													<div
+														class="product-card__badges product-card__badges--bottom"
+													></div>
+												</div>
+											</a>
+											<div
+												class="product-card__pagination swiper-pagination"
+												data-product-card-pagination
+											></div>
+											<div
+												class="product-card__pagination-invisible"
+												data-product-card-pagination-invisible=""
+											>
+												<a
+													href="/product.html"
+													class="product-card__pagination-link"
+													data-slide-index="0"
+													aria-label="Перейти на страницу товара"
+												></a>
+
+												<a
+													href="/product.html"
+													class="product-card__pagination-link"
+													data-slide-index="1"
+													aria-label="Перейти на страницу товара"
+												></a>
+
+												<a
+													href="/product.html"
+													class="product-card__pagination-link"
+													data-slide-index="2"
+													aria-label="Перейти на страницу товара"
+												></a>
+											</div>
+										</div>
+
+										<div class="product-card__content">
+											<h3 class="product-card__title">
+												Медицинский костюм M16 стрейч
+											</h3>
+											<div class="product-card__details">
+												<div
+													class="product-card__color"
+												></div>
+											</div>
+										</div>
+									</article>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+
+			<footer class="footer">
+				<div class="container footer__container">
+					<div class="footer__top">
+						<img
+							class="footer__logo"
+							src="/assets/img/svg/logo-desktop.svg"
+							alt="Логотип «Форма А1»"
+						/>
+						<a class="footer__up button-secondary" href="#app">
+							<svg aria-hidden="true">
+								<use
+									href="/assets/img/svg/sprite.svg#arrow-up"
+								></use>
+							</svg>
+						</a>
+						<div class="main-contact">
+							<a
+								class="main-contact__link"
+								href="tel:+74932333333"
+								>8 4932 333 333</a
+							>
+							<span class="text-grey"
+								>Звонки принимаются пн-пт с 9 до 19</span
+							>
+						</div>
+						<button
+							class="footer__request button-lg button-primary"
+							data-global-action="modal-open"
+							data-modal="request"
+						>
+							Заказать звонок
+						</button>
+					</div>
+					<div class="footer__mid">
+						<nav class="footer__nav">
+							<div class="footer__nav-section">
+								<p
+									class="footer__nav-title title-lg font-semibold"
+								>
+									Покупателям
+								</p>
+								<ul class="footer__nav-list">
+									<li class="footer__nav-item">
+										<a
+											href=""
+											class="body-text-xxl font-medium footer__nav-link"
+											>Каталог</a
+										>
+									</li>
+									<li class="footer__nav-item">
+										<a
+											href=""
+											class="body-text-xxl font-medium footer__nav-link"
+											>Подборки</a
+										>
+									</li>
+									<li class="footer__nav-item">
+										<a
+											href=""
+											class="body-text-xxl font-medium footer__nav-link"
+											>Личный кабинет</a
+										>
+									</li>
+									<li class="footer__nav-item">
+										<a
+											href=""
+											class="body-text-xxl font-medium footer__nav-link"
+											>Вопросы – ответы</a
+										>
+									</li>
+									<li class="footer__nav-item">
+										<a
+											href=""
+											class="body-text-xxl font-medium footer__nav-link"
+											>Новости</a
+										>
+									</li>
+									<li class="footer__nav-item">
+										<a
+											href=""
+											class="body-text-xxl font-medium footer__nav-link"
+											>Контакты</a
+										>
+									</li>
+								</ul>
+							</div>
+							<div class="footer__nav-section">
+								<p
+									class="footer__nav-title title-lg font-semibold"
+								>
+									Помощь
+								</p>
+								<ul class="footer__nav-list">
+									<li class="footer__nav-item">
+										<a
+											href=""
+											class="body-text-xxl font-medium footer__nav-link"
+											>Доставка</a
+										>
+									</li>
+									<li class="footer__nav-item">
+										<a
+											href=""
+											class="body-text-xxl font-medium footer__nav-link"
+											>Оплата</a
+										>
+									</li>
+									<li class="footer__nav-item">
+										<a
+											href=""
+											class="body-text-xxl font-medium footer__nav-link"
+											>Гарантия</a
+										>
+									</li>
+									<li class="footer__nav-item">
+										<a
+											href=""
+											class="body-text-xxl font-medium footer__nav-link"
+											>Возврат</a
+										>
+									</li>
+									<li class="footer__nav-item">
+										<a
+											href=""
+											class="body-text-xxl font-medium footer__nav-link"
+											>Документация</a
+										>
+									</li>
+								</ul>
+							</div>
+						</nav>
+						<address class="footer__contacts">
+							<div class="footer__connection">
+								<p
+									class="footer__contacts-title title-lg font-semibold"
+								>
+									Контактная информация
+								</p>
+								<ul
+									class="footer__connection-list contacts-grid"
+								>
+									<li class="contacts-grid-item">
+										<a
+											href="#"
+											class="body-text-md font-medium contacts-grid-link"
+										>
+											<svg aria-hidden="true">
+												<use
+													href="/assets/img/svg/sprite.svg#place"
+												></use>
+											</svg>
+											Иваново, пер. Конспиративный д. 11
+										</a>
+									</li>
+									<li class="contacts-grid-item">
+										<a
+											href="https://t.me/+78001000000"
+											class="body-text-md font-medium contacts-grid-link"
+										>
+											<svg aria-hidden="true">
+												<use
+													href="/assets/img/svg/sprite.svg#telegram"
+												></use>
+											</svg>
+											Telegram
+										</a>
+									</li>
+									<li class="contacts-grid-item">
+										<a
+											href="https://wa.me/78001000000"
+											class="body-text-md font-medium contacts-grid-link"
+										>
+											<svg aria-hidden="true">
+												<use
+													href="/assets/img/svg/sprite.svg#whatsapp"
+												></use>
+											</svg>
+											WhatsApp
+										</a>
+									</li>
+									<li class="contacts-grid-item">
+										<a
+											href="mailto:a1@mail.ru"
+											class="body-text-md font-medium contacts-grid-link"
+										>
+											<svg aria-hidden="true">
+												<use
+													href="/assets/img/svg/sprite.svg#mail"
+												></use>
+											</svg>
+											A1@mail.ru
+										</a>
+									</li>
+								</ul>
+							</div>
+
+							<div class="footer__socials">
+								<p
+									class="footer__contacts-title title-lg font-semibold"
+								>
+									Социальные сети
+								</p>
+								<ul class="footer__socials-list">
+									<li class="footer__socials-item">
+										<a
+											href="#"
+											class="footer__socials-link body-text-xxl font-medium"
+										>
+											<svg aria-hidden="true">
+												<use
+													href="/assets/img/svg/sprite.svg#vk"
+												></use>
+											</svg>
+											<span class="visually-hidden">
+												Вконтакте
+											</span>
+										</a>
+									</li>
+									<li class="footer__socials-item">
+										<a
+											href="#"
+											class="footer__socials-link body-text-xxl font-medium"
+										>
+											<svg aria-hidden="true">
+												<use
+													href="/assets/img/svg/sprite.svg#telegram"
+												></use>
+											</svg>
+											<span class="visually-hidden">
+												Телеграмм
+											</span>
+										</a>
+									</li>
+									<li class="footer__socials-item">
+										<a
+											href="#"
+											class="footer__socials-link body-text-xxl font-medium"
+										>
+											<svg aria-hidden="true">
+												<use
+													href="/assets/img/svg/sprite.svg#instagram"
+												></use>
+											</svg>
+											<span class="visually-hidden">
+												Instagram
+											</span>
+										</a>
+									</li>
+									<li class="footer__socials-item">
+										<a
+											href="#"
+											class="footer__socials-link body-text-xxl font-medium"
+										>
+											<svg aria-hidden="true">
+												<use
+													href="/assets/img/svg/sprite.svg#youtube"
+												></use>
+											</svg>
+											<span class="visually-hidden">
+												Youtube
+											</span>
+										</a>
+									</li>
+									<li class="footer__socials-item">
+										<a
+											href="#"
+											class="footer__socials-link body-text-xxl font-medium"
+										>
+											<svg aria-hidden="true">
+												<use
+													href="/assets/img/svg/sprite.svg#whatsapp"
+												></use>
+											</svg>
+											<span class="visually-hidden">
+												Whatsapp
+											</span>
+										</a>
+									</li>
+									<li class="footer__socials-item">
+										<a
+											href="#"
+											class="footer__socials-link body-text-xxl font-medium"
+										>
+											<svg aria-hidden="true">
+												<use
+													href="/assets/img/svg/sprite.svg#ok"
+												></use>
+											</svg>
+											<span class="visually-hidden">
+												Одноклассники
+											</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</address>
+					</div>
+					<div class="footer__bottom">
+						<div class="footer__links">
+							<a
+								class="body-text-md font-medium text-grey"
+								href="#"
+								>Политика конфиденциальности
+							</a>
+							<a
+								class="body-text-md font-medium text-grey"
+								href="#"
+								>Юридическая информация</a
+							>
+							<a
+								class="body-text-md font-medium text-grey"
+								href="#"
+								>Реквизиты</a
+							>
+						</div>
+						<span class="body-text-md font-medium text-grey"
+							>Создано в
+							<a
+								class="text-grey"
+								href="https://drozzi-it.ru/"
+								target="_blank"
+								>drozzi-it</a
+							></span
+						>
+					</div>
+				</div>
+			</footer>
+
+			<nav class="bottom-nav">
+				<ul class="bottom-nav__list">
+					<li class="bottom-nav__item">
+						<a href="/" class="bottom-nav__link active">
+							<span class="bottom-nav__icon icon">
+								<svg aria-hidden="true">
+									<use
+										href="/assets/img/svg/sprite.svg#home"
+									></use>
+								</svg>
+							</span>
+
+							<span class="bottom-nav__label">Главная</span>
+						</a>
+					</li>
+
+					<li class="bottom-nav__item">
+						<a
+							href="/catalog.html"
+							class="bottom-nav__link"
+							data-global-action="mobile-catalog-toggle"
+						>
+							<span class="bottom-nav__icon icon">
+								<svg aria-hidden="true">
+									<use
+										href="/assets/img/svg/sprite.svg#catalog"
+									></use>
+								</svg>
+							</span>
+
+							<span class="bottom-nav__label">Каталог</span>
+						</a>
+					</li>
+
+					<li class="bottom-nav__item">
+						<a href="/basket.html" class="bottom-nav__link">
+							<span class="bottom-nav__icon icon">
+								<span class="icon-counter" data-nav-counter="1">
+									<span class="visually-hidden">1</span>
+								</span>
+								<svg aria-hidden="true">
+									<use
+										href="/assets/img/svg/sprite.svg#cart"
+									></use>
+								</svg>
+							</span>
+
+							<span class="bottom-nav__label">Корзина</span>
+						</a>
+					</li>
+
+					<li class="bottom-nav__item">
+						<a href="#" class="bottom-nav__link">
+							<span class="bottom-nav__icon icon">
+								<span
+									class="icon-counter"
+									data-nav-counter="72"
+								>
+									<span class="visually-hidden">72</span>
+								</span>
+								<svg aria-hidden="true">
+									<use
+										href="/assets/img/svg/sprite.svg#heart"
+									></use>
+								</svg>
+							</span>
+
+							<span class="bottom-nav__label">Избранное</span>
+						</a>
+					</li>
+					<li class="bottom-nav__item">
+						<a
+							href="#"
+							class="bottom-nav__link"
+							data-global-action="mobile-account-toggle"
+						>
+							<span class="bottom-nav__icon icon">
+								<span
+									class="icon-counter"
+									data-nav-counter="100"
+								>
+									<span class="visually-hidden">100</span>
+								</span>
+								<svg aria-hidden="true">
+									<use
+										href="/assets/img/svg/sprite.svg#user"
+									></use>
+								</svg>
+							</span>
+
+							<span class="bottom-nav__label">Профиль</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+
+			<dialog class="modal" data-modal="auth">
+				<div class="modal__container thin-scrollbar">
+					<div class="modal__content">
+						<div class="form">
+							<header class="form__header">
+								<div
+									class="heading-md font-semibold form__title"
+								>
+									Вход
+								</div>
+							</header>
+
+							<form class="form__content">
+								<div class="input title-input">
+									<div class="input-wrapper">
+										<input
+											id="phone"
+											class="input-elem"
+											name="phone"
+											type="tel"
+											placeholder="Номер телефона"
+											inputmode="tel"
+										/>
+										<label
+											for="phone"
+											class="input-label"
+											data-content="Номер телефона"
+										></label>
+									</div>
+								</div>
+								<div class="input title-input">
+									<div class="input-wrapper">
+										<input
+											id="password"
+											class="input-elem"
+											name="password"
+											type="password"
+											placeholder="Пароль"
+											inputmode="text"
+											autocomplete="current-password"
+										/>
+										<label
+											for="password"
+											class="input-label"
+											data-content="Пароль"
+										></label>
+										<label class="input-switcher">
+											<input
+												class="visually-hidden"
+												type="checkbox"
+											/>
+											<span
+												class="input-switcher-wrapper"
+											>
+												<svg
+													class="input-icon input-icon--switcher input-switcher-on"
+													aria-hidden="true"
+												>
+													<use
+														href="./assets/img/svg/sprite.svg#eye-fill"
+													></use>
+												</svg>
+												<svg
+													class="input-icon input-icon--switcher input-switcher-off"
+													aria-hidden="true"
+												>
+													<use
+														href="./assets/img/svg/sprite.svg#eye-close"
+													></use>
+												</svg>
+											</span>
+										</label>
+									</div>
+								</div>
+
+								<div class="form__actions">
+									<button class="button-lg button-primary">
+										Получить код
+									</button>
+									<button class="button-transparent">
+										<svg aria-hidden="true">
+											<use
+												href="./assets/img/svg/sprite.svg#phone"
+											></use>
+										</svg>
+										Войти по номеру телефона
+									</button>
+								</div>
+							</form>
+
+							<div class="body-text-xxs text-grey form__warning">
+								Нажимая на&nbsp;кнопку я принимаю условия
+								<a href="#" target="_blank"
+									>политики конфиденциальности</a
+								>
+								и
+								<a href="#" target="_blank"
+									>обработки персональных данных</a
+								>
+							</div>
+						</div>
+
+						<div class="form">
+							<header class="form__header">
+								<div
+									class="heading-md font-semibold form__title"
+								>
+									Вход
+								</div>
+								<div class="form__text">
+									Позвоним или пришлём SMS. Введите последние
+									четыре цифры входящего номера телефона или
+									код из SMS-сообщения.
+								</div>
+							</header>
+
+							<form class="form__content">
+								<div class="input title-input">
+									<div class="input-wrapper">
+										<input
+											id="phone-1"
+											class="input-elem"
+											name="phone"
+											type="tel"
+											placeholder="Номер телефона"
+											inputmode="tel"
+										/>
+										<label
+											for="phone-1"
+											class="input-label"
+											data-content="Номер телефона"
+										></label>
+									</div>
+								</div>
+
+								<div class="form__actions">
+									<button class="button-lg button-primary">
+										Получить код
+									</button>
+									<button class="button-transparent">
+										<svg aria-hidden="true">
+											<use
+												href="./assets/img/svg/sprite.svg#key"
+											></use>
+										</svg>
+										Войти с паролем
+									</button>
+								</div>
+							</form>
+
+							<div class="body-text-xxs text-grey form__warning">
+								Нажимая на&nbsp;кнопку я принимаю условия
+								<a href="#" target="_blank"
+									>политики конфиденциальности</a
+								>
+								и
+								<a href="#" target="_blank"
+									>обработки персональных данных</a
+								>
+							</div>
+						</div>
+
+						<div class="form">
+							<button class="form__back" aria-label="Назад">
+								<svg aria-hidden="true">
+									<use
+										href="./assets/img/svg/sprite.svg#arrow-left-short"
+									></use>
+								</svg>
+							</button>
+							<header class="form__header">
+								<div
+									class="heading-md font-semibold form__title"
+								>
+									Подтвердите номер
+								</div>
+								<div class="form__confirm">
+									<div
+										class="title-lg font-semibold form__confirm-object"
+									>
+										+7 915 888 99 10
+									</div>
+									<div class="form__confirm-text">
+										Введите код из смс или последние
+										<b>4 цифры</b> входящего номера
+									</div>
+									<div
+										class="text-grey form__confirm-example"
+									>
+										Например +7 ХХХ ХХХ <b>ХХ ХХ</b>
+									</div>
+								</div>
+							</header>
+
+							<form class="form__content">
+								<div class="input title-input">
+									<div class="input-wrapper">
+										<input
+											id="code"
+											class="input-elem"
+											name="code"
+											type="text"
+											placeholder="Ваш код"
+											inputmode="numeric"
+											autocomplete="one-time-code"
+										/>
+										<label
+											for="code"
+											class="input-label"
+											data-content="Ваш код"
+										></label>
+									</div>
+									<div class="input-hint">
+										<svg
+											class="input-icon input-icon--hint"
+											aria-hidden="true"
+										>
+											<use
+												href="./assets/img/svg/sprite.svg#info-circle-fill"
+											></use>
+										</svg>
+										<span>
+											Запросить следующий код возможно
+											через 14 секунд
+										</span>
+									</div>
+								</div>
+
+								<div class="form__actions">
+									<button class="button-lg button-primary">
+										Подтвердить номер
+									</button>
+									<button class="button-transparent">
+										Отправить новый код
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+					<button
+						class="modal__close"
+						data-global-action="modal-close"
+					>
+						<svg class="modal__close-icon" aria-hidden="true">
+							<use
+								href="./assets/img/svg/sprite.svg#cancel"
+							></use>
+						</svg>
+					</button>
+				</div>
+
+				<div
+					class="modal__overlay"
+					data-global-action="modal-close"
+				></div>
+			</dialog>
+
+			<dialog class="modal" data-modal="request">
+				<div class="modal__container thin-scrollbar">
+					<div class="modal__content">
+						<div class="form">
+							<header class="form__header">
+								<div
+									class="heading-md font-semibold form__title"
+								>
+									Оставьте заявку на бесплатную консультацию
+								</div>
+								<div class="form__text">
+									Оставьте контактные данные и мы свяжемся с
+									Вами!
+								</div>
+							</header>
+
+							<form class="form__content">
+								<div class="input main-input">
+									<div class="input-wrapper">
+										<input
+											id="name"
+											class="input-elem"
+											name="name"
+											type="text"
+											placeholder="Введите ваше имя"
+											value=""
+										/>
+										<label
+											for="name"
+											class="input-label"
+											data-content="Имя"
+										></label>
+									</div>
+								</div>
+
+								<div class="input title-input">
+									<div class="input-wrapper">
+										<input
+											id="phone"
+											class="input-elem"
+											name="phone"
+											type="tel"
+											placeholder="Номер телефона"
+											inputmode="tel"
+										/>
+										<label
+											for="phone"
+											class="input-label"
+											data-content="Номер телефона"
+										></label>
+									</div>
+								</div>
+
+								<div class="form__actions">
+									<button class="button-lg button-primary">
+										Отправить
+									</button>
+								</div>
+							</form>
+
+							<div class="body-text-xxs text-grey form__warning">
+								Нажимая на&nbsp;кнопку я принимаю условия
+								<a href="#" target="_blank"
+									>политики конфиденциальности</a
+								>
+								и
+								<a href="#" target="_blank"
+									>обработки персональных данных</a
+								>
+							</div>
+						</div>
+					</div>
+					<button
+						class="modal__close"
+						data-global-action="modal-close"
+					>
+						<svg class="modal__close-icon" aria-hidden="true">
+							<use
+								href="./assets/img/svg/sprite.svg#cancel"
+							></use>
+						</svg>
+					</button>
+				</div>
+
+				<div
+					class="modal__overlay"
+					data-global-action="modal-close"
+				></div>
+			</dialog>
+
+			<dialog class="modal" data-modal="m-contacts">
+				<div class="modal__container thin-scrollbar">
+					<div class="modal__content">
+						<div class="m-contacts">
+							<header class="m-contacts__header">
+								<div class="heading-md font-medium">
+									Контакты
+								</div>
+							</header>
+
+							<ul class="m-contacts__list">
+								<li>
+									<a
+										href="https://t.me/tildanews"
+										target="_blank"
+										class="button-xl button-secondary"
+									>
+										<svg aria-hidden="true">
+											<use
+												href="./assets/img/svg/sprite.svg#telegram"
+											></use>
+										</svg>
+										Написать нам
+									</a>
+								</li>
+								<li>
+									<a
+										href="mailto:formaA1@mail.ru"
+										target="_blank"
+										class="button-xl button-secondary"
+									>
+										<svg aria-hidden="true">
+											<use
+												href="./assets/img/svg/sprite.svg#mail-fill"
+											></use>
+										</svg>
+										formaA1@mail.ru
+									</a>
+								</li>
+							</ul>
+
+							<div class="m-contacts__phone">
+								<a
+									class="font-semibold m-contacts__phone-link"
+									href="tel:88002013831"
+									>8 (800) 201-38-31</a
+								>
+								<span
+									class="body-text-xl text-grey m-contacts__caption"
+									>По всем вопросам</span
+								>
+							</div>
+
+							<div class="m-contacts__socials">
+								<ul class="m-contacts__socials-list">
+									<li>
+										<a href="#">
+											<svg aria-hidden="true">
+												<use
+													href="./assets/img/svg/sprite.svg#telegram"
+												></use>
+											</svg>
+											<span class="visually-hidden"
+												>Телеграмм</span
+											>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<svg aria-hidden="true">
+												<use
+													href="./assets/img/svg/sprite.svg#whatsapp"
+												></use>
+											</svg>
+											<span class="visually-hidden"
+												>Whatsapp</span
+											>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<svg aria-hidden="true">
+												<use
+													href="./assets/img/svg/sprite.svg#vk"
+												></use>
+											</svg>
+											<span class="visually-hidden"
+												>ВК</span
+											>
+										</a>
+									</li>
+								</ul>
+								<span
+									class="body-text-xl text-grey m-contacts__caption"
+									>Мы в соцсетях</span
+								>
+							</div>
+						</div>
+					</div>
+					<button
+						class="modal__close"
+						data-global-action="modal-close"
+					>
+						<svg class="modal__close-icon" aria-hidden="true">
+							<use
+								href="./assets/img/svg/sprite.svg#cancel"
+							></use>
+						</svg>
+					</button>
+				</div>
+
+				<div
+					class="modal__overlay"
+					data-global-action="modal-close"
+				></div>
+			</dialog>
+		</div>
+		<script src="./assets/js/vendors.min.js"></script>
+		<script src="./assets/js/main.min.js"></script>
+	</body>
+</html>

@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="#fff" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<link
+			rel="icon"
+			href="./assets/img/favicon/favicon.svg"
+			type="image/svg+xml"
+		/>
+		<link rel="apple-touch-icon" href="./assets/img/favicon/180.png" />
+		<link rel="manifest" href="manifest.webmanifest" />
+		<link rel="stylesheet" href="assets/css/vendors.min.css" />
+		<link rel="stylesheet" href="assets/css/style.min.css" />
+		<title>UI</title>
+		<style>
+			.ui {
+				display: grid;
+				gap: 40px;
+				padding: 40px 0;
+			}
+
+			@media (min-width: 768px) {
+				.ui {
+					grid-template-columns: repeat(2, 1fr);
+				}
+			}
+
+			@media (min-width: 1024px) {
+				.ui {
+					grid-template-columns: repeat(3, 1fr);
+				}
+			}
+
+			.ui-section {
+				display: flex;
+				flex-direction: column;
+				gap: 8px;
+				padding: 40px;
+				border: 1px dashed var(--color-stroke-secondary);
+				border-radius: 24px;
+				background-color: var(--color-highlight-contrast);
+			}
+
+			.ui-separator {
+				margin: 24px 0;
+				width: 100%;
+				border-bottom: 1px dashed var(--color-stroke-secondary);
+			}
+
+			.ui-title {
+				margin-bottom: 16px;
+				padding: 4px 12px;
+				text-align: center;
+				border-top: 1px dashed var(--color-stroke-secondary);
+				border-bottom: 1px dashed var(--color-stroke-secondary);
+
+				&:not(:first-child) {
+					margin-top: 16px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main class="main">
+			<div class="container">
+				<div class="ui">
+					<div class="ui-section">
+						<p class="body-text-xxs font-semibold ui-title">
+							Ссылки на Wildberries
+						</p>
+						<a href="#" class="button-lg button-wildberries"
+							>Wildberries</a
+						>
+						<a href="#" class="button-lg button-wildberries-2"
+							>Wildberries</a
+						>
+						<a
+							href="#"
+							class="button-lg button-wildberries-bordered"
+							>Wildberries</a
+						>
+
+						<p class="body-text-xxs font-semibold ui-title">
+							Ссылки на Ozon
+						</p>
+
+						<a href="#" class="button-lg button-ozon">Ozon</a>
+						<a href="#" class="button-lg button-ozon-2">Ozon</a>
+						<a href="#" class="button-lg button-ozon-bordered"
+							>Ozon</a
+						>
+					</div>
+
+					<div class="ui-section">
+						<p class="body-text-xxs font-semibold ui-title">
+							button primary xl
+						</p>
+
+						<button class="button-xl button-primary">Button</button>
+						<button disabled class="button-xl button-primary">
+							Button
+						</button>
+
+						<p class="body-text-xxs font-semibold ui-title">
+							button secondary lg
+						</p>
+
+						<button class="button-lg button-secondary">
+							Button
+						</button>
+						<button disabled class="button-lg button-secondary">
+							Button
+						</button>
+
+						<p class="body-text-xxs font-semibold ui-title">
+							button bordered rounded sm
+						</p>
+
+						<button class="button-xs-rounded button-bordered">
+							Button
+						</button>
+						<button
+							disabled
+							class="button-xs-rounded button-bordered"
+						>
+							Button
+						</button>
+					</div>
+
+					<div class="ui-section">
+						<p class="body-text-xxs font-semibold ui-title">
+							checkbox
+						</p>
+
+						<label class="checkbox">
+							<input
+								class="checkbox-input"
+								type="checkbox"
+								name="чекбокс"
+							/>
+							<span class="checkbox-text">Чекбокс</span>
+						</label>
+						<label class="checkbox">
+							<input
+								checked
+								class="checkbox-input"
+								type="checkbox"
+								name="чекбокс"
+							/>
+							<span class="checkbox-text">Чекбокс</span>
+						</label>
+						<label class="checkbox">
+							<input
+								disabled
+								class="checkbox-input"
+								type="checkbox"
+								name="чекбокс"
+							/>
+							<span class="checkbox-text">Чекбокс</span>
+						</label>
+						<label class="checkbox">
+							<input
+								checked
+								disabled
+								class="checkbox-input"
+								type="checkbox"
+								name="чекбокс"
+							/>
+							<span class="checkbox-text">Чекбокс</span>
+						</label>
+
+						<label class="checkbox">
+							<input
+								class="checkbox-input"
+								type="checkbox"
+								name="color"
+							/>
+							<span
+								class="checkbox-color"
+								style="
+									--back-color: #ede6ca;
+									--border-color: #ede6ca;
+								"
+							></span>
+							<span class="checkbox-text"> Бежевый </span>
+						</label>
+						<label class="checkbox">
+							<input
+								class="checkbox-input"
+								type="checkbox"
+								name="color"
+							/>
+							<span
+								class="checkbox-color"
+								style="
+									--back-color: #327be2;
+									--border-color: #327be2;
+								"
+							></span>
+							<span class="checkbox-text"> Голубой </span>
+						</label>
+						<label class="checkbox">
+							<input
+								class="checkbox-input"
+								type="checkbox"
+								name="color"
+							/>
+							<span
+								class="checkbox-color"
+								style="--back-color: #fff"
+							></span>
+							<span class="checkbox-text"> Белый </span>
+						</label>
+
+						<p class="body-text-xxs font-semibold ui-title">
+							radio
+						</p>
+
+						<label class="radio">
+							<input
+								class="radio-input"
+								type="radio"
+								name="radio"
+							/>
+							<span class="radio-text">Радио</span>
+						</label>
+						<label class="radio">
+							<input
+								checked
+								class="radio-input"
+								type="radio"
+								name="radio"
+							/>
+							<span class="radio-text">Радио</span>
+						</label>
+						<label class="radio">
+							<input
+								disabled
+								class="radio-input"
+								type="radio"
+								name="radio-disabled"
+							/>
+							<span class="radio-text">Радио</span>
+						</label>
+						<label class="radio">
+							<input
+								checked
+								disabled
+								class="radio-input"
+								type="radio"
+								name="radio-disabled"
+							/>
+							<span class="radio-text">radio</span>
+						</label>
+
+						<p class="body-text-xxs font-semibold ui-title">
+							toggle
+						</p>
+
+						<label class="toggle">
+							<input
+								class="toggle-input"
+								type="checkbox"
+								name="переключатель"
+							/>
+						</label>
+
+						<label class="toggle">
+							<input
+								class="toggle-input"
+								type="checkbox"
+								name="переключатель"
+								checked
+							/>
+						</label>
+
+						<p class="body-text-xxs font-semibold ui-title">
+							range
+						</p>
+
+						<div
+							class="range"
+							data-range-from="0"
+							data-range-to="6000"
+							data-range-max="10000"
+						>
+							<div class="range__inputs">
+								<div class="range__from">
+									<input
+										class="range__input"
+										type="number"
+										name="price_from"
+										value=""
+										aria-label="цена изменить от"
+									/>
+								</div>
+								<div class="range__to">
+									<input
+										class="range__input"
+										type="number"
+										name="price_to"
+										value=""
+										aria-label="цена изменить до"
+									/>
+								</div>
+							</div>
+							<div class="range__slider">
+								<div class="range__track"></div>
+								<input
+									class="range__slider-from"
+									type="range"
+									min="0"
+									max="10000"
+									value="0"
+									aria-label="изменить от"
+								/>
+								<input
+									class="range__slider-to"
+									type="range"
+									min="0"
+									max="10000"
+									value="10000"
+									aria-label="изменить до"
+								/>
+							</div>
+						</div>
+					</div>
+
+					<div class="ui-section">
+						<button
+							class="chip"
+							type="button"
+							aria-selected="false"
+						>
+							Тапиры
+						</button>
+						<button
+							class="chip active"
+							type="button"
+							aria-selected="true"
+						>
+							Ламантины
+						</button>
+					</div>
+
+					<div class="ui-section">
+						<div class="quantity-counter" data-count="1">
+							<button class="text-grey quantity-counter__delete">
+								<svg aria-hidden="true">
+									<use
+										href="./assets/img/svg/sprite.svg#delete"
+									></use>
+								</svg>
+								<span class="visually-hidden">Удалить</span>
+							</button>
+							<button class="text-grey quantity-counter__minus">
+								<svg aria-hidden="true">
+									<use
+										href="./assets/img/svg/sprite.svg#minus"
+									></use>
+								</svg>
+								<span class="visually-hidden"
+									>Уменьшить количество</span
+								>
+							</button>
+							<input
+								type="number"
+								class="body-text-md font-semibold quantity-counter__input"
+								value="1"
+								min="1"
+								max="1000"
+							/>
+							<button class="quantity-counter__plus">
+								<svg aria-hidden="true">
+									<use
+										href="./assets/img/svg/sprite.svg#plus"
+									></use>
+								</svg>
+								<span class="visually-hidden"
+									>Увеличить количество</span
+								>
+							</button>
+						</div>
+
+						<div class="quantity-counter" data-count="2">
+							<button class="text-grey quantity-counter__delete">
+								<svg aria-hidden="true">
+									<use
+										href="./assets/img/svg/sprite.svg#delete"
+									></use>
+								</svg>
+								<span class="visually-hidden">Удалить</span>
+							</button>
+							<button class="text-grey quantity-counter__minus">
+								<svg aria-hidden="true">
+									<use
+										href="./assets/img/svg/sprite.svg#minus"
+									></use>
+								</svg>
+								<span class="visually-hidden"
+									>Уменьшить количество</span
+								>
+							</button>
+							<input
+								type="number"
+								class="body-text-md font-semibold quantity-counter__input"
+								value="2"
+								min="1"
+								max="1000"
+							/>
+							<button class="quantity-counter__plus">
+								<svg aria-hidden="true">
+									<use
+										href="./assets/img/svg/sprite.svg#plus"
+									></use>
+								</svg>
+								<span class="visually-hidden"
+									>Увеличить количество</span
+								>
+							</button>
+						</div>
+					</div>
+					<div class="ui-section">
+						<button class="favorite">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								fill="none"
+							>
+								<path
+									d="M16.6865 4.5498C18.0157 4.5513 19.2896 5.08064 20.2295 6.02051C21.1105 6.90153 21.6305 8.07598 21.6934 9.31446L21.7002 9.56349C21.6997 12.47 19.5164 15.2307 17.0557 17.3857C14.7013 19.4476 12.2928 20.7809 12 20.9385C11.7072 20.7809 9.29874 19.4476 6.94434 17.3857C4.48358 15.2307 2.30029 12.47 2.2998 9.56349C2.3013 8.23431 2.83064 6.96038 3.77051 6.02051C4.71017 5.08085 5.98365 4.55154 7.3125 4.5498C9.01458 4.5498 10.4653 5.27774 11.3604 6.46973L12 7.32227L12.6396 6.46973C13.5345 5.27797 14.9849 4.55008 16.6865 4.5498Z"
+									stroke="currentColor"
+									stroke-width="2.3"
+									stroke-linejoin="round"
+								/>
+							</svg>
+							<span class="visually-hidden"
+								>Добавить в избранное</span
+							>
+						</button>
+						<button class="active favorite">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								fill="none"
+							>
+								<path
+									d="M16.6865 4.5498C18.0157 4.5513 19.2896 5.08064 20.2295 6.02051C21.1105 6.90153 21.6305 8.07598 21.6934 9.31446L21.7002 9.56349C21.6997 12.47 19.5164 15.2307 17.0557 17.3857C14.7013 19.4476 12.2928 20.7809 12 20.9385C11.7072 20.7809 9.29874 19.4476 6.94434 17.3857C4.48358 15.2307 2.30029 12.47 2.2998 9.56349C2.3013 8.23431 2.83064 6.96038 3.77051 6.02051C4.71017 5.08085 5.98365 4.55154 7.3125 4.5498C9.01458 4.5498 10.4653 5.27774 11.3604 6.46973L12 7.32227L12.6396 6.46973C13.5345 5.27797 14.9849 4.55008 16.6865 4.5498Z"
+									stroke="currentColor"
+									stroke-width="2.3"
+									stroke-linejoin="round"
+								/>
+							</svg>
+							<span class="visually-hidden"
+								>Убрать из избранного</span
+							>
+						</button>
+						<button class="favorite-lite">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								fill="none"
+							>
+								<path
+									d="M16.6865 4.5498C18.0157 4.5513 19.2896 5.08064 20.2295 6.02051C21.1105 6.90153 21.6305 8.07598 21.6934 9.31446L21.7002 9.56349C21.6997 12.47 19.5164 15.2307 17.0557 17.3857C14.7013 19.4476 12.2928 20.7809 12 20.9385C11.7072 20.7809 9.29874 19.4476 6.94434 17.3857C4.48358 15.2307 2.30029 12.47 2.2998 9.56349C2.3013 8.23431 2.83064 6.96038 3.77051 6.02051C4.71017 5.08085 5.98365 4.55154 7.3125 4.5498C9.01458 4.5498 10.4653 5.27774 11.3604 6.46973L12 7.32227L12.6396 6.46973C13.5345 5.27797 14.9849 4.55008 16.6865 4.5498Z"
+									stroke="currentColor"
+									stroke-width="2.3"
+									stroke-linejoin="round"
+								/>
+							</svg>
+							<span class="visually-hidden"
+								>Убрать из избранного</span
+							>
+						</button>
+						<button class="share">
+							<svg aria-hidden="true">
+								<use
+									href="./assets/img/svg/sprite.svg#export"
+								></use>
+							</svg>
+							<span class="visually-hidden">Поделиться</span>
+						</button>
+						<button class="delete">
+							<svg aria-hidden="true">
+								<use
+									href="./assets/img/svg/sprite.svg#delete"
+								></use>
+							</svg>
+							<span class="visually-hidden">Удалить</span>
+						</button>
+						<button class="delete-lite">
+							<svg aria-hidden="true">
+								<use
+									href="./assets/img/svg/sprite.svg#delete"
+								></use>
+							</svg>
+							<span class="visually-hidden">Удалить</span>
+						</button>
+					</div>
+				</div>
+
+				<div class="input title-input">
+					<div class="input-wrapper">
+						<input
+							id="phone"
+							class="input-elem"
+							name="phone"
+							type="tel"
+							placeholder="Номер телефона"
+						/>
+						<label
+							for="phone"
+							class="input-label"
+							data-content="Номер телефона"
+						></label>
+					</div>
+				</div>
+
+				<div class="input floating-input">
+					<div class="input-wrapper">
+						<input
+							id="address"
+							class="input-elem"
+							name="address"
+							type="text"
+							placeholder="Адрес"
+						/>
+						<label
+							for="address"
+							class="input-label"
+							data-content="Адрес"
+						></label>
+					</div>
+				</div>
+
+				<div class="input main-input">
+					<div class="input-wrapper">
+						<input
+							id="name"
+							class="input-elem"
+							name="name"
+							type="text"
+							placeholder="Введите ваше имя"
+						/>
+						<label
+							for="name"
+							class="input-label"
+							data-content="Имя"
+						></label>
+					</div>
+				</div>
+
+				<div class="input main-input">
+					<div class="input-wrapper">
+						<input
+							id="password"
+							class="input-elem"
+							name="password"
+							type="password"
+							placeholder="Ваш пароль"
+						/>
+						<label
+							for="password"
+							class="input-label"
+							data-content="Ваш пароль"
+						></label>
+						<label class="input-switcher">
+							<input class="visually-hidden" type="checkbox" />
+							<span class="input-switcher-wrapper">
+								<svg
+									class="input-icon input-icon--switcher input-switcher-on"
+									aria-hidden="true"
+								>
+									<use
+										href="./assets/img/svg/sprite.svg#eye-fill"
+									></use>
+								</svg>
+								<svg
+									class="input-icon input-icon--switcher input-switcher-off"
+									aria-hidden="true"
+								>
+									<use
+										href="./assets/img/svg/sprite.svg#eye-close"
+									></use>
+								</svg>
+							</span>
+						</label>
+					</div>
+					<div class="input-hint">
+						<svg
+							class="input-icon input-icon--hint"
+							aria-hidden="true"
+						>
+							<use
+								href="./assets/img/svg/sprite.svg#info-circle-fill"
+							></use>
+						</svg>
+						<span>
+							Запросить следующий код возможно через 14 секунд
+						</span>
+					</div>
+				</div>
+
+				<div class="input main-input danger">
+					<div class="input-wrapper">
+						<input
+							id="password"
+							class="input-elem"
+							name="password"
+							type="password"
+							placeholder="Ваш пароль"
+						/>
+						<label
+							for="password"
+							class="input-label"
+							data-content="Ваш пароль"
+						></label>
+						<button class="input-button">
+							<svg
+								class="input-icon input-icon--btn"
+								aria-hidden="true"
+							>
+								<use
+									href="./assets/img/svg/sprite.svg#dismiss-fill"
+								></use>
+							</svg>
+						</button>
+					</div>
+					<div class="input-hint">
+						<svg
+							class="input-icon input-icon--hint"
+							aria-hidden="true"
+						>
+							<use
+								href="./assets/img/svg/sprite.svg#error-circle-fill"
+							></use>
+						</svg>
+						<span> Неверный пароль </span>
+					</div>
+				</div>
+
+				<div class="input main-input success">
+					<div class="input-wrapper">
+						<input
+							id="password"
+							class="input-elem"
+							name="password"
+							type="password"
+							placeholder="Ваш пароль"
+						/>
+						<label
+							for="password"
+							class="input-label"
+							data-content="Ваш пароль"
+						></label>
+						<label class="input-switcher">
+							<input class="visually-hidden" type="checkbox" />
+							<span class="input-switcher-wrapper">
+								<svg
+									class="input-icon input-icon--switcher input-switcher-on"
+									aria-hidden="true"
+								>
+									<use
+										href="./assets/img/svg/sprite.svg#eye-fill"
+									></use>
+								</svg>
+								<svg
+									class="input-icon input-icon--switcher input-switcher-off"
+									aria-hidden="true"
+								>
+									<use
+										href="./assets/img/svg/sprite.svg#eye-close"
+									></use>
+								</svg>
+							</span>
+						</label>
+					</div>
+					<div class="input-hint">
+						<svg
+							class="input-icon input-icon--hint"
+							aria-hidden="true"
+						>
+							<use
+								href="./assets/img/svg/sprite.svg#check-circle-fill"
+							></use>
+						</svg>
+						<span>
+							Запросить следующий код возможно через 14 секунд
+						</span>
+					</div>
+				</div>
+
+				<div class="input main-input disabled">
+					<div class="input-wrapper">
+						<input
+							disabled
+							id="surname"
+							class="input-elem"
+							name="surname"
+							type="text"
+							placeholder="Введите вашу фамилию"
+						/>
+						<label
+							for="surname"
+							class="input-label"
+							data-content="Фамилия"
+						></label>
+					</div>
+				</div>
+
+				<div class="input main-input success">
+					<div class="input-wrapper">
+						<input
+							id="phone"
+							class="input-elem"
+							name="phone"
+							type="tel"
+							placeholder="Введите номер телефона"
+						/>
+						<label
+							for="phone"
+							class="input-label"
+							data-content="Телефон"
+						></label>
+					</div>
+				</div>
+
+				<div class="input main-input danger">
+					<div class="input-wrapper">
+						<input
+							id="email"
+							class="input-elem"
+							name="email"
+							type="email"
+							placeholder="Введите почту"
+						/>
+						<label
+							for="email"
+							class="input-label"
+							data-content="Почта"
+						></label>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script src="./assets/js/vendors.min.js"></script>
+		<script src="./assets/js/main.min.js"></script>
+	</body>
+</html>

@@ -5,7 +5,7 @@ node_modules/
 package-lock.json
 
 # Исключаем папку dist (собранные файлы)
-dist/
+#dist/
 
 # Исключаем файлы настроек системы
 .DS_Store
