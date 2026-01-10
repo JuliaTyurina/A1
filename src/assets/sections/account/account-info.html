@@ -1,0 +1,92 @@
+<section class="account">
+	<div class="account__container">
+		<aside class="account__menu thin-scrollbar">
+			<button class="sign-out">
+				<span class="sign-out__title">Алексей Ковалёв</span>
+				<span class="sign-out__info">+7 999 329 93 33</span>
+				<svg class="sign-out__icon" aria-hidden="true">
+					<use href="./assets/img/svg/sprite.svg#logout"></use>
+				</svg>
+			</button>
+
+			<nav class="account__nav">
+				<ul>
+					<li>
+						<a class="font-semibold" href="/account-orders.html">
+							<svg aria-hidden="true">
+								<use href="./assets/img/svg/sprite.svg#box"></use>
+							</svg>
+							Мои заказы
+						</a>
+					</li>
+					<li>
+						<a class="font-semibold active" href="/account-info.html">
+							<svg aria-hidden="true">
+								<use href="./assets/img/svg/sprite.svg#user-circle"></use>
+							</svg>
+							Мои данные
+						</a>
+					</li>
+					<li>
+						<a class="font-semibold" href="/account-favourites.html">
+							<svg aria-hidden="true">
+								<use href="./assets/img/svg/sprite.svg#heart"></use>
+							</svg>
+							Избранное
+						</a>
+					</li>
+					<li>
+						<a class="font-semibold" href="#">
+							<svg aria-hidden="true">
+								<use href="./assets/img/svg/sprite.svg#undo"></use>
+							</svg>
+							Возвраты
+						</a>
+					</li>
+					<li>
+						<a class="font-semibold" data-global-action="modal-open" data-modal="m-contacts">
+							<svg aria-hidden="true">
+								<use href="./assets/img/svg/sprite.svg#mail"></use>
+							</svg>
+							Контакты
+						</a>
+					</li>
+					<li>
+						<a class="font-semibold" href="/account-settings.html">
+							<svg aria-hidden="true">
+								<use href="./assets/img/svg/sprite.svg#gear"></use>
+							</svg>
+							Настройки
+						</a>
+					</li>
+				</ul>
+			</nav>
+
+		</aside>
+		<div class="account__wrapper col-2">
+			<div class="account__header">
+				<button class="account__back" data-global-action="mobile-account-toggle">
+					<svg aria-hidden="true">
+						<use href="./assets/img/svg/sprite.svg#arrow-left-short"></use>
+					</svg>
+				</button>
+				<h1 class="heading-md font-medium account__title">Профиль</h1>
+			</div>
+			<div class="account__content">
+				@@include("account/personal-info/personal-info.html")
+			</div>
+			<div class="offers thin-scrollbar">
+				@@include("./_components/promo-card/promo-card.html", {
+				"mode": null,
+				"size": "sm",
+				"period": "1 – 30 сентября",
+				"title": "Для тебя",
+				"text": "Прибавляйте товары в корзину и увеличьте вашу скидку до −35%",
+				"color": "light",
+				"imageBackMobile": "./assets/img/raster/promo-2.png.webp",
+				"imageBackDesktop": "./assets/img/raster/promo-2.png.webp"
+				})
+			</div>
+		</div>
+	</div>
+</section>

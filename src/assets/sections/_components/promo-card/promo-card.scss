@@ -38,6 +38,31 @@
     }
   }
 
+  &.sm {
+    border-radius: 16px;
+
+    .promo-card__period {
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .promo-card__title {
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .promo-card__text {
+      @include desktop {
+        font-weight: 500;
+      }
+    }
+
+    .promo-card__content {
+      padding: fluid(16px, 28px);
+    }
+  }
+
   &__back {
     position: absolute;
     inset: 0;
@@ -61,11 +86,11 @@
     }
   }
 
-
   &__content {
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: fluid(16px, 40px);
     aspect-ratio: 7/5;
     z-index: 2;
@@ -91,13 +116,14 @@
   }
 
   &__btn {
-    margin-top: auto;
+    position: relative;
+    margin-top: 40px;
     width: fit-content;
+    z-index: 1;
   }
 
   &__link {
     position: absolute;
     inset: 0;
-    z-index: -1;
   }
 }

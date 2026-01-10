@@ -40,6 +40,68 @@ input[type="search"]::-ms-clear {
   display: none;
 }
 
+input[type="number"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  // ✅ Chrome, Safari, Edge, Opera
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  // ✅ Firefox
+  -moz-appearance: textfield;
+
+  // ✅ IE 10-11
+  &::-ms-clear {
+    display: none;
+  }
+}
+
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  // ✅ Chrome, Safari, Edge
+  //&::-webkit-calendar-picker-indicator {
+  //  display: none;
+  //  -webkit-appearance: none;
+  //}
+
+  //// ✅ Firefox
+  //&::-moz-calendar-picker-indicator {
+  //  display: none;
+  //}
+
+  // ✅ IE 10-11
+  //&::-ms-clear {
+  //  display: none;
+  //}
+
+  text-align: left !important;
+  direction: ltr !important;
+
+  // Для внутренних элементов iOS Safari
+  &::-webkit-date-and-time-value {
+    text-align: left;
+  }
+
+  // Для внутренних полей даты
+  &::-webkit-datetime-edit {
+    text-align: left;
+    padding-left: 0;
+  }
+
+  &::-webkit-datetime-edit-fields-wrapper {
+    text-align: left;
+    padding-left: 0;
+  }
+}
+
 button {
   font-family: inherit;
   color: inherit;
@@ -49,6 +111,7 @@ button {
 
 a {
   color: inherit;
+  cursor: pointer;
 }
 
 a:link,

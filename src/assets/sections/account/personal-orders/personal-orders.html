@@ -1,0 +1,95 @@
+<div class="personal-orders">
+	<div class="personal-orders__wrapper">
+		@@include("./_components/order-card/order-card.html", {
+		"title": "Заказ номер 192-222",
+		"date": "5 сентября 2025",
+		"status": "completed",
+		"image1": "./assets/img/raster/product-1.png.webp",
+		"image2": "./assets/img/raster/product-2.png.webp",
+		"image3": "./assets/img/raster/product-3.png.webp",
+		"image4": "./assets/img/raster/product-4.png.webp",
+		"image5": null,
+		"image6": null,
+		"image7": null,
+		"image8": null,
+		})
+		@@include("./_components/order-card/order-card.html", {
+		"title": "Заказ номер 192-222",
+		"date": "5 сентября 2025",
+		"status": "process",
+		"image1": "./assets/img/raster/product-1.png.webp",
+		"image2": "./assets/img/raster/product-2.png.webp",
+		"image3": "./assets/img/raster/product-3.png.webp",
+		"image4": "./assets/img/raster/product-4.png.webp",
+		"image5": "./assets/img/raster/product-5.png.webp",
+		"image6": "./assets/img/raster/product-6.png.webp",
+		"image7": null,
+		"image8": null,
+		})
+		@@include("./_components/order-card/order-card.html", {
+		"title": "Заказ номер 192-222",
+		"date": "5 сентября 2025",
+		"status": "cancelled",
+		"image1": "./assets/img/raster/product-1.png.webp",
+		"image2": "./assets/img/raster/product-2.png.webp",
+		"image3": "./assets/img/raster/product-3.png.webp",
+		"image4": "./assets/img/raster/product-4.png.webp",
+		"image5": "./assets/img/raster/product-5.png.webp",
+		"image6": "./assets/img/raster/product-6.png.webp",
+		"image7": "./assets/img/raster/product-7.png.webp",
+		"image8": "./assets/img/raster/product-8.png.webp",
+		})
+	</div>
+
+	<div class="personal-orders__pagination">
+		<nav class="pagination" aria-label="Пагинация">
+			<div class="pagination__wrapper">
+				<a class="pagination__link pagination__link--prev" href="?page=31">
+					<svg>
+						<use href="./assets/img/svg/sprite.svg#chevron-left"></use>
+					</svg>
+
+					<span class="visually-hidden">Страница </span>
+					Назад
+				</a>
+
+				<a class="pagination__link" href="?page=1">
+					<span class="visually-hidden">Страница </span>
+					1
+				</a>
+
+				<span class="pagination-dots" aria-label="ещё страницы">...</span>
+
+				<a class="pagination__link" href="?page=31">
+					<span class="visually-hidden">Страница </span>
+					31
+				</a>
+				<a class="pagination__link pagination__link--current" href="?page=32">
+					<span class="visually-hidden">Страница </span>
+					32
+				</a>
+
+				<a class="pagination__link" aria-current="page" href="?page=33">
+					<span class="visually-hidden">Страница </span>
+					33
+				</a>
+
+				<span class="pagination-dots" aria-label="ещё страницы">...</span>
+
+				<a class="pagination__link" href="?page=65">
+					<span class="visually-hidden">Страница </span>
+					65
+				</a>
+
+				<a class="pagination__link pagination__link--next" href="?page=34">
+					Вперед
+					<svg>
+						<use href="./assets/img/svg/sprite.svg#chevron-right"></use>
+					</svg>
+				</a>
+			</div>
+		</nav>
+	</div>
+	@@include("_components/modal/o-details/o-details.html")
+
+</div>

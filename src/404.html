@@ -1,0 +1,24 @@
+@@include("header/header.html", {
+"title": "Страница не найдена"
+})
+
+<main class="main">
+	<section class="error-404">
+		<div class="container">
+			<div class="error-404__heading">
+				<h1 class="heading-lg">
+					404
+				</h1>
+				<p>Страница не найдена</p>
+			</div>
+			<a href="/" class="button-xl button-primary">На главную</a>
+		</div>
+	</section>
+
+	@@include("products-slider/products-slider.html", {
+	"title" : "Популярные товары",
+	"showAll": true,
+	})
+</main>
+
+@@include("footer/footer.html")

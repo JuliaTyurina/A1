@@ -1,0 +1,19 @@
+@use '../../../scss/mixins' as *;
+
+.personal-orders {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+
+  @include desktop {
+    row-gap: 16px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(8px, 16px);
+  }
+
+
+}

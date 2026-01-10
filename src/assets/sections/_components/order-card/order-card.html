@@ -1,0 +1,46 @@
+<article class="order-card
+@@if (status === 'completed') {completed}
+@@if (status === 'process') {process}
+@@if (status === 'cancelled') {cancelled}"
+		 data-global-action="modal-open"
+		 data-modal="o-details"
+>
+	<div class="title-lg font-semibold order-card__title">@@title</div>
+	<span class="body-text-md font-semibold text-grey order-card__date">@@date</span>
+
+	@@if (status === 'completed') {
+	<span class="body-text-md font-semibold order-card__status">Выполнен</span>
+	}
+	@@if (status === 'process') {
+	<span class="body-text-md font-semibold order-card__status">В работе</span>
+	}
+	@@if (status === 'cancelled') {
+	<span class="body-text-md font-semibold order-card__status">Отменен</span>
+	}
+	<div class="order-card__products">
+		@@if (image1) {
+		<img class="order-card__img" src="@@image1" alt="">
+		}
+		@@if (image2) {
+		<img class="order-card__img" src="@@image2" alt="">
+		}
+		@@if (image3) {
+		<img class="order-card__img" src="@@image3" alt="">
+		}
+		@@if (image4) {
+		<img class="order-card__img" src="@@image4" alt="">
+		}
+		@@if (image5) {
+		<img class="order-card__img" src="@@image5" alt="">
+		}
+		@@if (image6) {
+		<img class="order-card__img" src="@@image6" alt="">
+		}
+		@@if (image7) {
+		<img class="order-card__img" src="@@image7" alt="">
+		}
+		@@if (image8) {
+		<img class="order-card__img" src="@@image8" alt="">
+		}
+	</div>
+</article>

@@ -1,0 +1,44 @@
+@use '../../../scss/mixins' as *;
+
+.personal-info {
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+
+  @include desktop {
+    row-gap: 48px;
+    max-width: 456px;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+
+    @include desktop {
+      row-gap: 24px;
+    }
+  }
+
+  &__inputs {
+    display: grid;
+    row-gap: 6px;
+
+    @include desktop {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+
+      > *:not(.half) {
+        grid-column: span 2;
+      }
+
+      .half {
+        grid-column: span 1;
+      }
+    }
+
+  }
+
+
+}

@@ -14,7 +14,7 @@
 
 //классы для размера кнопки
 
-.button-sm-rounded {
+.button-xs-rounded {
   @extend .button;
   column-gap: 4px;
   padding: 8px 10px;
@@ -29,6 +29,17 @@
     min-height: 40px;
   }
 }
+
+.button-sm {
+  @extend .button;
+  column-gap: 6px;
+  padding: 10px 16px;
+  min-height: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
 
 .button-md {
   @extend .button;
@@ -320,7 +331,9 @@
 
   &-elem {
     width: 100%;
+    max-width: 100%;
     min-height: 56px;
+    font-family: inherit;
     font-size: 16px;
     font-weight: 500;
     line-height: 1;
@@ -579,6 +592,30 @@
         transform: unset;
       }
     }
+
+    &[type="date"] {
+      padding-right: 16px;
+
+    }
+
+
+  }
+
+  select.input-elem {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+
+    // ✅ Убираем стрелку в IE10-11
+    &::-ms-expand {
+      display: none;
+    }
+
+    // Скрываем disabled option
+    option[value=""][disabled] {
+      display: none;
+    }
   }
 
   .input-label {
@@ -613,6 +650,125 @@
         transform: unset;
       }
     }
+  }
+}
+
+.select {
+
+  &-wrapper {
+    position: relative;
+
+    @include desktop {
+      display: flex;
+      flex-direction: column-reverse;
+      row-gap: 4px;
+    }
+  }
+
+  &-elem {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 24px 60px 8px 16px;
+    width: 100%;
+    min-height: 56px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    background-color: var(--color-background-secondary);
+    outline: 1px solid var(--color-stroke-primary);
+    outline-offset: -1px;
+    border-radius: 12px;
+    transition: outline-color var(--transition);
+    cursor: pointer;
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    option[value=""][disabled] {
+      display: none;
+    }
+
+    @include desktop {
+      padding: 12px 60px 12px 16px;
+    }
+
+    &:not(:disabled) {
+      &:hover,
+      &:focus-visible,
+      &:focus {
+        outline: 1px solid var(--color-stroke-secondary);
+        outline-offset: -1px;
+      }
+    }
+
+  }
+
+  option {
+    font-size: 16px;
+    font-weight: 500 !important;
+
+    &:checked {
+      font-weight: 700 !important;
+    }
+  }
+
+  &:has(option[value=""][disabled]:checked) .select-label::before {
+    transform: translate3d(0, -40px, 0) scale3d(1, 1, 1);
+
+    @include desktop {
+      transform: unset;
+    }
+  }
+
+
+  &-label {
+    display: block;
+    max-height: 0;
+    pointer-events: none;
+
+    @include desktop {
+      position: static;
+      max-height: unset;
+    }
+
+    &::before {
+      position: relative;
+      left: 16px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--color-text-secondary);
+      content: attr(data-content);
+      display: inline-block;
+      filter: blur(0);
+      backface-visibility: hidden;
+      transform: translate3d(0, -52px, 0) scale3d(0.82, 0.82, 1);
+      transform-origin: left top;
+      transition: transform var(--transition);
+
+      @include desktop {
+        position: static;
+        font-size: 14px;
+        color: var(--color-text-primary);
+        transform: unset;
+      }
+    }
+  }
+
+  &-arrow {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    pointer-events: none;
+    transition: color var(--transition), transform var(--transition);
   }
 }
 
@@ -827,7 +983,6 @@
   }
 }
 
-
 .toggle {
   display: flex;
 
@@ -941,19 +1096,19 @@
     }
   }
 
-    .quantity-counter__minus {
+  .quantity-counter__minus {
+    display: none;
+
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  .quantity-counter__delete {
+    @include tablet {
       display: none;
-
-      @include tablet {
-        display: flex;
-      }
     }
-
-    .quantity-counter__delete {
-      @include tablet {
-        display: none;
-      }
-    }
+  }
 
 
   &__plus {
@@ -994,22 +1149,31 @@
 }
 
 .pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
+
+  &.grey {
+    @include desktop {
+      background-color: var(--color-background-secondary);
+    }
+  }
 
   @include desktop {
     padding: 16px;
-    background-color: var(--color-background-secondary);
     border: 1px solid var(--color-stroke-primary);
     border-radius: 16px;
   }
 
-  &-link {
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__link {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     column-gap: 2px;
     padding: 6px 10px;
     min-width: 32px;
@@ -1308,23 +1472,11 @@
     border-radius: 8px;
     transition: outline var(--transition);
 
-    -moz-appearance: textfield;
-
 
     &:hover,
     &:focus-visible,
     &:focus {
       outline-color: var(--color-stroke-secondary);
-    }
-
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-
-    &::-ms-clear {
-      display: none;
     }
   }
 
@@ -1486,5 +1638,53 @@
 
   &:hover {
     color: var(--color-icon-primary);
+  }
+}
+
+.sign-out {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  grid-auto-flow: dense;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 24px;
+  row-gap: 2px;
+  padding: 20px;
+  background-color: var(--color-background-secondary);
+  border-radius: 16px;
+  transition: background-color var(--transition);
+
+  &:not(:disabled) {
+    &:hover {
+      background-color: var(--color-background-secondary-3);
+    }
+  }
+
+  &:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+  }
+
+  span {
+    text-align: left;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  &__info {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  &__icon {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 2;
+    color: var(--color-icon-accent);
   }
 }

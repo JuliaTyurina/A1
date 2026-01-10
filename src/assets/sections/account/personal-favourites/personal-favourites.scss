@@ -1,0 +1,16 @@
+@use '../../../scss/mixins' as *;
+
+.personal-favourites {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 8px;
+  row-gap: fluid(16px, 32px);
+
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

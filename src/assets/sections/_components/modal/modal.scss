@@ -3,6 +3,8 @@
 @use "./product/p-descr/p-descr";
 @use "./product/p-specs/p-specs";
 @use "./product/p-sizes/p-sizes";
+@use "./o-details/o-details";
+@use "./m-contacts/m-contacts";
 
 .modal {
   z-index: 10;
@@ -63,7 +65,7 @@
       right: 0;
       bottom: 0;
       left: initial;
-      padding: 72px 48px 24px;
+      padding: 72px 48px;
       width: 50dvw;
       opacity: 1;
       transform: translateX(100%);
@@ -90,7 +92,10 @@
     position: fixed;
     top: 0;
     right: 0;
-    padding: 18px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: fluid(20px, 32px);
     z-index: 10;
     background-color: transparent;
   }

@@ -1,0 +1,79 @@
+<section class="account">
+	<div class="account__container">
+		<aside class="account__menu thin-scrollbar">
+			<button class="sign-out">
+				<span class="sign-out__title">Алексей Ковалёв</span>
+				<span class="sign-out__info">+7 999 329 93 33</span>
+				<svg class="sign-out__icon" aria-hidden="true">
+					<use href="./assets/img/svg/sprite.svg#logout"></use>
+				</svg>
+			</button>
+
+			<nav class="account__nav">
+				<ul>
+					<li>
+						<a class="font-semibold active" href="/account-orders.html">
+							<svg aria-hidden="true">
+								<use href="./assets/img/svg/sprite.svg#box"></use>
+							</svg>
+							Мои заказы
+						</a>
+					</li>
+					<li>
+						<a class="font-semibold" href="/account-info.html">
+							<svg aria-hidden="true">
+								<use href="./assets/img/svg/sprite.svg#user-circle"></use>
+							</svg>
+							Мои данные
+						</a>
+					</li>
+					<li>
+						<a class="font-semibold" href="/account-favourites.html">
+							<svg aria-hidden="true">
+								<use href="./assets/img/svg/sprite.svg#heart"></use>
+							</svg>
+							Избранное
+						</a>
+					</li>
+					<li>
+						<a class="font-semibold" href="#">
+							<svg aria-hidden="true">
+								<use href="./assets/img/svg/sprite.svg#undo"></use>
+							</svg>
+							Возвраты
+						</a>
+					</li>
+					<li>
+						<a class="font-semibold" data-global-action="modal-open" data-modal="m-contacts">
+							<svg aria-hidden="true">
+								<use href="./assets/img/svg/sprite.svg#mail"></use>
+							</svg>
+							Контакты
+						</a>
+					</li>
+					<li>
+						<a class="font-semibold" href="/account-settings.html">
+							<svg aria-hidden="true">
+								<use href="./assets/img/svg/sprite.svg#gear"></use>
+							</svg>
+							Настройки
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</aside>
+		<div class="account__wrapper">
+			<div class="account__header">
+				<button class="account__back" data-global-action="mobile-account-toggle">
+					<svg aria-hidden="true">
+						<use href="./assets/img/svg/sprite.svg#arrow-left-short"></use>
+					</svg>
+				</button>
+				<h1 class="heading-md font-medium account__title">Мои заказы</h1>
+			</div>
+			<div class="account__content">
+				@@include("account/personal-orders/personal-orders.html")
+			</div>
+		</div>
+	</div>
+</section>

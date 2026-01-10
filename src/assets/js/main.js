@@ -20,11 +20,17 @@ import {initProductCardSliders} from "../sections/_components/product-card/produ
 import {initBannerSliders} from "../sections/banner-slider/banner-slider.js";
 import {initBlogSliders} from "../sections/blog-slider/blog-slider.js";
 import {initExpandButtons, initProductRefSliders, initProductSliders} from "../sections/product/product.js";
-import {initDragScroll, initInputsRange} from "./files/functions.js";
+import {initInputsRange} from "./files/functions.js";
 import {initSetCardsSliders} from "../sections/set-cards-slider/set-cards-slider.js";
 
+window.addEventListener('load', function() {
+    const loader = document.getElementById('loader');
+    const content = document.getElementById('app');
 
-// Инициализация после загрузки DOM
+    loader.classList.add('hidden');
+    content.classList.add('visible');
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     initGlobalAction();
     updateCounterClass();
@@ -38,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initExpandButtons()
     initInputsRange()
     initSetCardsSliders()
-    // initDragScroll()
 
     initFancybox()
 

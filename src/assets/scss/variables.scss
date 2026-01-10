@@ -48,7 +48,8 @@
   --project-color-30: #0056FF;
   --project-color-31: #0056ffcc;
   --project-color-32: #0056ff1f;
-  --project-color-33: #4B8AFF;
+  --project-color-33: #70A2FF;
+  --project-color-34: #EA6F6D;
 
   --color-background-primary: var(--project-color-9);
   --color-background-contrast: var(--project-color-1);
@@ -62,16 +63,19 @@
   --color-background-accent: var(--project-color-10);
   --color-background-accent-2: var(--project-color-13);
   --color-background-danger: var(--project-color-11);
+  --color-background-warning: var(--project-color-12);
 
   --color-text-primary: var(--project-color-1);
   --color-text-contrast: var(--project-color-9);
   --color-text-secondary: var(--project-color-3);
   --color-text-tertiary: var(--project-color-5);
   --color-text-accent: var(--project-color-10);
+  --color-text-accent-hover: var(--project-color-34);
   --color-text-accent-2: var(--project-color-13);
   --color-text-accent-2-hover: var(--project-color-33);
   --color-text-success: var(--project-color-14);
   --color-text-danger: var(--project-color-11);
+  --color-text-warning: var(--project-color-12);
 
   --color-stroke-primary: var(--project-color-6);
   --color-stroke-contrast: var(--project-color-9);
@@ -82,6 +86,7 @@
   --color-stroke-accent-2: var(--project-color-13);
   --color-stroke-success: var(--project-color-14);
   --color-stroke-danger: var(--project-color-11);
+  --color-stroke-warning: var(--project-color-12);
 
   --color-icon-primary: var(--project-color-1);
   --color-icon-contrast: var(--project-color-9);
@@ -92,6 +97,7 @@
   --color-icon-accent-2: var(--project-color-13);
   --color-icon-success: var(--project-color-14);
   --color-icon-danger: var(--project-color-11);
+  --color-icon-warning: var(--project-color-12);
 
   --color-highlight-accent-themed: var(--project-color-17);
   --color-highlight-primary: var(--project-color-18);

@@ -1,0 +1,77 @@
+@use '../../../scss/mixins' as *;
+
+.order-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 16px;
+  padding: fluid(16px, 32px);
+  outline: 1px solid var(--color-stroke-primary);
+  border-radius: 16px;
+  cursor: pointer;
+
+  &.completed {
+    .order-card__status {
+      color: var(--color-text-success);
+      outline-color: var(--color-stroke-success);
+    }
+  }
+
+  &.process {
+    .order-card__status {
+      color: var(--color-text-warning);
+      outline-color: var(--color-stroke-warning);
+    }
+  }
+
+  &.cancelled {
+    .order-card__status {
+      color: var(--color-text-danger);
+      outline-color: var(--color-stroke-danger);
+    }
+  }
+
+  &__title,
+  &__date {
+    grid-column: 1 / span 1;
+  }
+
+  &__title {
+    margin-bottom: fluid(4px, 8px);
+  }
+
+  &__status {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: fluid(6px, 8px) fluid(8px, 12px);
+    height: fit-content;
+    outline: 1px solid;
+    outline-offset: -1px;
+    border-radius: 999px;
+
+    @include desktop {
+      margin-top: -8px;
+      margin-right: -8px;
+    }
+  }
+
+  &__products {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 65px);
+    grid-auto-columns: 65px;
+    gap: 4px;
+    padding-top: 16px;
+
+    @include desktop {
+      grid-template-columns: repeat(auto-fit, 82px);
+    }
+  }
+
+  &__img {
+    aspect-ratio: 3/4;
+    border-radius: 6px;
+  }
+}

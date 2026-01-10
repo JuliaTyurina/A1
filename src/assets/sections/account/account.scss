@@ -1,0 +1,141 @@
+@use '../../scss/mixins' as *;
+@use "./personal-info/personal-info";
+@use "./personal-orders/personal-orders";
+@use "./personal-favourites/personal-favourites";
+@use "./personal-settings/personal-settings";
+
+.account {
+  @include desktop {
+    background-color: var(--color-background-primary);
+    border-radius: 16px;
+  }
+
+  @include desktop-lg {
+    border-radius: 40px;
+  }
+
+  &__container {
+    @include desktop {
+      display: grid;
+      grid-template-columns: 245px minmax(auto, 890px);
+      justify-content: space-between;
+      column-gap: 32px;
+      width: 100%;
+      max-width: var(--container-primary);
+      margin: 0 auto;
+      padding: 28px var(--container-padding) fluid(16px, 64px);
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-rows: auto;
+    grid-auto-rows: 1fr;
+    min-height: calc(100dvh - var(--header-height) - var(--bottom-nav-height) - 16px);
+
+    &.col-2 {
+      @include desktop {
+        grid-template-columns: auto 350px;
+        column-gap: 32px;
+      }
+
+      .offers {
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 2;
+      }
+    }
+
+  }
+
+  &__menu,
+  .offers {
+    display: none;
+
+    @include desktop {
+      position: sticky;
+      top: calc(var(--header-height) + 8px);
+      display: flex;
+      flex-direction: column;
+      row-gap: 32px;
+      height: fit-content;
+      max-height: calc(100dvh - var(--header-height) - 16px);
+      overflow-y: auto;
+    }
+  }
+
+  &__nav {
+    a {
+      display: flex;
+      column-gap: 12px;
+      padding: 16px;
+      border-radius: 16px;
+      transition: background-color var(--transition);
+
+      &:hover,
+      &.active {
+        background-color: var(--color-background-secondary);
+      }
+    }
+
+
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    padding: 16px var(--container-padding) 0;
+    background-color: var(--color-background-primary);
+    border-radius: 16px 16px 0 0;
+
+    @include desktop {
+      margin-bottom: 32px;
+      padding: unset;
+      height: fit-content;
+      background-color: unset;
+      border-radius: unset;
+    }
+  }
+
+  .personal-info,
+  .personal-orders__wrapper,
+  .personal-favourites,
+  .personal-settings {
+    padding: 16px var(--container-padding);
+    height: 100%;
+    background-color: var(--color-background-primary);
+    border-radius: 0 0 16px 16px;
+
+    @include desktop {
+      padding: unset;
+      background-color: unset;
+      border-radius: unset;
+    }
+  }
+
+  .personal-orders__pagination {
+    padding: 16px var(--container-padding);
+    background-color: var(--color-background-primary);
+    border-radius: 16px;
+
+    @include desktop {
+      padding: unset;
+      background-color: unset;
+      border-radius: unset;
+    }
+  }
+
+  &__back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    margin: -8px;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+
+}

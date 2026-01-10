@@ -9,10 +9,6 @@
   width: 100%;
   min-height: 0;
 
-  @include desktop {
-    padding: unset;
-  }
-
   &__header {
     display: flex;
     flex-direction: column;

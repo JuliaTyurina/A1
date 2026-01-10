@@ -1,0 +1,20 @@
+@use '../../../scss/mixins' as *;
+
+.personal-settings {
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+
+    button {
+      width: fit-content;
+      color: var(--color-text-danger);
+      transition: color var(--transition);
+
+      &:hover {
+        color: var(--color-text-accent-hover);
+      }
+    }
+  }
+}

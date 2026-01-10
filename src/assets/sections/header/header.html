@@ -11,8 +11,99 @@
 	<link rel="stylesheet" href="assets/css/vendors.min.css">
 	<link rel="stylesheet" href="assets/css/style.min.css">
 	<title>@@title</title>
+	<style>
+		#loader {
+			position: fixed;
+			inset: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 12px;
+			background-color: #fff;
+			z-index: 20;
+			transition: opacity 0.5s ease, visibility 0.5s ease;
+		}
+
+		#loader.hidden {
+			opacity: 0;
+			visibility: hidden;
+			pointer-events: none;
+		}
+
+		.ecg-container {
+			position: relative;
+			width: 72px;
+			height: 29px;
+
+			svg {
+				width: initial;
+				height: initial;
+			}
+		}
+
+		.ecg-bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.ecg-active {
+			position: absolute;
+			top: 0;
+			left: 0;
+			clip-path: inset(0 100% 0 0);
+			animation: ecg-pulse 2s ease-in-out infinite;
+		}
+
+		@keyframes ecg-pulse {
+			0% {
+				clip-path: inset(0 100% 0 0);
+			}
+			50% {
+				clip-path: inset(0 0 0 0);
+			}
+			100% {
+				clip-path: inset(0 0 0 100%);
+			}
+		}
+
+		.loader-text {
+			animation: text-fade 2s ease-in-out infinite;
+		}
+
+		@keyframes text-fade {
+			0%, 100% {
+				opacity: 0.5;
+			}
+			50% {
+				opacity: 1;
+			}
+		}
+
+		#app {
+			opacity: 0;
+			transition: opacity 0.5s ease 0.3s;
+		}
+
+		#app.visible {
+			opacity: 1;
+		}
+	</style>
 </head>
 <body>
+<div id="loader">
+	<div class="ecg-container">
+		<svg class="ecg-bg" xmlns="http://www.w3.org/2000/svg" width="72" height="29" viewBox="0 0 72 29" fill="none">
+			<path d="M43.4653 21.2213L50.6816 12.4078L72 12.4078V16.3164H52.5745L42.19 29L35.4013 11.1353L29.5135 26.631L22.2576 14.8507H0V10.942H24.4857L28.6653 17.7273L35.4017 0L43.4653 21.2213Z" fill="#E5E5E5"/>
+		</svg>
+
+		<svg class="ecg-active" xmlns="http://www.w3.org/2000/svg" width="72" height="29" viewBox="0 0 72 29" fill="none">
+			<path d="M43.4653 21.2213L50.6816 12.4078L72 12.4078V16.3164H52.5745L42.19 29L35.4013 11.1353L29.5135 26.631L22.2576 14.8507H0V10.942H24.4857L28.6653 17.7273L35.4017 0L43.4653 21.2213Z" fill="#E1312F"/>
+		</svg>
+	</div>
+	<span class="loader-text">Загрузка...</span>
+</div>
 
 <div class="app" id="app">
 	<header class="header">
@@ -678,7 +769,6 @@
 			</div>
 		</div>
 
-
 		<div class="search-bar">
 			<div class="search-bar__header">
 				<search class="search" role="search" data-input-wrapper>
@@ -821,7 +911,4 @@
 			<div class="search-bar__overlay" data-global-action="search-bar-toggle"></div>
 
 		</div>
-
 	</header>
-
-

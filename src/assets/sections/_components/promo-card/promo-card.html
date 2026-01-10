@@ -1,4 +1,4 @@
-<article class="promo-card @@if (mode === 'full') { full } @@if (color === 'light') { light }">
+<article class="promo-card @@if (size === 'sm') { sm } @@if (mode === 'full') { full } @@if (color === 'light') { light }">
 	<div class="promo-card__media">
 		@@if (imageBackMobile) {
 		<div class="promo-card__back promo-card__back--mobile"
@@ -14,18 +14,40 @@
 		<a href="/promo-single.html" class="promo-card__link" aria-label="Перейти к акции «@@title»"></a>
 
 		<div class="promo-card__descr">
-			<div class=" promo-card__period">@@period</div>
+			<div class="promo-card__period">@@period</div>
 
+			@@if (size === 'sm') {
+			<div class="font-semibold promo-card__title">@@title</div>
+			}
+			@@if (size !== 'sm') {
 			<div class="title-xl font-medium promo-card__title">@@title</div>
+			}
 
+			@@if (size === 'sm') {
+			<div class="promo-card__text">
+				@@text
+			</div>
+			}
+			@@if (size !== 'sm') {
 			<div class="body-text-xl promo-card__text">
 				@@text
 			</div>
+			}
+
+
 		</div>
 
 
+		@@if (size === 'sm') {
+		<a href="/promo-single.html" class="button-sm button-primary promo-card__btn">
+			Подробнее
+		</a>
+		}
+		@@if (size !== 'sm') {
 		<a href="/promo-single.html" class="button-md button-primary promo-card__btn">
 			Подробнее
 		</a>
+		}
+
 	</div>
 </article>

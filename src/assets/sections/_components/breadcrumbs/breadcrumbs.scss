@@ -68,6 +68,19 @@
     }
   }
 
+  &.bc-only-desktop {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    margin-top: 8px;
+
+    @include desktop {
+      padding: 24px 0 52px;
+      height: initial;
+      overflow: initial;
+    }
+  }
+
   .scroll {
     @include desktop {
       position: static;
