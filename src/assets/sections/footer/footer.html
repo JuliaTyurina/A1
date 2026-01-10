@@ -11,7 +11,7 @@
 				<a class="main-contact__link" href="tel:+74932333333">8 4932 333 333</a>
 				<span class=" text-grey">Звонки принимаются пн-пт с 9 до 19</span>
 			</div>
-			<button class="footer__request button-lg button-primary">
+			<button class="footer__request button-lg button-primary" data-global-action="modal-open" data-modal="request">
 				Заказать звонок
 			</button>
 		</div>
@@ -158,7 +158,8 @@
 </footer>
 
 @@include("_components/bottom-nav/bottom-nav.html")
-@@include("_components/modal/auth/auth.html")
+@@include("_components/modal/form/auth.html")
+@@include("_components/modal/form/request.html")
 @@include("_components/modal/m-contacts/m-contacts.html")
 
 

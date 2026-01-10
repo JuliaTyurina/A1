@@ -1,0 +1,52 @@
+<dialog class="modal" data-modal="request" >
+	<div class="modal__container thin-scrollbar">
+		<div class="modal__content">
+			<div class="form">
+				<header class="form__header">
+					<div class="heading-md font-semibold form__title">
+						Оставьте заявку на бесплатную консультацию
+					</div>
+					<div class="form__text">
+						Оставьте контактные данные и мы свяжемся с Вами!
+					</div>
+				</header>
+
+				<form class="form__content">
+					<div class="input main-input">
+						<div class="input-wrapper">
+							<input id="name" class="input-elem" name="name" type="text" placeholder="Введите ваше имя"
+								   value=""/>
+							<label for="name" class="input-label" data-content="Имя"></label>
+						</div>
+					</div>
+
+					<div class="input title-input">
+						<div class="input-wrapper">
+							<input id="phone" class="input-elem" name="phone" type="tel" placeholder="Номер телефона"
+								   inputmode="tel"/>
+							<label for="phone" class="input-label" data-content="Номер телефона"></label>
+						</div>
+					</div>
+
+					<div class="form__actions">
+						<button class="button-lg button-primary">
+							Отправить
+						</button>
+					</div>
+				</form>
+
+				<div class="body-text-xxs text-grey form__warning">
+					Нажимая на&nbsp;кнопку я принимаю условия <a href="#" target="_blank">политики конфиденциальности</a> и <a href="#" target="_blank">обработки персональных данных</a>
+				</div>
+			</div>
+
+		</div>
+		<button class="modal__close" data-global-action="modal-close">
+			<svg class="modal__close-icon" aria-hidden="true">
+				<use href="./assets/img/svg/sprite.svg#cancel"></use>
+			</svg>
+		</button>
+	</div>
+
+	<div class="modal__overlay" data-global-action="modal-close"></div>
+</dialog>

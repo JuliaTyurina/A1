@@ -1,14 +1,14 @@
 <dialog class="modal" data-modal="auth">
 	<div class="modal__container thin-scrollbar">
 		<div class="modal__content">
-			<div class="auth">
-				<header class="auth__header">
-					<div class="heading-md font-semibold auth__title">
+			<div class="form">
+				<header class="form__header">
+					<div class="heading-md font-semibold form__title">
 						Вход
 					</div>
 				</header>
 
-				<form class="auth__form">
+				<form class="form__content">
 					<div class="input title-input">
 						<div class="input-wrapper">
 							<input id="phone" class="input-elem" name="phone" type="tel" placeholder="Номер телефона"
@@ -37,7 +37,7 @@
 						</div>
 					</div>
 
-					<div class="auth__actions">
+					<div class="form__actions">
 						<button class="button-lg button-primary">
 							Получить код
 						</button>
@@ -50,23 +50,23 @@
 					</div>
 				</form>
 
-				<div class="body-text-xxs text-grey auth__warning">
-					Нажимая на&nbsp;кнопку &laquo;я&nbsp;даю согласие&raquo; на&nbsp;обработку своих персональных данных в&nbsp;соответствии с&nbsp;политикой обработки персональных данных
+				<div class="body-text-xxs text-grey form__warning">
+					Нажимая на&nbsp;кнопку я принимаю условия <a href="#" target="_blank">политики конфиденциальности</a> и <a href="#" target="_blank">обработки персональных данных</a>
 				</div>
 			</div>
 
-			<div class="auth">
-				<header class="auth__header">
-					<div class="heading-md font-semibold auth__title">
+			<div class="form">
+				<header class="form__header">
+					<div class="heading-md font-semibold form__title">
 						Вход
 					</div>
-					<div class=" auth__text">
+					<div class="form__text">
 						Позвоним или пришлём SMS. Введите последние четыре цифры входящего номера телефона или код из
 						SMS-сообщения.
 					</div>
 				</header>
 
-				<form class="auth__form">
+				<form class="form__content">
 					<div class="input title-input">
 						<div class="input-wrapper">
 							<input id="phone-1" class="input-elem" name="phone" type="tel" placeholder="Номер телефона"
@@ -75,7 +75,7 @@
 						</div>
 					</div>
 
-					<div class="auth__actions">
+					<div class="form__actions">
 						<button class="button-lg button-primary">
 							Получить код
 						</button>
@@ -88,33 +88,33 @@
 					</div>
 				</form>
 
-				<div class="body-text-xxs text-grey auth__warning">
-					Нажимая на&nbsp;кнопку &laquo;я&nbsp;даю согласие&raquo; на&nbsp;обработку своих персональных данных в&nbsp;соответствии с&nbsp;политикой обработки персональных данных
+				<div class="body-text-xxs text-grey form__warning">
+					Нажимая на&nbsp;кнопку я принимаю условия <a href="#" target="_blank">политики конфиденциальности</a> и <a href="#" target="_blank">обработки персональных данных</a>
 				</div>
 			</div>
 
-			<div class="auth">
-				<button class="auth__back" aria-label="Назад">
+			<div class="form">
+				<button class="form__back" aria-label="Назад">
 					<svg aria-hidden="true">
 						<use href="./assets/img/svg/sprite.svg#arrow-left-short"></use>
 					</svg>
 				</button>
-				<header class="auth__header">
-					<div class="heading-md font-semibold auth__title">
+				<header class="form__header">
+					<div class="heading-md font-semibold form__title">
 						Подтвердите номер
 					</div>
-					<div class="auth__confirm">
-						<div class="title-lg font-semibold auth__confirm-object">+7 915 888 99 10</div>
-						<div class=" auth__confirm-text">
+					<div class="form__confirm">
+						<div class="title-lg font-semibold form__confirm-object">+7 915 888 99 10</div>
+						<div class=" form__confirm-text">
 							Введите код из смс или последние <b>4 цифры</b> входящего номера
 						</div>
-						<div class=" text-grey auth__confirm-example">
+						<div class=" text-grey form__confirm-example">
 							Например +7 ХХХ ХХХ <b>ХХ ХХ</b>
 						</div>
 					</div>
 				</header>
 
-				<form class="auth__form">
+				<form class="form__content">
 					<div class="input title-input">
 						<div class="input-wrapper">
 							<input id="code" class="input-elem" name="code" type="text" placeholder="Ваш код"
@@ -132,7 +132,7 @@
 						</div>
 					</div>
 
-					<div class="auth__actions">
+					<div class="form__actions">
 						<button class="button-lg button-primary">
 							Подтвердить номер
 						</button>
