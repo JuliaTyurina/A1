@@ -383,14 +383,48 @@ footer {
   }
 
   &__section {
-    p {
-      &:not(:last-child) {
-        margin-bottom: fluid(8px, 16px);
-      }
-    }
 
     &:not(:last-child) {
       margin-bottom: fluid(24px, 32px);
+    }
+  }
+
+  p, ul, ol {
+    &:not(:last-child) {
+      margin-bottom: fluid(8px, 16px);
+    }
+  }
+
+  ul, ol {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    row-gap: 8px;
+
+    li {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: subgrid;
+      column-gap: 4px;
+    }
+  }
+
+  ul {
+    li {
+      &:before {
+        content: '-';
+      }
+    }
+  }
+
+  ol {
+    counter-reset: p-descr-counter;
+
+    li {
+      counter-increment: p-descr-counter;
+
+      &:before {
+        content: counter(p-descr-counter) ".";
+      }
     }
   }
 }

@@ -32,6 +32,8 @@ window.addEventListener('load', function() {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    initFancybox()
+
     initGlobalAction();
     updateCounterClass();
     initHeroSliders()
@@ -44,8 +46,4 @@ document.addEventListener('DOMContentLoaded', () => {
     initExpandButtons()
     initInputsRange()
     initSetCardsSliders()
-
-    initFancybox()
-
-
 });

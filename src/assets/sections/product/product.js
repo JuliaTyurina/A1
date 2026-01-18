@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, Thumbs } from 'swiper/modules';
+import { Navigation, Thumbs, Mousewheel } from 'swiper/modules';
 import 'swiper/css';
 
 export function initProductRefSliders() {
@@ -43,7 +43,7 @@ export function initProductSliders() {
         if (!mainSliderEl) return;
 
         const thumbsSwiper = new Swiper(thumbsSliderEl, {
-            modules: [Navigation, Thumbs],
+            modules: [Thumbs],
             slidesPerView: 4,
             freeMode: true,
             breakpoints: {
@@ -59,12 +59,15 @@ export function initProductSliders() {
         });
 
         const mainSlider = new Swiper(mainSliderEl, {
-            modules: [Navigation, Thumbs],
+            modules: [Thumbs, Mousewheel],
             watchSlidesProgress: true,
             slidesPerView: 1.5,
             slidesOffsetBefore: 4,
             slidesOffsetAfter: 4,
             spaceBetween: 4,
+            mousewheel: {
+                eventsTarget: '[data-product-section]',
+            },
             thumbs: {
                 swiper: thumbsSwiper,
             },
@@ -80,6 +83,7 @@ export function initProductSliders() {
                     slidesOffsetBefore: 0,
                     slidesOffsetAfter: 0,
                     spaceBetween: 24,
+                    direction: "vertical",
                 },
             },
         });

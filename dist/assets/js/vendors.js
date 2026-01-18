@@ -490,12 +490,13 @@
             // EXPORTS
             __webpack_require__.d(__webpack_exports__, {
                 s3: () => /* reexport */ Keyboard,
+                FJ: () => /* reexport */ Mousewheel,
                 Vx: () => /* reexport */ Navigation,
                 dK: () => /* reexport */ Pagination,
                 WO: () => /* reexport */ Thumb,
             });
 
-            // UNUSED EXPORTS: A11y, Autoplay, Controller, EffectCards, EffectCoverflow, EffectCreative, EffectCube, EffectFade, EffectFlip, FreeMode, Grid, HashNavigation, History, Manipulation, Mousewheel, Parallax, Scrollbar, Virtual, Zoom
+            // UNUSED EXPORTS: A11y, Autoplay, Controller, EffectCards, EffectCoverflow, EffectCreative, EffectCube, EffectFade, EffectFlip, FreeMode, Grid, HashNavigation, History, Manipulation, Parallax, Scrollbar, Virtual, Zoom
 
             // EXTERNAL MODULE: ./node_modules/swiper/shared/ssr-window.esm.mjs
             var ssr_window_esm = __webpack_require__(375);
@@ -1137,7 +1138,7 @@
 
             /* eslint-disable consistent-return */
             function Mousewheel({ swiper, extendParams, on, emit }) {
-                const window = getWindow();
+                const window = (0, ssr_window_esm.a)();
                 extendParams({
                     mousewheel: {
                         enabled: false,
@@ -1155,7 +1156,7 @@
                     enabled: false,
                 };
                 let timeout;
-                let lastScrollTime = now();
+                let lastScrollTime = (0, utils.h)();
                 let lastEventBeforeSnap;
                 const recentWheelEvents = [];
                 function normalize(e) {
@@ -1244,7 +1245,7 @@
                     }
                     if (
                         swiper.params.mousewheel.thresholdTime &&
-                        now() - lastScrollTime <
+                        (0, utils.h)() - lastScrollTime <
                             swiper.params.mousewheel.thresholdTime
                     ) {
                         // Prevent if time between scrolls is below configured threshold
@@ -1254,7 +1255,10 @@
                     // If the movement is NOT big enough and
                     // if the last time the user scrolled was too close to the current one (avoid continuously triggering the slider):
                     //   Don't go any further (avoid insignificant scroll movement).
-                    if (newEvent.delta >= 6 && now() - lastScrollTime < 60) {
+                    if (
+                        newEvent.delta >= 6 &&
+                        (0, utils.h)() - lastScrollTime < 60
+                    ) {
                         // Return false as a default
                         return true;
                     }
@@ -1393,7 +1397,7 @@
                     ) {
                         // Register the new event in a variable which stores the relevant data
                         const newEvent = {
-                            time: now(),
+                            time: (0, utils.h)(),
                             delta: Math.abs(delta),
                             direction: Math.sign(delta),
                             raw: event,
@@ -1440,7 +1444,7 @@
                         // or if it's a new scroll (larger delta or inverse sign as last event before
                         // an end-of-momentum snap).
                         const newEvent = {
-                            time: now(),
+                            time: (0, utils.h)(),
                             delta: Math.abs(delta),
                             direction: Math.sign(delta),
                         };
@@ -1530,7 +1534,7 @@
                                         delta > 0 ? 0.8 : 0.2;
                                     lastEventBeforeSnap = newEvent;
                                     recentWheelEvents.splice(0);
-                                    timeout = nextTick(() => {
+                                    timeout = (0, utils.n)(() => {
                                         if (swiper.destroyed || !swiper.params)
                                             return;
                                         swiper.slideToClosest(
@@ -1546,7 +1550,7 @@
                                     // if we get here, then we haven't detected the end of a momentum scroll, so
                                     // we'll consider a scroll "complete" when there haven't been any wheel events
                                     // for 500ms.
-                                    timeout = nextTick(() => {
+                                    timeout = (0, utils.n)(() => {
                                         if (swiper.destroyed || !swiper.params)
                                             return;
                                         const snapToThreshold = 0.5;

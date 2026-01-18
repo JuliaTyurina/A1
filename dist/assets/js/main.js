@@ -450,10 +450,7 @@
                     const thumbsSwiper = new swiper_swiper /* default */.A(
                         thumbsSliderEl,
                         {
-                            modules: [
-                                modules /* Navigation */.Vx,
-                                modules /* Thumbs */.WO,
-                            ],
+                            modules: [modules /* Thumbs */.WO],
                             slidesPerView: 4,
                             freeMode: true,
                             breakpoints: {
@@ -472,14 +469,17 @@
                         mainSliderEl,
                         {
                             modules: [
-                                modules /* Navigation */.Vx,
                                 modules /* Thumbs */.WO,
+                                modules /* Mousewheel */.FJ,
                             ],
                             watchSlidesProgress: true,
                             slidesPerView: 1.5,
                             slidesOffsetBefore: 4,
                             slidesOffsetAfter: 4,
                             spaceBetween: 4,
+                            mousewheel: {
+                                eventsTarget: '[data-product-section]',
+                            },
                             thumbs: {
                                 swiper: thumbsSwiper,
                             },
@@ -494,6 +494,7 @@
                                     slidesOffsetBefore: 0,
                                     slidesOffsetAfter: 0,
                                     spaceBetween: 24,
+                                    direction: 'vertical',
                                 },
                             },
                         }
@@ -519,47 +520,6 @@
                 update();
                 window.addEventListener('resize', update);
             }; // ./src/assets/js/files/functions.js
-            const initDragScroll = (selector = '.drag-scroll') => {
-                // Находим все элементы по селектору
-                const elements = document.querySelectorAll(selector);
-                if (elements.length === 0) {
-                    console.warn(
-                        `enableDragScroll: элементы с селектором "${selector}" не найдены`
-                    );
-                    return;
-                }
-                elements.forEach((element) => {
-                    let isDown = false;
-                    let startX;
-                    let scrollLeft;
-                    element.style.cursor = 'grab';
-                    element.style.userSelect = 'none';
-                    element.addEventListener('mousedown', (e) => {
-                        isDown = true;
-                        element.style.cursor = 'grabbing';
-                        startX = e.pageX - element.offsetLeft;
-                        scrollLeft = element.scrollLeft;
-                    });
-                    element.addEventListener('mouseup', () => {
-                        isDown = false;
-                        element.style.cursor = 'grab';
-                    });
-                    element.addEventListener('mouseleave', () => {
-                        isDown = false;
-                        element.style.cursor = 'grab';
-                    });
-                    element.addEventListener('mousemove', (e) => {
-                        if (!isDown) return;
-                        e.preventDefault();
-                        const x = e.pageX - element.offsetLeft;
-                        const walk = x - startX;
-                        element.scrollLeft = scrollLeft - walk;
-                    });
-                });
-                console.log(
-                    `✅ Drag-scroll применён к ${elements.length} элементам`
-                );
-            };
             const initInputsRange = () => {
                 const ranges = document.querySelectorAll('.range');
                 ranges.forEach((range) => {
@@ -777,6 +737,7 @@
                 content.classList.add('visible');
             });
             document.addEventListener('DOMContentLoaded', () => {
+                initFancybox();
                 initGlobalAction();
                 updateCounterClass();
                 initHeroSliders();
@@ -789,7 +750,6 @@
                 initExpandButtons();
                 initInputsRange();
                 initSetCardsSliders();
-                initFancybox();
             });
 
             /***/
