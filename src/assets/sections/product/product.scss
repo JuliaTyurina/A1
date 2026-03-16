@@ -227,6 +227,7 @@
 
     @include desktop {
       grid-column: 11/ span 8;
+      padding-top: 110px;
     }
 
     .product__actions {
@@ -243,10 +244,6 @@
       &:not(:last-child) {
         margin-bottom: 40px;
       }
-    }
-
-    @include desktop {
-      padding-top: 110px;
     }
   }
 
@@ -282,13 +279,10 @@
   }
 
   &__price {
-
-    @include tablet {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
 
     &:not(:last-child) {
       @include tablet {

@@ -1,8 +1,8 @@
 <article class="product-card @@if (mode === 'unavailable') { unavailable }"
 		 data-product-card>
 	<div class="product-card__media">
-		<a href="/product.html" class="product-card__link">
-			<div class="product-card__wrapper">
+		<div class="product-card__wrapper">
+			<a href="/product.html" class="product-card__link">
 				<div class="product-card__slider swiper" data-product-card-slider>
 					<div class="product-card__wrapper swiper-wrapper">
 						@@if (image1) {
@@ -25,66 +25,70 @@
 						}
 					</div>
 				</div>
+			</a>
 
-				@@if (badge1 || badge2) {
-				<div class="product-card__badges product-card__badges--top">
-					@@if (badge1) {
-					<span class="badge badge-main">@@badge1</span>
-					}
-					@@if (badge2) {
-					<span class="badge badge-secondary">@@badge2</span>
-					}
-				</div>
+			@@if (badge1 || badge2) {
+			<div class="product-card__badges product-card__badges--top">
+				@@if (badge1) {
+				<span class="badge badge-main">@@badge1</span>
 				}
-				@@if (favorite === true) {
-				<button class="product-card__favorite active" type="button">
-					<span class="visually-hidden">Убрать из избранного</span>
-
-					<svg class="product-card__favorite-icon" aria-hidden="true">
-						<use href="./assets/img/svg/sprite.svg#heart-fill"></use>
-					</svg>
-				</button>
+				@@if (badge2) {
+				<span class="badge badge-secondary">@@badge2</span>
 				}
-
-				@@if (favorite !== true) {
-				<button class="product-card__favorite" type="button">
-					<span class="visually-hidden">Добавить в избранное</span>
-
-					<svg class="product-card__favorite-icon" aria-hidden="true">
-						<use href="./assets/img/svg/sprite.svg#heart-fill"></use>
-					</svg>
-				</button>
-				}
-
-				<div class="product-card__cart">
-					<button class="product-card__cart-btn" type="button">
-						<span class="visually-hidden">Добавить в корзину</span>
-
-						<svg class="product-card__cart-icon" aria-hidden="true">
-							<use href="./assets/img/svg/sprite.svg#cart-stroke-thin"></use>
-						</svg>
-						<span class="product-card__counter">2</span>
-					</button>
-				</div>
-
-				<div class="product-card__badges product-card__badges--bottom">
-					@@if (discount) {
-					<span class="badge badge-accent product-card__discount">@@discount%</span>
-					}
-				</div>
-
 			</div>
-		</a>
+			}
+			@@if (favorite === true) {
+			<button class="product-card__favorite active" type="button">
+				<span class="visually-hidden">Убрать из избранного</span>
+
+				<svg class="product-card__favorite-icon" aria-hidden="true">
+					<use href="./assets/img/svg/sprite.svg#heart-fill"></use>
+				</svg>
+			</button>
+			}
+
+			@@if (favorite !== true) {
+			<button class="product-card__favorite" type="button">
+				<span class="visually-hidden">Добавить в избранное</span>
+
+				<svg class="product-card__favorite-icon" aria-hidden="true">
+					<use href="./assets/img/svg/sprite.svg#heart-fill"></use>
+				</svg>
+			</button>
+			}
+
+			<div class="product-card__cart">
+				<button class="product-card__cart-btn" type="button" data-global-action="modal-open"
+						data-modal="product-preview">
+					<span class="visually-hidden">Добавить в корзину</span>
+
+					<svg class="product-card__cart-icon" aria-hidden="true">
+						<use href="./assets/img/svg/sprite.svg#cart-stroke-thin"></use>
+					</svg>
+					<span class="product-card__counter">2</span>
+				</button>
+			</div>
+
+			<div class="product-card__badges product-card__badges--bottom">
+				@@if (discount) {
+				<span class="badge badge-accent product-card__discount">@@discount%</span>
+				}
+			</div>
+
+		</div>
 		<div class="product-card__pagination swiper-pagination" data-product-card-pagination></div>
 		<div class="product-card__pagination-invisible" data-product-card-pagination-invisible="">
 			@@if (image1) {
-			<a href="/product.html" class="product-card__pagination-link" data-slide-index="0" aria-label="Перейти на страницу товара"></a>
+			<a href="/product.html" class="product-card__pagination-link" data-slide-index="0"
+			   aria-label="Перейти на страницу товара"></a>
 			}
 			@@if (image1) {
-			<a href="/product.html" class="product-card__pagination-link" data-slide-index="1" aria-label="Перейти на страницу товара"></a>
+			<a href="/product.html" class="product-card__pagination-link" data-slide-index="1"
+			   aria-label="Перейти на страницу товара"></a>
 			}
 			@@if (image1) {
-			<a href="/product.html" class="product-card__pagination-link" data-slide-index="2" aria-label="Перейти на страницу товара"></a>
+			<a href="/product.html" class="product-card__pagination-link" data-slide-index="2"
+			   aria-label="Перейти на страницу товара"></a>
 			}
 		</div>
 	</div>
@@ -107,13 +111,16 @@
 		<div class="product-card__details">
 			<div class="product-card__color">
 				@@if (color1) {
-				<span class="product-card__color-btn @@if (color1border === true) { has-border }" style="background-color: @@color1"></span>
+				<span class="product-card__color-btn @@if (color1border === true) { has-border }"
+					  style="background-color: @@color1"></span>
 				}
 				@@if (color2) {
-				<span class="product-card__color-btn @@if (color2border === true) { has-border }" style="background-color: @@color2"></span>
+				<span class="product-card__color-btn @@if (color2border === true) { has-border }"
+					  style="background-color: @@color2"></span>
 				}
 				@@if (color3) {
-				<span class="product-card__color-btn @@if (color3border === true) { has-border }" style="background-color: @@color3"></span>
+				<span class="product-card__color-btn @@if (color3border === true) { has-border }"
+					  style="background-color: @@color3"></span>
 				}
 				@@if (colorsMore) {
 				<div class="product-card__color-more">

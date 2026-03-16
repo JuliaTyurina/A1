@@ -5,13 +5,16 @@
 @use "./product/p-sizes/p-sizes";
 @use "./o-details/o-details";
 @use "./m-contacts/m-contacts";
+@use "./location/location";
+@use "./delivery-point/delivery-point";
+@use "./product-preview/product-preview";
 
 .modal {
   z-index: 10;
   display: block !important;
 
   &[open] {
-    .modal__container {
+    > .modal__container {
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
@@ -43,6 +46,29 @@
     }
   }
 
+  &[data-modal="delivery-point"][open] {
+    .delivery-point__map {
+      opacity: 1;
+    }
+  }
+
+
+  &.scroll-hidden {
+    .modal__container {
+      overflow: unset;
+    }
+
+    .modal__content {
+      min-height: 0;
+    }
+
+    .location,
+    .delivery-point {
+      min-height: 0;
+    }
+
+  }
+
   &__container {
     position: fixed;
     inset: 0;
@@ -72,7 +98,7 @@
     }
 
     @include desktop-lg {
-      padding: 64px;
+      padding: 108px 56px;
     }
   }
 
@@ -85,6 +111,20 @@
       opacity: 0;
       transition: opacity var(--transition);
       transition-delay: .4s;
+    }
+  }
+
+  &__main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 420px;
+    padding: 0 var(--container-padding) 60px;
+
+    @include desktop {
+      padding: unset;
     }
   }
 

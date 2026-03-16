@@ -1,0 +1,38 @@
+@use '../../../../scss/mixins' as *;
+
+.location {
+
+  row-gap: 24px;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(12px, 16px);
+  }
+
+  &__list {
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+
+  &__item {
+    input:checked ~ label {
+      background-color: var(--color-background-secondary);
+    }
+  }
+
+  &__label {
+    display: block;
+    padding: 12px;
+    border-radius: 12px;
+    transition: background-color var(--transition), color var(--transition);
+    cursor: pointer;
+
+    &:hover,
+    &.active {
+      background-color: var(--color-background-secondary);
+    }
+  }
+
+
+}

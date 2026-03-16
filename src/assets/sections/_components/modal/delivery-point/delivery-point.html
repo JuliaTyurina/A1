@@ -1,0 +1,213 @@
+<dialog class="modal scroll-hidden" data-modal="delivery-point" >
+	<div class="modal__container">
+		<div class="modal__content">
+			<!--data-view: map | list-->
+			<!--data-point-selected: true | false-->
+						<div class=" delivery-point" data-view="map">
+
+							<header class="delivery-point__header">
+								<div class="heading-md font-medium delivery-font-bold point__title">
+									Пункт выдачи
+								</div>
+
+								<label class="select">
+									<select class="select-elem" name="">
+										<option value="" selected="" disabled="">
+											Выберите службу выдачи
+										</option>
+										<option value="">CDEK</option>
+										<option value="">5Post</option>
+									</select>
+									<span class="select-arrow">
+										<svg aria-hidden="true">
+											<use href="./assets/img/svg/sprite.svg#chevron-down"></use>
+										</svg>
+									</span>
+								</label>
+							</header>
+
+							<ul class="thin-scrollbar delivery-point__list">
+								<li class="delivery-point__item point">
+									<a href="#" class="delivery-point__link point">
+										<div class="point__heading">
+											<span class="font-bold point__title">СДЭК</span>
+											<span class="font-medium point__address">Дзержинского, 39</span>
+										</div>
+
+										<div class="font-medium point__meta">
+											<span>стоимость — бесплатно</span>
+											<span>дата доставки — 17 января</span>
+										</div>
+									</a>
+								</li>
+								<li class="delivery-point__item point">
+									<a href="#" class="delivery-point__link point">
+										<div class="point__heading">
+											<span class="font-bold point__title">СДЭК</span>
+											<span class="font-medium point__address">Дзержинского, 39</span>
+										</div>
+
+										<div class="font-medium point__meta">
+											<span>стоимость — бесплатно</span>
+											<span>дата доставки — 17 января</span>
+										</div>
+									</a>
+								</li>
+								<li class="delivery-point__item point">
+									<a href="#" class="delivery-point__link point">
+										<div class="point__heading">
+											<span class="font-bold point__title">СДЭК</span>
+											<span class="font-medium point__address">Дзержинского, 39</span>
+										</div>
+
+										<div class="font-medium point__meta">
+											<span>стоимость — бесплатно</span>
+											<span>дата доставки — 17 января</span>
+										</div>
+									</a>
+								</li>
+							</ul>
+
+							<div class="delivery-point__map">
+								<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adbc4130ef31a19d75aee0ea6c0fbb423c51b3aca97011aca61876ff99088dbf4&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+							</div>
+
+
+							<div class="delivery-point__actions">
+								<button class="button-xl button-primary delivery-point__choose" disabled>
+									Привезти сюда
+								</button>
+								<div class="delivery-point__mode">
+									<button class="button-secondary button-lg delivery-point__mode-btn active">На карте</button>
+									<button class="button-secondary button-lg delivery-point__mode-btn">Списком</button>
+								</div>
+							</div>
+
+						</div>
+			<div class="delivery-point" data-view="list">
+
+				<header class="delivery-point__header">
+					<div class="heading-md font-medium delivery-font-bold point__title">
+						Пункт выдачи
+					</div>
+
+					<label class="select">
+						<select class="select-elem" name="">
+							<option value="" disabled>
+								Выберите службу выдачи
+							</option>
+							<option value="" selected>СДЭК</option>
+							<option value="">5Post</option>
+						</select>
+						<span class="select-arrow">
+							<svg aria-hidden="true">
+								<use href="./assets/img/svg/sprite.svg#chevron-down"></use>
+							</svg>
+						</span>
+					</label>
+
+				</header>
+
+				<ul class="thin-scrollbar delivery-point__list">
+					<li class="delivery-point__item">
+						<a href="#" class="delivery-point__link point active" data-global-action="modal-open" data-modal="delivery-point-selected">
+							<div class="point__heading">
+								<span class="font-bold point__title">СДЭК</span>
+								<span class="font-medium point__address">Дзержинского, 39</span>
+							</div>
+
+							<div class="font-medium point__meta">
+								<span>стоимость — бесплатно</span>
+								<span>дата доставки — 17 января</span>
+							</div>
+						</a>
+					</li>
+					<li class="delivery-point__item">
+						<a href="#" class="delivery-point__link point">
+							<div class="point__heading">
+								<span class="font-bold point__title">СДЭК</span>
+								<span class="font-medium point__address">Дзержинского, 39</span>
+							</div>
+
+							<div class="font-medium point__meta">
+								<span>стоимость — бесплатно</span>
+								<span>дата доставки — 17 января</span>
+							</div>
+						</a>
+					</li>
+
+				</ul>
+
+				<div class="delivery-point__map">
+					<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adbc4130ef31a19d75aee0ea6c0fbb423c51b3aca97011aca61876ff99088dbf4&amp;source=constructor"
+							width="100%" height="400" frameborder="0"></iframe>
+				</div>
+
+
+				<div class="delivery-point__actions">
+					<button class="button-xl button-primary delivery-point__choose">
+						Привезти сюда
+					</button>
+					<div class="delivery-point__mode">
+						<button class="button-secondary button-lg delivery-point__mode-btn ">На карте</button>
+						<button class="button-secondary button-lg delivery-point__mode-btn active">Списком</button>
+					</div>
+				</div>
+
+
+			</div>
+
+
+		</div>
+		<button class="modal__close" data-global-action="modal-close">
+			<svg class="modal__close-icon" aria-hidden="true">
+				<use href="./assets/img/svg/sprite.svg#cancel"></use>
+			</svg>
+		</button>
+	</div>
+
+	<div class="modal__overlay" data-global-action="modal-close"></div>
+</dialog>
+
+<dialog class="modal scroll-hidden" data-modal="delivery-point-selected">
+	<div class="modal__container thin-scrollbar">
+		<div class="modal__content">
+			<div class="delivery-point">
+				<header class="delivery-point__header">
+					<div class="heading-md font-medium delivery-point__title">
+						Пункт выдачи
+					</div>
+					<div class="delivery-point__info point">
+						<div class="point__heading">
+							<span class="font-bold point__title">СДЭК</span>
+							<span class="font-medium point__address">Дзержинского, 39</span>
+						</div>
+
+						<div class="font-medium point__meta">
+							<span>стоимость — бесплатно</span>
+							<span>дата доставки — 17 января</span>
+						</div>
+					</div>
+				</header>
+
+				<div class="delivery-point__map">
+					<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adbc4130ef31a19d75aee0ea6c0fbb423c51b3aca97011aca61876ff99088dbf4&amp;source=constructor"
+							width="100%" height="400" frameborder="0"></iframe>
+				</div>
+
+				<div class="delivery-point__actions">
+					<button class="button-xl button-primary ">
+						Привезти сюда
+					</button>
+				</div>
+			</div>
+
+		</div>
+		<button class="modal__close" data-global-action="modal-close">
+			<svg class="modal__close-icon" aria-hidden="true">
+				<use href="./assets/img/svg/sprite.svg#cancel"></use>
+			</svg>
+		</button>
+	</div>
+
+</dialog>

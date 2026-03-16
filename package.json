@@ -1,8 +1,7 @@
 {
-    "name": "pkm-start",
+    "name": "markup-starter",
     "version": "0.0.2",
     "description": "Start template with Gulp and Webpack",
-    "author": "Berezin Edward",
     "private": true,
     "license": "",
     "type": "module",

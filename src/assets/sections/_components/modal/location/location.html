@@ -1,0 +1,92 @@
+<dialog class="modal scroll-hidden" data-modal="location" >
+	<div class="modal__container thin-scrollbar">
+		<div class="modal__content">
+			<div class="modal__main location">
+				<header class="location__header">
+					<div class="heading-md font-medium location__title">
+						Выберите город
+					</div>
+					<div class="input floating-input">
+						<div class="input-wrapper">
+							<input id="location" class="input-elem" name="location" type="text" placeholder="Найдите свой город"/>
+							<label for="location" class="input-label" data-content="Найдите свой город"></label>
+						</div>
+					</div>
+				</header>
+
+				<ul class="thin-scrollbar location__list">
+					<li class="location__item">
+						<input id="location_1" class="visually-hidden" type="radio" name="location">
+						<label for="location_1" class="font-medium location__label">Москва</label>
+					</li>
+
+					<li class="location__item">
+						<input id="location_2" class="visually-hidden" type="radio" name="location" >
+						<label for="location_2" class="font-medium location__label">Санкт-Петербург</label>
+					</li>
+
+					<li class="location__item">
+						<input id="location_3" class="visually-hidden" type="radio" name="location" checked>
+						<label for="location_3" class="font-medium location__label">Екатеринбург</label>
+					</li>
+
+					<li class="location__item">
+						<input id="location_4" class="visually-hidden" type="radio" name="location" >
+						<label for="location_4" class="font-medium location__label">Новосибирск</label>
+					</li>
+
+					<li class="location__item">
+						<input id="location_1" class="visually-hidden" type="radio" name="location">
+						<label for="location_1" class="font-medium location__label">Москва</label>
+					</li>
+
+					<li class="location__item">
+						<input id="location_2" class="visually-hidden" type="radio" name="location" >
+						<label for="location_2" class="font-medium location__label">Санкт-Петербург</label>
+					</li>
+
+					<li class="location__item">
+						<input id="location_3" class="visually-hidden" type="radio" name="location" checked>
+						<label for="location_3" class="font-medium location__label">Екатеринбург</label>
+					</li>
+
+					<li class="location__item">
+						<input id="location_4" class="visually-hidden" type="radio" name="location" >
+						<label for="location_4" class="font-medium location__label">Новосибирск</label>
+					</li>
+					<li class="location__item">
+						<input id="location_1" class="visually-hidden" type="radio" name="location">
+						<label for="location_1" class="font-medium location__label">Москва</label>
+					</li>
+
+					<li class="location__item">
+						<input id="location_2" class="visually-hidden" type="radio" name="location" >
+						<label for="location_2" class="font-medium location__label">Санкт-Петербург</label>
+					</li>
+
+					<li class="location__item">
+						<input id="location_3" class="visually-hidden" type="radio" name="location" checked>
+						<label for="location_3" class="font-medium location__label">Екатеринбург</label>
+					</li>
+
+					<li class="location__item">
+						<input id="location_4" class="visually-hidden" type="radio" name="location" >
+						<label for="location_4" class="font-medium location__label">Новосибирск</label>
+					</li>
+				</ul>
+
+				<button class="button-xl button-secondary">
+					Закрыть
+				</button>
+			</div>
+
+		</div>
+		<button class="modal__close" data-global-action="modal-close">
+			<svg class="modal__close-icon" aria-hidden="true">
+				<use href="./assets/img/svg/sprite.svg#cancel"></use>
+			</svg>
+		</button>
+	</div>
+
+	<div class="modal__overlay" data-global-action="modal-close"></div>
+</dialog>

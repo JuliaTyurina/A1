@@ -1,18 +1,6 @@
 @use '../../../../scss/mixins' as *;
 
 .form {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 420px;
-  padding: 0 var(--container-padding) 60px;
-
-  @include desktop {
-    padding: unset;
-  }
-
   &__back {
     margin-bottom: 16px;
     width: 36px;

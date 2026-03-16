@@ -2141,7 +2141,6 @@
 
 					<li class="bottom-nav__item">
 						<a
-							href="/catalog.html"
 							class="bottom-nav__link"
 							data-global-action="mobile-catalog-toggle"
 						>
@@ -2222,11 +2221,9 @@
 			<dialog class="modal" data-modal="auth">
 				<div class="modal__container thin-scrollbar">
 					<div class="modal__content">
-						<div class="form">
+						<div class="modal__main form">
 							<header class="form__header">
-								<div
-									class="heading-md font-semibold form__title"
-								>
+								<div class="heading-md font-medium form__title">
 									Вход
 								</div>
 							</header>
@@ -2321,11 +2318,9 @@
 							</div>
 						</div>
 
-						<div class="form">
+						<div class="modal__main form">
 							<header class="form__header">
-								<div
-									class="heading-md font-semibold form__title"
-								>
+								<div class="heading-md font-medium form__title">
 									Вход
 								</div>
 								<div class="form__text">
@@ -2381,7 +2376,7 @@
 							</div>
 						</div>
 
-						<div class="form">
+						<div class="modal__main form">
 							<button class="form__back" aria-label="Назад">
 								<svg aria-hidden="true">
 									<use
@@ -2390,9 +2385,7 @@
 								</svg>
 							</button>
 							<header class="form__header">
-								<div
-									class="heading-md font-semibold form__title"
-								>
+								<div class="heading-md font-medium form__title">
 									Подтвердите номер
 								</div>
 								<div class="form__confirm">
@@ -2476,10 +2469,554 @@
 				></div>
 			</dialog>
 
+			<dialog class="modal scroll-hidden" data-modal="location">
+				<div class="modal__container thin-scrollbar">
+					<div class="modal__content">
+						<div class="modal__main location">
+							<header class="location__header">
+								<div
+									class="heading-md font-medium location__title"
+								>
+									Выберите город
+								</div>
+								<div class="input floating-input">
+									<div class="input-wrapper">
+										<input
+											id="location"
+											class="input-elem"
+											name="location"
+											type="text"
+											placeholder="Найдите свой город"
+										/>
+										<label
+											for="location"
+											class="input-label"
+											data-content="Найдите свой город"
+										></label>
+									</div>
+								</div>
+							</header>
+
+							<ul class="thin-scrollbar location__list">
+								<li class="location__item">
+									<input
+										id="location_1"
+										class="visually-hidden"
+										type="radio"
+										name="location"
+									/>
+									<label
+										for="location_1"
+										class="font-medium location__label"
+										>Москва</label
+									>
+								</li>
+
+								<li class="location__item">
+									<input
+										id="location_2"
+										class="visually-hidden"
+										type="radio"
+										name="location"
+									/>
+									<label
+										for="location_2"
+										class="font-medium location__label"
+										>Санкт-Петербург</label
+									>
+								</li>
+
+								<li class="location__item">
+									<input
+										id="location_3"
+										class="visually-hidden"
+										type="radio"
+										name="location"
+										checked
+									/>
+									<label
+										for="location_3"
+										class="font-medium location__label"
+										>Екатеринбург</label
+									>
+								</li>
+
+								<li class="location__item">
+									<input
+										id="location_4"
+										class="visually-hidden"
+										type="radio"
+										name="location"
+									/>
+									<label
+										for="location_4"
+										class="font-medium location__label"
+										>Новосибирск</label
+									>
+								</li>
+
+								<li class="location__item">
+									<input
+										id="location_1"
+										class="visually-hidden"
+										type="radio"
+										name="location"
+									/>
+									<label
+										for="location_1"
+										class="font-medium location__label"
+										>Москва</label
+									>
+								</li>
+
+								<li class="location__item">
+									<input
+										id="location_2"
+										class="visually-hidden"
+										type="radio"
+										name="location"
+									/>
+									<label
+										for="location_2"
+										class="font-medium location__label"
+										>Санкт-Петербург</label
+									>
+								</li>
+
+								<li class="location__item">
+									<input
+										id="location_3"
+										class="visually-hidden"
+										type="radio"
+										name="location"
+										checked
+									/>
+									<label
+										for="location_3"
+										class="font-medium location__label"
+										>Екатеринбург</label
+									>
+								</li>
+
+								<li class="location__item">
+									<input
+										id="location_4"
+										class="visually-hidden"
+										type="radio"
+										name="location"
+									/>
+									<label
+										for="location_4"
+										class="font-medium location__label"
+										>Новосибирск</label
+									>
+								</li>
+								<li class="location__item">
+									<input
+										id="location_1"
+										class="visually-hidden"
+										type="radio"
+										name="location"
+									/>
+									<label
+										for="location_1"
+										class="font-medium location__label"
+										>Москва</label
+									>
+								</li>
+
+								<li class="location__item">
+									<input
+										id="location_2"
+										class="visually-hidden"
+										type="radio"
+										name="location"
+									/>
+									<label
+										for="location_2"
+										class="font-medium location__label"
+										>Санкт-Петербург</label
+									>
+								</li>
+
+								<li class="location__item">
+									<input
+										id="location_3"
+										class="visually-hidden"
+										type="radio"
+										name="location"
+										checked
+									/>
+									<label
+										for="location_3"
+										class="font-medium location__label"
+										>Екатеринбург</label
+									>
+								</li>
+
+								<li class="location__item">
+									<input
+										id="location_4"
+										class="visually-hidden"
+										type="radio"
+										name="location"
+									/>
+									<label
+										for="location_4"
+										class="font-medium location__label"
+										>Новосибирск</label
+									>
+								</li>
+							</ul>
+
+							<button class="button-xl button-secondary">
+								Закрыть
+							</button>
+						</div>
+					</div>
+					<button
+						class="modal__close"
+						data-global-action="modal-close"
+					>
+						<svg class="modal__close-icon" aria-hidden="true">
+							<use
+								href="./assets/img/svg/sprite.svg#cancel"
+							></use>
+						</svg>
+					</button>
+				</div>
+
+				<div
+					class="modal__overlay"
+					data-global-action="modal-close"
+				></div>
+			</dialog>
+
+			<dialog class="modal scroll-hidden" data-modal="delivery-point">
+				<div class="modal__container">
+					<div class="modal__content">
+						<!--data-view: map | list-->
+						<!--data-point-selected: true | false-->
+						<div class="delivery-point" data-view="map">
+							<header class="delivery-point__header">
+								<div
+									class="heading-md font-medium delivery-font-bold point__title"
+								>
+									Пункт выдачи
+								</div>
+
+								<label class="select">
+									<select class="select-elem" name="">
+										<option
+											value=""
+											selected=""
+											disabled=""
+										>
+											Выберите службу выдачи
+										</option>
+										<option value="">CDEK</option>
+										<option value="">5Post</option>
+									</select>
+									<span class="select-arrow">
+										<svg aria-hidden="true">
+											<use
+												href="./assets/img/svg/sprite.svg#chevron-down"
+											></use>
+										</svg>
+									</span>
+								</label>
+							</header>
+
+							<ul class="thin-scrollbar delivery-point__list">
+								<li class="delivery-point__item point">
+									<a
+										href="#"
+										class="delivery-point__link point"
+									>
+										<div class="point__heading">
+											<span class="font-bold point__title"
+												>СДЭК</span
+											>
+											<span
+												class="font-medium point__address"
+												>Дзержинского, 39</span
+											>
+										</div>
+
+										<div class="font-medium point__meta">
+											<span>стоимость — бесплатно</span>
+											<span
+												>дата доставки — 17 января</span
+											>
+										</div>
+									</a>
+								</li>
+								<li class="delivery-point__item point">
+									<a
+										href="#"
+										class="delivery-point__link point"
+									>
+										<div class="point__heading">
+											<span class="font-bold point__title"
+												>СДЭК</span
+											>
+											<span
+												class="font-medium point__address"
+												>Дзержинского, 39</span
+											>
+										</div>
+
+										<div class="font-medium point__meta">
+											<span>стоимость — бесплатно</span>
+											<span
+												>дата доставки — 17 января</span
+											>
+										</div>
+									</a>
+								</li>
+								<li class="delivery-point__item point">
+									<a
+										href="#"
+										class="delivery-point__link point"
+									>
+										<div class="point__heading">
+											<span class="font-bold point__title"
+												>СДЭК</span
+											>
+											<span
+												class="font-medium point__address"
+												>Дзержинского, 39</span
+											>
+										</div>
+
+										<div class="font-medium point__meta">
+											<span>стоимость — бесплатно</span>
+											<span
+												>дата доставки — 17 января</span
+											>
+										</div>
+									</a>
+								</li>
+							</ul>
+
+							<div class="delivery-point__map">
+								<iframe
+									src="https://yandex.ru/map-widget/v1/?um=constructor%3Adbc4130ef31a19d75aee0ea6c0fbb423c51b3aca97011aca61876ff99088dbf4&amp;source=constructor"
+									width="100%"
+									height="400"
+									frameborder="0"
+								></iframe>
+							</div>
+
+							<div class="delivery-point__actions">
+								<button
+									class="button-xl button-primary delivery-point__choose"
+									disabled
+								>
+									Привезти сюда
+								</button>
+								<div class="delivery-point__mode">
+									<button
+										class="button-secondary button-lg delivery-point__mode-btn active"
+									>
+										На карте
+									</button>
+									<button
+										class="button-secondary button-lg delivery-point__mode-btn"
+									>
+										Списком
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="delivery-point" data-view="list">
+							<header class="delivery-point__header">
+								<div
+									class="heading-md font-medium delivery-font-bold point__title"
+								>
+									Пункт выдачи
+								</div>
+
+								<label class="select">
+									<select class="select-elem" name="">
+										<option value="" disabled>
+											Выберите службу выдачи
+										</option>
+										<option value="" selected>СДЭК</option>
+										<option value="">5Post</option>
+									</select>
+									<span class="select-arrow">
+										<svg aria-hidden="true">
+											<use
+												href="./assets/img/svg/sprite.svg#chevron-down"
+											></use>
+										</svg>
+									</span>
+								</label>
+							</header>
+
+							<ul class="thin-scrollbar delivery-point__list">
+								<li class="delivery-point__item">
+									<a
+										href="#"
+										class="delivery-point__link point active"
+										data-global-action="modal-open"
+										data-modal="delivery-point-selected"
+									>
+										<div class="point__heading">
+											<span class="font-bold point__title"
+												>СДЭК</span
+											>
+											<span
+												class="font-medium point__address"
+												>Дзержинского, 39</span
+											>
+										</div>
+
+										<div class="font-medium point__meta">
+											<span>стоимость — бесплатно</span>
+											<span
+												>дата доставки — 17 января</span
+											>
+										</div>
+									</a>
+								</li>
+								<li class="delivery-point__item">
+									<a
+										href="#"
+										class="delivery-point__link point"
+									>
+										<div class="point__heading">
+											<span class="font-bold point__title"
+												>СДЭК</span
+											>
+											<span
+												class="font-medium point__address"
+												>Дзержинского, 39</span
+											>
+										</div>
+
+										<div class="font-medium point__meta">
+											<span>стоимость — бесплатно</span>
+											<span
+												>дата доставки — 17 января</span
+											>
+										</div>
+									</a>
+								</li>
+							</ul>
+
+							<div class="delivery-point__map">
+								<iframe
+									src="https://yandex.ru/map-widget/v1/?um=constructor%3Adbc4130ef31a19d75aee0ea6c0fbb423c51b3aca97011aca61876ff99088dbf4&amp;source=constructor"
+									width="100%"
+									height="400"
+									frameborder="0"
+								></iframe>
+							</div>
+
+							<div class="delivery-point__actions">
+								<button
+									class="button-xl button-primary delivery-point__choose"
+								>
+									Привезти сюда
+								</button>
+								<div class="delivery-point__mode">
+									<button
+										class="button-secondary button-lg delivery-point__mode-btn"
+									>
+										На карте
+									</button>
+									<button
+										class="button-secondary button-lg delivery-point__mode-btn active"
+									>
+										Списком
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button
+						class="modal__close"
+						data-global-action="modal-close"
+					>
+						<svg class="modal__close-icon" aria-hidden="true">
+							<use
+								href="./assets/img/svg/sprite.svg#cancel"
+							></use>
+						</svg>
+					</button>
+				</div>
+
+				<div
+					class="modal__overlay"
+					data-global-action="modal-close"
+				></div>
+			</dialog>
+
+			<dialog
+				class="modal scroll-hidden"
+				data-modal="delivery-point-selected"
+			>
+				<div class="modal__container thin-scrollbar">
+					<div class="modal__content">
+						<div class="delivery-point">
+							<header class="delivery-point__header">
+								<div
+									class="heading-md font-medium delivery-point__title"
+								>
+									Пункт выдачи
+								</div>
+								<div class="delivery-point__info point">
+									<div class="point__heading">
+										<span class="font-bold point__title"
+											>СДЭК</span
+										>
+										<span class="font-medium point__address"
+											>Дзержинского, 39</span
+										>
+									</div>
+
+									<div class="font-medium point__meta">
+										<span>стоимость — бесплатно</span>
+										<span>дата доставки — 17 января</span>
+									</div>
+								</div>
+							</header>
+
+							<div class="delivery-point__map">
+								<iframe
+									src="https://yandex.ru/map-widget/v1/?um=constructor%3Adbc4130ef31a19d75aee0ea6c0fbb423c51b3aca97011aca61876ff99088dbf4&amp;source=constructor"
+									width="100%"
+									height="400"
+									frameborder="0"
+								></iframe>
+							</div>
+
+							<div class="delivery-point__actions">
+								<button class="button-xl button-primary">
+									Привезти сюда
+								</button>
+							</div>
+						</div>
+					</div>
+					<button
+						class="modal__close"
+						data-global-action="modal-close"
+					>
+						<svg class="modal__close-icon" aria-hidden="true">
+							<use
+								href="./assets/img/svg/sprite.svg#cancel"
+							></use>
+						</svg>
+					</button>
+				</div>
+			</dialog>
+
 			<dialog class="modal" data-modal="request">
 				<div class="modal__container thin-scrollbar">
 					<div class="modal__content">
-						<div class="form">
+						<div class="modal__main form">
 							<header class="form__header">
 								<div
 									class="heading-md font-semibold form__title"
@@ -2569,7 +3106,7 @@
 			<dialog class="modal" data-modal="m-contacts">
 				<div class="modal__container thin-scrollbar">
 					<div class="modal__content">
-						<div class="m-contacts">
+						<div class="modal__main m-contacts">
 							<header class="m-contacts__header">
 								<div class="heading-md font-medium">
 									Контакты
@@ -2663,6 +3200,560 @@
 									>Мы в соцсетях</span
 								>
 							</div>
+						</div>
+					</div>
+					<button
+						class="modal__close"
+						data-global-action="modal-close"
+					>
+						<svg class="modal__close-icon" aria-hidden="true">
+							<use
+								href="./assets/img/svg/sprite.svg#cancel"
+							></use>
+						</svg>
+					</button>
+				</div>
+
+				<div
+					class="modal__overlay"
+					data-global-action="modal-close"
+				></div>
+			</dialog>
+
+			<dialog class="modal" data-modal="product-preview">
+				<div class="modal__container">
+					<div class="modal__content">
+						<div class="product-preview">
+							<div class="product__info">
+								<h1 class="product__title">
+									Медицинский костюм М16 стрейч на запах с
+									брюками палаццо
+								</h1>
+
+								<div class="product__price">
+									<div class="product__price-wrapper">
+										<span
+											class="font-bold product__price-current"
+											>13 000 ₽</span
+										>
+										<span
+											class="text-grey text-strike product__price-old"
+											>18 000 ₽</span
+										>
+										<span
+											class="body-text-xs font-bold product__price-discount"
+											>24%</span
+										>
+									</div>
+
+									<div class="product__actions">
+										<button class="share product__share">
+											<svg aria-hidden="true">
+												<use
+													href="./assets/img/svg/sprite.svg#export"
+												></use>
+											</svg>
+											<span class="visually-hidden"
+												>Поделиться</span
+											>
+										</button>
+										<button
+											class="favorite product__favorite"
+										>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												viewBox="0 0 24 24"
+												fill="none"
+											>
+												<path
+													d="M16.6865 4.5498C18.0157 4.5513 19.2896 5.08064 20.2295 6.02051C21.1105 6.90153 21.6305 8.07598 21.6934 9.31446L21.7002 9.56349C21.6997 12.47 19.5164 15.2307 17.0557 17.3857C14.7013 19.4476 12.2928 20.7809 12 20.9385C11.7072 20.7809 9.29874 19.4476 6.94434 17.3857C4.48358 15.2307 2.30029 12.47 2.2998 9.56349C2.3013 8.23431 2.83064 6.96038 3.77051 6.02051C4.71017 5.08085 5.98365 4.55154 7.3125 4.5498C9.01458 4.5498 10.4653 5.27774 11.3604 6.46973L12 7.32227L12.6396 6.46973C13.5345 5.27797 14.9849 4.55008 16.6865 4.5498Z"
+													stroke="currentColor"
+													stroke-width="2.3"
+													stroke-linejoin="round"
+												></path>
+											</svg>
+											<span class="visually-hidden"
+												>Убрать из избранного</span
+											>
+										</button>
+									</div>
+								</div>
+
+								<div class="product__variants">
+									<div
+										class="font-medium product__variant-info"
+									>
+										<span
+											class="text-grey product__variant-key"
+											>Цвет</span
+										>
+										<span class="product__variant-value"
+											>Бордовый</span
+										>
+									</div>
+
+									<div
+										class="scroll product__variants-scroll"
+									>
+										<ul
+											class="track product__variants-list"
+											data-expand="product-variants"
+										>
+											<li class="product__variant">
+												<label
+													class="product__variant-label"
+													aria-label="Цвет: Белый"
+													title="Белый"
+												>
+													<input
+														type="radio"
+														id="color-1"
+														name="product-color"
+														class="visually-hidden product__variant-input"
+													/>
+													<span
+														class="product__variant-img"
+														style="
+															background-image: url(&quot;./assets/img/raster/product-variant-1.png.webp&quot;);
+														"
+													></span>
+												</label>
+											</li>
+											<li class="product__variant">
+												<label
+													class="product__variant-label"
+													aria-label="Цвет: Бордовый"
+													title="Бордовый"
+												>
+													<input
+														type="radio"
+														id="color-2"
+														name="product-color"
+														class="visually-hidden product__variant-input"
+													/>
+													<span
+														class="product__variant-img"
+														style="
+															background-image: url(&quot;./assets/img/raster/product-variant-2.png.webp&quot;);
+														"
+													></span>
+												</label>
+											</li>
+											<li class="product__variant">
+												<label
+													class="product__variant-label"
+													aria-label="Цвет: Серый"
+													title="Серый"
+												>
+													<input
+														type="radio"
+														id="color-3"
+														name="product-color"
+														class="visually-hidden product__variant-input"
+													/>
+													<span
+														class="product__variant-img"
+														style="
+															background-image: url(&quot;./assets/img/raster/product-variant-3.png.webp&quot;);
+														"
+													></span>
+												</label>
+											</li>
+											<li class="product__variant">
+												<label
+													class="product__variant-label"
+													aria-label="Цвет: Салатовый"
+													title="Салатовый"
+												>
+													<input
+														type="radio"
+														id="color-4"
+														name="product-color"
+														class="visually-hidden product__variant-input"
+													/>
+													<span
+														class="product__variant-img"
+														style="
+															background-image: url(&quot;./assets/img/raster/product-variant-4.png.webp&quot;);
+														"
+													></span>
+												</label>
+											</li>
+											<li class="product__variant">
+												<label
+													class="product__variant-label"
+													aria-label="Цвет: Фиолетовый"
+													title="Фиолетовый"
+												>
+													<input
+														type="radio"
+														id="color-5"
+														name="product-color"
+														class="visually-hidden product__variant-input"
+													/>
+													<span
+														class="product__variant-img"
+														style="
+															background-image: url(&quot;./assets/img/raster/product-variant-5.png.webp&quot;);
+														"
+													></span>
+												</label>
+											</li>
+											<li class="product__variant">
+												<label
+													class="product__variant-label"
+													aria-label="Цвет: Розовый"
+													title="Розовый"
+												>
+													<input
+														type="radio"
+														id="color-6"
+														name="product-color"
+														class="visually-hidden product__variant-input"
+													/>
+													<span
+														class="product__variant-img"
+														style="
+															background-image: url(&quot;./assets/img/raster/product-variant-6.png.webp&quot;);
+														"
+													></span>
+												</label>
+											</li>
+											<li class="product__variant">
+												<label
+													class="product__variant-label"
+													aria-label="Цвет: Синий"
+													title="Синий"
+												>
+													<input
+														type="radio"
+														id="color-7"
+														name="product-color"
+														class="visually-hidden product__variant-input"
+													/>
+													<span
+														class="product__variant-img"
+														style="
+															background-image: url(&quot;./assets/img/raster/product-variant-7.png.webp&quot;);
+														"
+													></span>
+												</label>
+											</li>
+											<li class="product__variant">
+												<label
+													class="product__variant-label"
+													aria-label="Цвет: Темно-синий"
+													title="Темно-синий"
+												>
+													<input
+														type="radio"
+														id="color-8"
+														name="product-color"
+														class="visually-hidden product__variant-input"
+													/>
+													<span
+														class="product__variant-img"
+														style="
+															background-image: url(&quot;./assets/img/raster/product-variant-8.png.webp&quot;);
+														"
+													></span>
+												</label>
+											</li>
+											<li class="product__variant">
+												<label
+													class="product__variant-label"
+													aria-label="Цвет: Белый"
+													title="Белый"
+												>
+													<input
+														type="radio"
+														id="color-1"
+														name="product-color"
+														class="visually-hidden product__variant-input"
+													/>
+													<span
+														class="product__variant-img"
+														style="
+															background-image: url(&quot;./assets/img/raster/product-variant-1.png.webp&quot;);
+														"
+													></span>
+												</label>
+											</li>
+											<li class="product__variant">
+												<label
+													class="product__variant-label"
+													aria-label="Цвет: Бордовый"
+													title="Бордовый"
+												>
+													<input
+														type="radio"
+														id="color-2"
+														name="product-color"
+														class="visually-hidden product__variant-input"
+													/>
+													<span
+														class="product__variant-img"
+														style="
+															background-image: url(&quot;./assets/img/raster/product-variant-2.png.webp&quot;);
+														"
+													></span>
+												</label>
+											</li>
+											<li class="product__variant">
+												<label
+													class="product__variant-label"
+													aria-label="Цвет: Серый"
+													title="Серый"
+												>
+													<input
+														type="radio"
+														id="color-3"
+														name="product-color"
+														class="visually-hidden product__variant-input"
+													/>
+													<span
+														class="product__variant-img"
+														style="
+															background-image: url(&quot;./assets/img/raster/product-variant-3.png.webp&quot;);
+														"
+													></span>
+												</label>
+											</li>
+											<li class="product__variant">
+												<label
+													class="product__variant-label"
+													aria-label="Цвет: Салатовый"
+													title="Салатовый"
+												>
+													<input
+														type="radio"
+														id="color-4"
+														name="product-color"
+														class="visually-hidden product__variant-input"
+													/>
+													<span
+														class="product__variant-img"
+														style="
+															background-image: url(&quot;./assets/img/raster/product-variant-4.png.webp&quot;);
+														"
+													></span>
+												</label>
+											</li>
+											<li class="product__variant">
+												<label
+													class="product__variant-label"
+													aria-label="Цвет: Фиолетовый"
+													title="Фиолетовый"
+												>
+													<input
+														type="radio"
+														id="color-5"
+														name="product-color"
+														class="visually-hidden product__variant-input"
+													/>
+													<span
+														class="product__variant-img"
+														style="
+															background-image: url(&quot;./assets/img/raster/product-variant-5.png.webp&quot;);
+														"
+													></span>
+												</label>
+											</li>
+											<li class="product__variant">
+												<label
+													class="product__variant-label"
+													aria-label="Цвет: Розовый"
+													title="Розовый"
+												>
+													<input
+														type="radio"
+														id="color-6"
+														name="product-color"
+														class="visually-hidden product__variant-input"
+													/>
+													<span
+														class="product__variant-img"
+														style="
+															background-image: url(&quot;./assets/img/raster/product-variant-6.png.webp&quot;);
+														"
+													></span>
+												</label>
+											</li>
+											<li class="product__variant">
+												<label
+													class="product__variant-label"
+													aria-label="Цвет: Синий"
+													title="Синий"
+												>
+													<input
+														type="radio"
+														id="color-7"
+														name="product-color"
+														class="visually-hidden product__variant-input"
+													/>
+													<span
+														class="product__variant-img"
+														style="
+															background-image: url(&quot;./assets/img/raster/product-variant-7.png.webp&quot;);
+														"
+													></span>
+												</label>
+											</li>
+											<li class="product__variant">
+												<label
+													class="product__variant-label"
+													aria-label="Цвет: Темно-синий"
+													title="Темно-синий"
+												>
+													<input
+														type="radio"
+														id="color-8"
+														name="product-color"
+														class="visually-hidden product__variant-input"
+													/>
+													<span
+														class="product__variant-img"
+														style="
+															background-image: url(&quot;./assets/img/raster/product-variant-8.png.webp&quot;);
+														"
+													></span>
+												</label>
+											</li>
+										</ul>
+									</div>
+
+									<button
+										class="text-grey product__variant-more"
+										data-global-action="product-variants-toggle"
+										data-expand="product-variants"
+										hidden=""
+									>
+										<span class="visually-hidden"
+											>Показать все варианты</span
+										>
+										<svg aria-hidden="true">
+											<use
+												href="./assets/img/svg/sprite.svg#chevron-down"
+											></use>
+										</svg>
+									</button>
+								</div>
+
+								<div class="product__sizes">
+									<div class="product__sizes-info">
+										<p class="product__sizes-caption">
+											Размер
+										</p>
+									</div>
+
+									<div class="scroll">
+										<ul class="track product__sizes-list">
+											<li class="product__size">
+												<input
+													type="radio"
+													id="size-xs"
+													name="product-size"
+													value="xs"
+													class="visually-hidden product__size-input"
+												/>
+												<label
+													class="body-text-md font-semibold product__size-label"
+													for="size-xs"
+												>
+													XS 38/40
+												</label>
+											</li>
+											<li class="product__size">
+												<input
+													type="radio"
+													id="size-s"
+													name="product-size"
+													value="s"
+													class="visually-hidden product__size-input"
+												/>
+												<label
+													class="body-text-md font-semibold product__size-label"
+													for="size-s"
+												>
+													S 40/42
+												</label>
+											</li>
+											<li class="product__size">
+												<input
+													type="radio"
+													id="size-m"
+													name="product-size"
+													value="m"
+													class="visually-hidden product__size-input"
+												/>
+												<label
+													class="body-text-md font-semibold product__size-label"
+													for="size-m"
+												>
+													M 44/46
+												</label>
+											</li>
+											<li class="product__size">
+												<input
+													type="radio"
+													id="size-l"
+													name="product-size"
+													value="l"
+													class="visually-hidden product__size-input"
+												/>
+												<label
+													class="body-text-md font-semibold product__size-label"
+													for="size-l"
+												>
+													L 48/50
+												</label>
+											</li>
+											<li class="product__size">
+												<input
+													type="radio"
+													id="size-xl"
+													name="product-size"
+													value="xl"
+													class="visually-hidden product__size-input"
+												/>
+												<label
+													class="body-text-md font-semibold product__size-label"
+													for="size-xl"
+												>
+													XL 52/54
+												</label>
+											</li>
+											<li class="product__size">
+												<input
+													type="radio"
+													id="size-2xl"
+													name="product-size"
+													value="2xl"
+													class="visually-hidden product__size-input"
+												/>
+												<label
+													class="body-text-md font-semibold product__size-label"
+													for="size-2xl"
+												>
+													2XL 54/56
+												</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<p
+									class="body-text-md font-semibold product__model"
+								>
+									Рост модели 172 (82/60/92), размер S
+								</p>
+							</div>
+
+							<button
+								class="button-xl button-primary product-preview__add"
+							>
+								Добавить в корзину
+							</button>
 						</div>
 					</div>
 					<button
